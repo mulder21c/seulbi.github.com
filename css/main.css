@@ -340,7 +340,7 @@
 	top:0;
 	right:0;
 }
-.btnEventArea button{
+.btnEventArea a{
 	display:inline-block;
 	width:20px;
 	height:20px;
