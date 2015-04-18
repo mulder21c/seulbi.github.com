@@ -14,11 +14,20 @@
 <link rel="stylesheet" href="css/main.css">
 <script src="js/jQuery.js"></script>
 <script src="js/webcafe.js"></script>
-<style>
+<!--<style>
 	a:focus {
 		outline : none ;
 	}
-</style>
+</style>-->
+<script>
+	$(function(){
+		$(".board h1>a").click(function(e){
+			e.preventDefault();
+			$(e.target).parents("section").removeClass("off").addClass("on")
+								.siblings().removeClass("on").addClass("off");
+		});
+	});
+</script>
 </head>
 <body>
 	<!-- 건너뛰기 링크 시작 -->
@@ -163,7 +172,7 @@
 			<!-- //검색영역 종료 -->
 			<!-- 공지사항 및 자료실 시작 -->
 			<div class="board">
-				<section id="notice">
+				<section id="notice" class="on">
 					<h1><a href="#notice">공지사항</a></h1>
 					<ul>
 						<li><a href="notice_1.html">HTML 모든 것을 알려주마 샘플 활용법</a> <time datetime="2013-10-04">2013.10.04</time></li>
@@ -174,7 +183,7 @@
 					</ul>
 					<a href="notice.html" class="more" title="더보기">더보기</a>
 				</section>
-				<section id="pds">
+				<section id="pds" class="off">
 					<h1><a href="#pds">자료실</a></h1>
 					<ul>
 						<li><a href="pds_1.html">디자인 사이트 링크 모음</a> <time datetime="2013-10-04">2013.10.04</time></li>
