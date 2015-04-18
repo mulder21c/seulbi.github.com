@@ -355,7 +355,9 @@
 }
 #joinForm span {
 	display: inline-block;
-	width : 160px;
+	width : 140px;
+	padding-left: 20px;
+	margin-right: 5px;
 }
 #joinForm input{
 	margin:10px 0;
