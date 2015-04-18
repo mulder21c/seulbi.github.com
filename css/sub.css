@@ -361,6 +361,7 @@
 }
 #joinForm .mailingText{
 	width : 350px !important;
+	display: block !important;
 }
 #joinForm input{
 	margin:10px 0;
