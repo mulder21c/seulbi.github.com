@@ -353,6 +353,10 @@
 	color:#666;
 	background: #fffcef;
 }
+#joinForm span {
+	display: inline-block;
+	width : 10em;
+}
 #joinForm input{
 	margin:10px 0;
 }
