@@ -100,25 +100,25 @@
         		<p class="location">Home &gt; 자료실 &gt; <strong>이미지 자료</strong></p> 
         		<!-- //현재위치 종료 -->
         		<h1>회원가입</h1>
-        		<p class="formSign"><strong class="require">필수</strong> 는 반드시 입력하여야 하는 항목입니다.</p>
+        		<p class="formSign">글자색상이 빨강색인 항목은<strong class="require">필수</strong> 반드시 입력하여야 하는 항목입니다.</p>
         		<form action="join.php" method="post" id="joinForm" name="joinForm">
           			<fieldset>
             			<legend>회원가입 정보 입력 폼</legend>
             			<p>
-            				성명 <strong class="require">필수</strong>
+            				<span class="requireContents">성명 <strong class="require">필수</strong></span>
             				<input type="text" id="name" name="name" placeholder="홍길동">
             			</p>
             			<p>
-            				아이디 <strong class="require">필수</strong>
+            				<span>아이디 <strong class="require">필수</strong></span>
             				<input type="password" id="id" name="id" placeholder="Guest">
             				<a href="pop_idcheck.html" class="idCheck">ID중복확인</a>
         				</p>
              			<p>
-             				암호 <strong class="require">필수</strong>
+             				<span>암호 <strong class="require">필수</strong></span>
              				<input type="password" id="password" name="password" placeholder="영문/숫자 4~8자 이내">
          				</p>
               			<p>
-              				암호 확인 <strong class="require">필수</strong>
+              				<span>암호 확인 <strong class="require">필수</strong></span>
               				<input type="password" id="confirmPassword" name="confirmPassword">
           				</p>
               			<p>
@@ -132,7 +132,7 @@
               				<input type="tel" id="tel" name="tel"  maxlength="11" size="20" pattern=”[0-9]{11}” title="하이픈(-)은 입력할 수 없습니다." placeholder="입력 예) 01042542375">
           				</p>
               			<p>
-              				이메일 <strong class="require">필수</strong>
+              				<span>이메일 <strong class="require">필수</strong></span>
               				<input type="email" id="email" name="email" size="30" required placeholder="입력 예) seulbinim@gmail.com">
           				</p>
               			<p class="mailing">
