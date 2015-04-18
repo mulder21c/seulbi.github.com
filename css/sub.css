@@ -360,7 +360,7 @@
 	margin-right: 6px;
 }
 #joinForm .mailingText{
-	width : auto;
+	width : 350px !important;
 }
 #joinForm input{
 	margin:10px 0;
