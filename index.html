@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta name="author" content="Teresa,BMH">
@@ -7,19 +7,13 @@
 	content="Web Cafe,Web Standards,Web Accessibility,웹 접근성,웹 표준">
 <meta name="description" content="HTML5 & CSS3 예제">
 <meta name="robots" content="all">
-<title>:::::환영합니다:::::</title>
+<title>webcafe | HTML5 CSS3</title>
 <link rel="shortcut icon" href="images/common/webcafe.ico">
 <link rel="apple-touch-icon" href="images/common/webcafe.png">
 <link rel="stylesheet" href="css/common.css">
 <link rel="stylesheet" href="css/main.css">
 <script src="js/jQuery.js"></script>
 <script src="js/webcafe.js"></script>
-<style>
-	a:focus {
-		outline : none ;
-	}
-</style>
-<!--
 <script>
 	$(function(){
 		$(".board h1>a").click(function(e){
@@ -28,18 +22,18 @@
 								.siblings().removeClass("on").addClass("off");
 		});
 	});
-</script>-->
+</script>
 </head>
 <body>
 	<!-- 건너뛰기 링크 시작 -->
-	<a id="skipNav" href="#contents">본문 바로가기</a>
+	<a id="skipNav" href="#contentsArea">본문 바로가기</a>
 	<!-- //건너뛰기 링크 종료 -->
 	<!-- #wrapper 시작 -->
 	<div id="wrapper">
 		<!-- #header 시작 -->
 		<header id="header">
 			<!-- 웹카페 로고 시작 -->
-			<h1 class="logo"><a href="index.html"><img src="images/logo.png"></a></h1>
+			<h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="webcafe"></a></h1>
 			<!-- //웹카페 로고 종료 -->
 			<!-- 웹카페 안내 링크 시작 -->
 			<ul class="infoLink">
@@ -118,10 +112,10 @@
 					<fieldset>
 						<legend>회원 로그인 폼</legend>
 						<p>
-							아이디 <input type="text" id="userId" name="userId" placeholder="Guest">
+							<label for="userId">아이디</label> <input type="text" id="userId" name="userId" placeholder="Guest">
 						</p>
 						<p>
-							비밀번호 <input type="password" id="userPw" name="userPw" placeholder="4자이상 8자이하">
+							<label>비밀번호</label> <input type="password" id="userPw" name="userPw" placeholder="4자이상 8자이하">
 						</p>
 						<p>
 							<button type="submit">로그인</button>
@@ -173,7 +167,7 @@
 			<!-- //검색영역 종료 -->
 			<!-- 공지사항 및 자료실 시작 -->
 			<div class="board">
-				<section id="notice">
+				<section id="notice" class="on">
 					<h1><a href="#notice">공지사항</a></h1>
 					<ul>
 						<li><a href="notice_1.html">HTML 모든 것을 알려주마 샘플 활용법</a> <time datetime="2013-10-04">2013.10.04</time></li>
@@ -184,7 +178,7 @@
 					</ul>
 					<a href="notice.html" class="more" title="더보기">더보기</a>
 				</section>
-				<section id="pds">
+				<section id="pds" class="off">
 					<h1><a href="#pds">자료실</a></h1>
 					<ul>
 						<li><a href="pds_1.html">디자인 사이트 링크 모음</a> <time datetime="2013-10-04">2013.10.04</time></li>
