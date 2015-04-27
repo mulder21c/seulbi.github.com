@@ -1,35 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="utf-8">
-        <title>반응형 웹디자인 Main - WebCafe</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <!--[if lt IE 9]>
-			<script src="js/html5shiv.js"></script>
-			<script src="js/respond.js"></script>						
-		<![endif]-->			
-		<link rel="stylesheet" href="css/legacy.css">	
-    </head>
-    <body>    	
+	<head>
+		<meta charset="utf-8">
+		<title>반응형 웹디자인 Main - WebCafe</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!--[if lt IE 9]>
+		<script src="js/html5shiv.js"></script>
+		<script src="js/respond.js"></script>
+		<![endif]-->
+		<link rel="stylesheet" href="css/legacy.css">
+	</head>
+	<body>
 		<div class="container">
 			<header class="header">
-				<h1>웹카페</h1>
+				<h1 class="logo"><a href="#"> <img src="images/logo.png" alt="webcafe"> </a></h1>
+				<div class="picture">
+					<picture>
+						<source media="(min-width: 960px)" srcset="images/itnews_02.png">
+						<source media="(min-width: 720px)" srcset="images/itnews_03.png">						
+						<img src="images/itnews_01.png" alt="Picture Element">
+					</picture>
+				</div>
 			</header>
 			<div class="contents">
-				<div class="slide">슬라이드</div>
-				<div class="bookMain">웹카페 서적</div>
+				<div class="slide">
+					슬라이드
+				</div>
+				<div class="bookMain">
+					웹카페 서적
+				</div>
 				<div class="qnaNewsArea">
-					<div class="qnaMain">묻고 답하기</div>
-					<div class="newsMain">새소식</div>					
+					<div class="qnaMain">
+						묻고 답하기
+					</div>
+					<div class="newsMain">
+						새소식
+					</div>
 				</div>
 				<div class="hotTwitterArea">
-					<div class="hotMain">인기 검색어</div>
-					<div class="twitterMain">트위터</div>	
-				</div>						
+					<div class="hotMain">
+						인기 검색어
+					</div>
+					<div class="twitterMain">
+						트위터
+					</div>
+				</div>
 			</div>
-			<footer class="footer">푸터</footer>
+			<footer class="footer">
+				푸터
+			</footer>
 		</div>
-    </body>
+	</body>
 </html>
