@@ -1,1 +1,143 @@
 @charset "utf-8";
+/* 웹폰트 */
+@font-face {
+    font-family:"Nanum";
+    font-weight:400;
+    src: url('font/NanumGothic.eot');
+    src: url('font/NanumGothic.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothic.woff') format('woff'),
+		 url('font/NanumGothic.ttf') format('truetype');
+}
+@font-face {
+    font-family:"NanumEX";
+    font-weight:900;
+    src: url('font/NanumGothicExtraBold.eot');
+    src: url('font/NanumGothicExtraBold.eot?#iefix') format('embedded-opentype'),
+         url('font/NanumGothicExtraBold.woff') format('woff'),
+		 url('font/NanumGothicExtraBold.ttf') format('truetype');
+}
+/* Reset */
+h1, h2, h3{
+	margin: 0;
+}
+/* Base Style */
+html{
+	font-size: 0.625em;
+}
+body{
+	font-size: 1.2rem;
+	font-family: 'Nanum', sans-serif;
+	line-height: 1.2;
+}
+
+
+/* all device layout */
+.container{
+	background: silver;
+}
+.header{
+	background: yellow;
+}
+.contents{
+	background: red;
+}
+.slide{
+	background: pink;
+}
+.bookMain{
+	background: lime;
+}
+.qnaMain{
+	background: orange;
+}
+.newsMain{
+	background: aqua;
+}
+.hotMain{
+	background: purple;
+}
+.twitterMain{
+	background: skyblue;
+}
+.footer{
+	background: yellow;
+}
+/* mobile device */
+.header, .footer{
+	height: 100px;
+}
+.contents{
+	display: flex;
+	flex-flow: row wrap;
+}
+.slide, .bookMain, .qnaNewsArea, .qnaMain, .newsMain, .hotTwitterArea, .hotMain, .twitterMain{
+	width: 100%; 
+	min-height: 150px;
+}
+/* Tablet Device */
+@media all and (min-width:720px){	
+	/* iE8 이하를 위한 Float 선언 --- Start */
+	.contents{
+		overflow: hidden;
+	}
+	.bookMain, .hotMain{
+		float: left;
+	}
+	.qnaNewsArea, .twitterMain{
+		float: right;
+	}	
+	/* --- End */
+	.contents, .qnaNewsArea, .hotTwitterArea{
+		justify-content: space-around;
+	}
+	.qnaNewsArea, .hotTwitterArea{
+		display: flex;
+		flex-flow: row wrap;
+	}
+	.hotTwitterArea{
+		width: 100%;		
+	}
+	.bookMain, .hotMain{
+		width: 41%;
+	}	
+	.qnaNewsArea, .twitterMain{
+		width: 52%;
+	}	
+}
+/* DeskTop Device */
+@media all and (min-width:960px){
+	body{
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+	.container{
+		max-width: 960px;
+		margin: 0 auto;
+	}
+	.qnaNewsArea, .hotTwitterArea{
+		float: left;
+		margin-left: 6%;
+	}
+	
+	.bookMain{
+		width: 27.5%;
+	}
+	.qnaNewsArea{
+		width: 37.5%;
+	}
+	.hotTwitterArea{
+		width: 23%
+	}
+	.hotMain, .twitterMain{
+		width: 100%;
+	}
+}
+
+
+
+
+
+
+
+
+
