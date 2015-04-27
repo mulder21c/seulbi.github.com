@@ -1,4 +1,16 @@
 @charset "utf-8";
+/* 반응형 콘텐츠 */
+.logo{
+	background: blue;
+	width: 20%;
+}
+.logo img{
+	max-width: 100%;
+	height: auto;
+}
+
+
+
 /* 웹폰트 */
 @font-face {
     font-family:"Nanum";
@@ -64,7 +76,7 @@ body{
 }
 /* mobile device */
 .header, .footer{
-	height: 100px;
+	height: 300px;
 }
 .contents{
 	display: flex;
