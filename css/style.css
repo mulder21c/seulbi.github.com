@@ -196,7 +196,7 @@ a.actNumber{
 	height: 60px;
 	padding-left: 60px;
 	padding-top: 10px;
-	font-size: 1.6rem;	
+	font-size: 1.4rem;	
 }
 .enSubject{
 	display: block;
@@ -245,28 +245,28 @@ a.actNumber{
 	text-align: center;
 }
 .bookPrev, .bookNext {
-	position : absolute ;
+	position : absolute ;	
 	top : 100px ; 
 	height : 0 ;
-	padding-top : 1.5em ;
+	padding-top : 30px ;
 	padding-left: 15px;
-	padding-right:15px;
+	padding-right: 15px;
 	overflow : hidden ;
 	background : url(images/sprite_book.png) no-repeat ;
 }
 .bookPrev {
 	left : 0 ;
-	background-position : 0 -34px ;
+	background-position : 50% -34px ;
 }
 .bookPrev.end {
-	background-position : 0 0 ;
+	background-position : 50% 0 ;
 }
 .bookNext {
 	right : 0 ;
-	background-position : 0 -102px ;
+	background-position : 50% -102px ;
 }
 .bookNext.end {
-	background-position : 0 -68px ;
+	background-position : 50% -68px ;
 }
 .bookDetail {
 	margin : 20px 0;
@@ -277,7 +277,7 @@ a.actNumber{
 }
 .bookDetail h3 {
 	color : #888;
-	font-size : 1.4rem ;
+	font-size : 1.4em ;
 	text-align : center ;
 	margin: 5px 0;
 }
