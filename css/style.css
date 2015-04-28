@@ -196,7 +196,7 @@ a.actNumber{
 	height: 60px;
 	padding-left: 60px;
 	padding-top: 10px;
-	font-size: 1.4rem;	
+	font-size: 1.6rem;	
 }
 .enSubject{
 	display: block;
@@ -277,7 +277,7 @@ a.actNumber{
 }
 .bookDetail h3 {
 	color : #888;
-	font-size : 1.4em ;
+	font-size : 1.2rem ;
 	text-align : center ;
 	margin: 5px 0;
 }
