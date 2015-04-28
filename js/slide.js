@@ -9,7 +9,9 @@ function actImg(actImgNo){
 $(function(){
 	slideImgSize = $(".slideImg > li").size();	// 슬라이드 이미지 수				
 	var actImgNo = 0;	// 초기 슬라이드 활성화 번호
-	
+	$( ".slideControl a" ).click(function( event ) {
+	  event.preventDefault();
+	});
 	$(".slidePrev").click(function(){	// 이전 버튼 클릭 이벤트
 		// 첫번째 이미지에서 이전 버튼을 누를 경우 마지막 슬라이드 번호로 이동한다.
 		actImgNo = (actImgNo == 0) ? slideImgSize-1 : --actImgNo;
@@ -50,7 +52,9 @@ $(function(){
 	bookDetailSize = $(".bookDetail").size();	// 서적 수
 	var actBookNo = 0;	// 초기 서적 활성화 번호
 	checkEnd(actBookNo);	// 최초 페이지 로딩 시 서적의 이전/다음 버튼의 활성화여부를 지정한다.
-	
+	$( ".bookControl a" ).click(function( event ) {
+	  event.preventDefault();
+	});
 	$(".bookPrev").click(function(){	// 이전 버튼 클릭 이벤트
 		if(actBookNo > 0){
 			actBook(--actBookNo);
