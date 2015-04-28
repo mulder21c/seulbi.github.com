@@ -17,7 +17,8 @@
 				$('picture').picture();
 			});
 		</script>
-		<script src="js/jquery-picture-min.js"></script>		
+		<script src="js/jquery-picture-min.js"></script>
+		<script src="js/slide.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -43,7 +44,7 @@
 								<a href="http://cafe.naver.com/webcafe2010" title="네이버 웹카페">NAVER CAFE</a>
 							</li>
 						</ul>
-					</div>					
+					</div>
 					<div class="search">
 						<h2 class="hidden">웹카페 검색</h2>
 						<form id="searchForm" action="javascript:alert('검색이 완료되었습니다.');">
@@ -51,7 +52,7 @@
 								<legend>
 									검색 폼
 								</legend>
-								<input type="search" required placeholder="검색어를 입력하세요" title="검색어 입력란" id="keyword">								
+								<input type="search" required placeholder="검색어를 입력하세요" title="검색어 입력란" id="keyword">
 								<button type="submit" class="btnSearch">
 									<img src="images/btn_search_x2.png" alt="검색">
 								</button>
@@ -80,12 +81,188 @@
 				</div>
 			</header>
 			<div class="contents">
-				<div class="slide">
-					슬라이드
+				<section class="slide">
+					<h2 class="hidden">반응형 웹 디자인에 대해서</h2>
+					<div class="slideControl">
+						<a href="#" class="slidePrev">
+						<picture alt="webcafe">
+							<source src="images/slide_prev.png">
+							<source src="images/slide_prev_x2.png" media="(min-width: 960px)">
+							<noscript>
+							<img src="images/slide_prev.png" alt="이전">
+							</noscript>
+						</picture> </a>
+						<a href="#" class="slideNext">
+						<picture alt="webcafe">
+							<source src="images/slide_next.png">
+							<source src="images/slide_next_x2.png" media="(min-width: 960px)">
+							<noscript>
+							<img src="images/slide_prev.png" alt="다음">
+							</noscript>
+						</picture> </a>
+					</div>
+					<ul class="slideImg">
+						<li class="actImg">
+							<picture>
+								<source src="images/slide_01.jpg">
+								<source src="images/slide_01_x2.jpg" media="(min-width: 960px)">
+								<noscript>
+								<img src="images/slide_01.jpg" alt="Responsive Design : Mobilizing Your Website with RWD Project Key point Guide, HTML5, CSS3">
+								</noscript>
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source src="images/slide_02.jpg">
+								<source src="images/slide_02_x2.jpg" media="(min-width: 960px)">
+								<noscript>
+								<img src="images/slide_02.jpg" alt="Responsive Design : 데스크탑에서 모바일 기기까지 각각 다른 다양한 해상도의 디바이스에 맞춰 웹사이트의 레이아웃이 동적으로 변환되면서 텍스트, 이미지 및 UI가 최적화되어 보여지도록 하는 기법">
+								</noscript>
+							</picture>
+						</li>
+						<li>
+							<picture>
+								<source src="images/slide_03.jpg">
+								<source src="images/slide_03_x2.jpg" media="(min-width: 960px)">
+								<noscript>
+								<img src="images/slide_03.jpg" alt="Responsive Design : 1. 해상도별로 반응하면 화면의 레이아웃 가변단계를 정의해야 한다, 2. 고해상도 화면의 콘텐츠부터 기획해야 PC와 모바일간의 UI 차이로 인한 오류를 방지할 수 있다, 3. 모든 해상도에서 터치 인터페이스를 고려해야 한다.">
+								</noscript>
+							</picture>
+						</li>
+
+					</ul>
+					<div class="slideNumber">
+						<a href="#" class="actNumber">1</a>
+						<a href="#" class="">2</a>
+						<a href="#" class="">3</a>
+					</div>
+				</section>
+				<section class="bookMain">
+				<h2 class="subject bookTitle"><a href="#">웹카페 서적
+					<span class="enSubject">WebCafe Book</span></a></h2>
+				<div class="bookDetail">
+					<div class="bookImg">
+						<picture>
+							<source src="images/book_xhtml.jpg">
+							<source src="images/book_xhtml_x2.jpg" media="(min-width: 960px)">
+							<noscript>
+							<img src="images/book_xhtml.jpg" alt="웹표준 핵심 가이드북 XHTML+CSS" title="책에 대한 상세 설명은 하단 내용 참조">
+							</noscript>
+						</picture>
+					</div>
+					<h3>웹표준 핵심가이드북 XHTML+CSS</h3>
+					<dl>
+						<dt class="author">
+							저자
+						</dt>
+						<dd class="name">
+							김데레사
+						</dd>
+						<dt class="designer">
+							저자
+						</dt>
+						<dd class="name">
+							방미희
+						</dd>
+						<dt class="hidden">
+							평점
+						</dt>
+						<dd class="point">
+							★★★★★
+						</dd>
+					</dl>
+					<p>
+						저자의 풍부한 실무 노하우와 오랜 강의 경헝을 토대로 웹표준과 웹접근성 그리고 크로스 브라우징을 체계적으로 학습할 수 잇는 방법을 제시한 책이다. 또한 Part04에서 소개하고 있는 실전예제를 통해 실무에서 쓰이는 다양한 테크닉들을 학습할 수 있도록 하였다.
 				</div>
-				<div class="bookMain">
-					웹카페 서적
+				<div class="bookDetail">
+					<div class="bookImg">
+						<picture>
+							<source src="images/book_html5.jpg">
+							<source src="images/book_html5_x2.jpg" media="(min-width: 960px)">
+							<noscript>
+							<img src="images/book_html5.jpg" alt="웹표준 핵심 가이드북2 HTML5+CSS3" title="책에 대한 상세 설명은 하단 내용 참조">
+							</noscript>
+						</picture>
+					</div>
+					<h3>웹표준 핵심가이드북 HTML5+CSS3</h3>
+					<dl>
+						<dt class="author">
+							저자
+						</dt>
+						<dd class="name">
+							김데레사
+						</dd>
+						<dt class="designer">
+							디자인
+						</dt>
+						<dd class="name">
+							방미희
+						</dd>
+						<dt class="hidden">
+							평점
+						</dt>
+						<dd class="point">
+							★★★★★
+						</dd>
+					</dl>
+					<p>
+						HTML5와 CSS3의 최신 스펙이 쉽고 체계적으로 정리되어 있으며 차세대 표준기술을 실전에 어떻게 적용할 수 있는지를 소개하고 있다. 특히 웹접근성 향상을 위해 오류 진단부터 수정까지의 프로세스를 실무 예제를 통해 익힐 수 있도록 하였다.
+					</p>
 				</div>
+				<div class="bookDetail actBook">
+					<div class="bookImg">
+						<picture>
+							<source src="images/book_rwd.jpg">
+							<source src="images/book_rwd_x2.jpg" media="(min-width: 960px)">
+							<noscript>
+							<img src="images/book_rwd.jpg" alt="반응형 웹디자인 핵심 가이드북" title="책에 대한 상세 설명은 하단 내용 참조">
+							</noscript>
+						</picture>
+					</div>
+					<h3>반응형 웹디자인 핵심가이드북</h3>
+					<dl>
+						<dt class="author">
+							저자
+						</dt>
+						<dd class="name">
+							김데레사
+						</dd>
+						<dt class="designer">
+							디자인
+						</dt>
+						<dd class="name">
+							김기범
+						</dd>
+						<dt class="hidden">
+							평점
+						</dt>
+						<dd class="point">
+							★★★★★
+						</dd>
+					</dl>
+					<p>
+						저자의 풍부한 실무 노하우와 오랜 강의 경헝을 토대로 반응형웹을 체계적으로 학습할 수 잇는 방법을 제시한 책이다. 미디어쿼리의 기본적인 이해를 시작으로 실전예제를 통해 반응형 웹디자인의 노하우를 학습할 수 있도록 구성된 실용서로 부족함이 없는 책이다.
+					</p>
+				</div>
+				<div class="bookControl">
+					<a href="#" class="bookPrev">이전</a>
+					<a href="#" class="bookNext end">다음</a>
+				</div>
+				<div class="bookExample">
+					<h3 class="hidden">핵심 가이드북 실전예제</h3>
+					<ul>
+						<li>
+							<a href="http://www.webcafe2010.com/xhtml/index.html"><img src="images/xhtml.png" alt="XHTML 실전예제"> <span class="xhtmlDeom">Example</span></a>
+						</li>
+						<li>
+							<a href="http://www.webcafe2010.com/html5/index#notice.html"><img src="images/html5.png" alt="HTML5 실전예제"> <span class="html5Deom">Example</span></a>
+						</li>
+						<li>
+							<a href="http://www.webcafe2010.com/rwd/index.html"><img src="images/rwd.png" alt="Rosponsive Web 실전예제"> <span class="rwdDeom">Example</span></a>
+						</li>
+					</ul>
+				</div>
+				</section>
 				<div class="qnaNewsArea">
 					<div class="qnaMain">
 						묻고 답하기

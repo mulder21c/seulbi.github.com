@@ -64,21 +64,6 @@ a:hover, a:focus{
 	text-decoration: underline;
 }
 /* all device layout */
-.container{
-	background: silver;
-}
-.header{
-	background: yellow;
-}
-.contents{
-	background: red;
-}
-.slide{
-	background: pink;
-}
-.bookMain{
-	background: lime;
-}
 .qnaMain{
 	background: orange;
 }
@@ -170,6 +155,172 @@ a:hover, a:focus{
 .mainMenu a{
 	display: block;
 }
+/* 슬라이드 */
+.slide {
+	position: relative;
+	text-align: center;
+}
+.slidePrev, .slideNext{
+	position: absolute;
+	top: 40%;
+	width: 30px;
+	height: 30px;
+}
+.slidePrev{
+	left: 0;
+}
+.slideNext{
+	right: 0;
+}
+.slideImg li{
+	display: none;
+}
+li.actImg{
+	display: block;
+}
+.slideNumber a{
+	background: #333;
+	display: inline-block;
+	width: 15px;
+	height: 0;
+	padding-top: 15px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+a.actNumber{
+	background: #f00;
+}
+/* .contents 섹션 제목 공통 */
+.subject{
+	background: url(images/sprite_main.png) no-repeat ;
+	height: 60px;
+	padding-left: 60px;
+	padding-top: 10px;
+	font-size: 1.4rem;	
+}
+.enSubject{
+	display: block;
+	margin-top: 5px;	
+}
+.subject a{
+	display: block;
+}
+.subject a:hover, .subject a:focus{
+	text-decoration: none;
+}
+.bookTitle .enSubject{
+	color: #abd375;
+}
+.qnaTitle {
+	background-position : 0 -115px;
+}
+.qnaTitle .enSubject {
+	color : #c7b39a ;
+}
+.newsTitle {
+	background-position : 0 -230px;
+}
+.newsTitle .enSubject {
+	color : #e8ca58 ;
+}
+.hotTitle {
+	background-position : 0 -345px;
+}
+.hotTitle .enSubject {
+	color : #eea60a ;
+}
+.twitterTitle {
+	background-position : 0 -460px;
+}
+.twitterTitle .enSubject {
+	color : #6aaee6 ;
+}
+/* 웹카페 북 */
+.bookMain{
+	position: relative;
+}
+.bookImg{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+}
+.bookPrev, .bookNext {
+	position : absolute ;
+	top : 100px ; 
+	height : 0 ;
+	padding-top : 1.5em ;
+	overflow : hidden ;
+	background : url(images/sprite_book.png) no-repeat ;
+}
+.bookPrev {
+	left : 0 ;
+	background-position : 0 -34px ;
+}
+.bookPrev.end {
+	background-position : 0 0 ;
+}
+.bookNext {
+	right : 0 ;
+	background-position : 0 -102px ;
+}
+.bookNext.end {
+	background-position : 0 -68px ;
+}
+.bookDetail {
+	margin : 20px 0;
+	display : none ;
+}
+.actBook{
+	display : block ;
+}
+.bookDetail h3 {
+	color : #888;
+	font-size : 1em ;
+	text-align : center ;
+	margin: 5px 0;
+}
+.bookDetail dl {
+	margin : 5px 0 10px;
+	text-align : center ;
+}
+.bookDetail dt, .bookDetail dd {
+	display : inline-block ;
+	color : #8a8a8a ;
+}
+.bookDetail .designer:before {
+	content : "&" ;
+}
+.bookDetail .name:before {
+	content : "/" ;
+}
+.bookDetail .point {
+	display : block ;
+	color : #afd371 ;
+	font-size : 2em ;
+}
+.bookDetail p {
+	text-align : justify ;
+	color : #898989 ;
+	line-height : 1.6 ;
+}
+.bookExample {
+	width : 80% ;
+	margin : 20px auto ;
+	overflow : hidden ;
+}
+.bookExample li{
+	width: 30%;
+	margin-right: 5%;
+	float: left;
+	text-align: center;
+}
+.bookExample li:nth-of-type(3){
+	margin-right: 0;
+}
+/* 묻고 답하기 */
+
+
+
 /* mobile device */
 .contents{
 	display: flex;
@@ -215,11 +366,36 @@ a:hover, a:focus{
 		float: right;
 	}	
 	/* --- End */
+	.header {
+		position : relative ;
+	}
+	.header:before {
+		content : "슬비쌤의 반응형 웹 사이트  - Tablet" ;
+		position : absolute ;
+		top : 20px ;
+		left : 30px ;
+		font-family : "NanumEX" ;
+		font-size : 1.2em ;
+		color : #fff ;
+	}
+	.logo{
+		width: 20%;
+		position : absolute ;
+		top : 30px ;
+		left : 0
+	}
+	.mainMenu {
+		margin-left : 250px ;
+	}	
 	.search{
 		margin: 8px 10px 10px 0;
 	}
 	.mainMenu{
 		font-size: 1.6rem;
+	}
+	.slidePrev, .slideNext{
+		width: 40px;
+		height: 40px;
 	}	
 	.contents, .qnaNewsArea, .hotTwitterArea{
 		justify-content: space-around;
@@ -247,13 +423,22 @@ a:hover, a:focus{
 	.headerInner, .navigation, .contents, .footerInner{
 		max-width: 960px;
 		margin: 0 auto;
+	}
+	.header:before {
+		content : "슬비쌤의 반응형 웹 사이트  - Desktop" ;
+		font-size: 1.2rem;
 	}	
 	.logo{
 		width: 22%;
 	}
 	.mainMenu{
 		font-size: 1.8rem;
+		line-height: 3.5;
 	}
+	.slidePrev, .slideNext{
+		width: 45px;
+		height: 45px;
+	}	
 	.qnaNewsArea, .hotTwitterArea{
 		float: left;
 		margin-left: 6%;
@@ -270,15 +455,6 @@ a:hover, a:focus{
 	}
 	.hotMain, .twitterMain{
 		width: 100%;
-	}
-}
-
-.slide{
-		background: url(images/bg_login.png) no-repeat;
-	}
-@media all and (min-device-pixed-ratio: 2){
-	.slide{
-		background: url(images/bg_cafe.png) no-repeat;
 	}
 }
 
