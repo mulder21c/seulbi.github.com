@@ -325,6 +325,7 @@ a.actNumber{
 
 /* mobile device */
 .contents{
+	clear:both;
 	display: flex;
 	flex-flow: row wrap;
 }
