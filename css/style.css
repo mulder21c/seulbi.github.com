@@ -554,7 +554,6 @@ li.webcafeEmail{
 		width: 50%;
 		box-sizing: border-box;
 		float: right;
-		padding-left: 50px;
 		
 	}
 	.copyright{
@@ -564,17 +563,6 @@ li.webcafeEmail{
 
 /* Tablet Device */
 @media all and (min-width:720px){	
-	/* iE8 이하를 위한 Float 선언 --- Start */
-	.contents{
-		overflow: hidden;
-	}
-	.bookMain, .hotMain{
-		float: left;
-	}
-	.qnaNewsArea, .twitterMain{
-		float: right;
-	}	
-	/* --- End */
 	.header {
 		position : relative ;
 	}
