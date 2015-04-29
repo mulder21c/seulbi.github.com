@@ -63,16 +63,6 @@ a:hover, a:focus{
 	color: inherit;
 	text-decoration: underline;
 }
-/* all device layout */
-.hotMain{
-	background: purple;
-}
-.twitterMain{
-	background: skyblue;
-}
-.footer{
-	background: yellow;
-}
 /* All Device Style */
 /* 헤더 */
 .header{
@@ -353,7 +343,165 @@ a.actNumber{
 	background: url(images/sprite_bullet.png) no-repeat 0 -49px;
 	padding-left: 20px;
 }
-
+/* 인기 검색어 */
+.hotMain ol{
+	overflow: hidden;
+	font-family: 'NanumEx';
+	font-size: 1.4rem;
+	color: #fff;
+}
+.hotMain li{
+	counter-increment: number;
+	margin: 10px 0;
+}
+.hotMain li:before{
+	content: counter(number, decimal);
+	background: #ec6b4e;
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0.5rem;
+	text-align: center;
+	display: inline-block;
+	border-radius: 50%;
+}
+.hotMain .keyword{
+	background: #ebebeb;
+	display: inline-block;
+	width: 80%;
+	border-radius: 1.5rem;
+}
+.keyword span{
+	background: #c69c6c;
+	display: inline-block;
+	padding: 0.5rem;
+	border-radius: 1.5rem 0 0 1.5rem;
+	text-indent: 1.5rem;
+}
+.no1{
+	width:80%;
+}
+.no2{
+	width:72%;
+}
+.no3{
+	width:68%;
+}
+.no4{
+	width:65%;
+}
+.no5{
+	width:60%;
+}
+/* 트위터 */
+.twitterMain article:last-of-type{
+	border-bottom: 0;
+}
+.twitterArticle{
+	/*padding-left: 25%;*/
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid #999;
+	padding-bottom : 10px;
+	margin-bottom : 10px;
+}
+.twitterUserProfile{
+	/*position: absolute;
+	top: 0;
+	left: 0;*/
+	float: left;
+	width: 20%;
+}
+.twitterContentArea{
+	float: right;
+	width: 78%;
+}
+.twitterUserName{
+	font-weight: bold;
+}
+.twitterContent{
+	line-height: 1.6;
+	margin: 15px 0;
+}
+.twitterDate{
+	float: right;
+	background: url(images/sprite_bullet.png) no-repeat 0 102%;
+	padding-left: 1.5rem;
+}
+/* 푸터 */
+.footer {
+	color : #eceaeb ;
+	font-size : 0.85em ;
+	background-color : #432219 ;	
+}
+.footer h2 {
+	font-size : 1.5rem ;
+	color : #c6b29a ;
+}
+/* 주소 */
+.addressArea {
+	text-align : center ;
+	padding : 10px 0 15px ;
+}
+.addressArea h2 {
+	display: inline-block;
+	padding-right : 10px ;
+}
+address {
+	display: inline-block;
+	font-style : normal ;
+}
+address:after {
+	content : "" ;
+	display : inline-block ;
+	width : 18px ;
+	height : 25px ;
+	background : url(images/sprite_footer.png) no-repeat 0 0 ;
+}
+/* 웹카페 정책 */
+.guideArea h2 {
+	padding : 15px 0 0 15px ;
+}
+.guide {
+	padding : 15px ;
+}
+.guide a {
+	color : #fff ;
+	display : block ;
+	line-height : 2 ;	
+}
+/* 연락처정보 */
+.contactArea h2 {
+	padding : 15px 0 0 15px ;
+}
+.contact {
+	padding : 15px ;
+}
+.contact li {
+	height : 18px ;
+	line-height : 18px ;
+	padding-left : 25px ;
+	margin : 5px 0 ;
+	background : url(images/sprite_footer.png) no-repeat 0 0 ;
+}
+li.webcafeTel{
+	background-position : 0 -50px ;
+}
+li.webcafeFax{
+	background-position : 0 -93px ;
+}
+li.webcafeEmail{
+	background-position : 0 -136px ;
+}
+.contact a {
+	color : #fff ;
+}
+/* 저작권 */
+.copyright {	
+	color : #c5b39b ;
+	padding : 10px ;
+	text-align : center ;	
+	background : #291610 ;
+} 
 /* mobile device */
 .contents{
 	clear:both;
@@ -362,7 +510,6 @@ a.actNumber{
 }
 .slide, .bookMain, .qnaNewsArea, .qnaMain, .newsMain, .hotTwitterArea, .hotMain, .twitterMain{
 	width: 100%; 
-	min-height: 150px;
 }
 /* Mobile Device 최소 320px 에서 최대 480px 까지 */
 @media all and (min-width:320px) and (max-width:480px){
@@ -385,6 +532,34 @@ a.actNumber{
 	.mainMenu a{
 		text-transform: capitalize;
 	}
+	.contents{
+		padding: 0 10px;
+	}
+	.contents section{
+		margin: 15px 0;
+	}	
+}
+
+@media all and (min-width:320px){
+	.footerInner{
+		overflow: hidden;
+	}
+	.guideArea{
+		width: 50%;
+		box-sizing: border-box;
+		float: left;
+		padding-left: 50px;
+	}
+	.contactArea{
+		width: 50%;
+		box-sizing: border-box;
+		float: right;
+		padding-left: 50px;
+		
+	}
+	.copyright{
+		clear: both;
+	}	
 }
 
 /* Tablet Device */
@@ -446,7 +621,29 @@ a.actNumber{
 	}	
 	.qnaNewsArea, .twitterMain{
 		width: 52%;
-	}	
+	}
+	.footerInner{
+		position: relative;
+	}
+	.addressArea{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+	.guideArea{
+		width: auto;
+		padding-left: 20px;
+		padding-right: 20px;
+		position: relative;
+	}
+	.contactArea{
+		width: auto;
+		padding-left: 20px;
+		padding-right: 20px;
+		position: relative;		
+	}
+		
 }
 /* DeskTop Device */
 @media all and (min-width:960px){
@@ -489,6 +686,10 @@ a.actNumber{
 	}
 	.hotMain, .twitterMain{
 		width: 100%;
+	}
+	.footer {
+		background-image : -ms-repeating-linear-gradient(-45deg, #462a1f 2px, #462a1f 4px, #432219 4px, #432219 8px) ;
+		background-image : -moz-repeating-linear-gradient(-45deg, #462a1f 2px, #462a1f 4px, #432219 4px, #432219 8px) ;	
 	}
 }
 
