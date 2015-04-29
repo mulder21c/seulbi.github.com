@@ -39,7 +39,7 @@ input, button, label, img {
 	left: -9999em;
 }
 /* responsive contents */
-img{
+img, video{
 	max-width: 100%;
 	height: auto;
 }
@@ -64,12 +64,6 @@ a:hover, a:focus{
 	text-decoration: underline;
 }
 /* all device layout */
-.qnaMain{
-	background: orange;
-}
-.newsMain{
-	background: aqua;
-}
 .hotMain{
 	background: purple;
 }
@@ -320,8 +314,45 @@ a.actNumber{
 	margin-right: 0;
 }
 /* 묻고 답하기 */
-
-
+.qnaList a:before{
+	display: inline-block;
+	background: #c7b299;
+	content: " ";
+	width: 0.8rem;
+	height: 0.8rem;
+	border-radius: 50%;
+	margin-right: 0.5rem;
+}
+.qnaList li{
+	overflow: hidden;
+}
+.qnaList a{
+	float: left;
+	line-height: 2;
+	width: 76%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.qnaList time{
+	float: right;
+	line-height: 2;
+	width: 23%;
+	text-align: right;
+}
+/* 새소식 */
+.newsMain p{
+	line-height: 1.6;
+}
+.newsMain time{
+	display: block;
+	text-align: right;
+	margin: 1rem 0;
+}
+.newsMain .bullet{
+	background: url(images/sprite_bullet.png) no-repeat 0 -49px;
+	padding-left: 20px;
+}
 
 /* mobile device */
 .contents{
