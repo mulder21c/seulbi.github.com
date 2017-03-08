@@ -14,5 +14,7 @@ body {
 
 body {
   font-size: 1.5rem;
+  color: #00f;
+  background: pink;
   margin-left: auto;
   margin-right: auto; }
