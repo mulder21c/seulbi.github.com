@@ -220,3 +220,13 @@ a:link, a:visited{
                0px -1px 0 rgba(0,0,0,1);
 }
 /* 메인 콘텐츠 끝 ====================================*/
+@media all and (min-width:600px) and (max-width:1024px) {
+  body{
+    font-size: 1em;
+  }
+}
+@media all and (min-width:1025px) {
+  body{
+    font-size: 1.2em;
+  }
+}
