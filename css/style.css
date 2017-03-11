@@ -227,7 +227,6 @@ a:link, a:visited{
 }
 [class$="case"] [class$="theme"], 
 [class$="case"] [class$="question"]{
-  border: 1px solid #ddd;
   background-color: #fff;
   margin: 0 0 0.5em;
 }
