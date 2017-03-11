@@ -181,14 +181,14 @@ a:link, a:visited{
   border: 1px solid #bbb;
   background-color: #fff;
 }
-[class$="list"]{
+.text-type [class$="list"]{
   margin: 0;
   padding: 0;
 }
-[class$="list"] li{
+.text-type [class$="list"] li{
   line-height: 1.5;
 }
-[class$="list"] a{
+.text-type [class$="list"] a{
   display: block;
   padding: 1em;
   border-top: 1px solid #bbb;
@@ -219,28 +219,46 @@ a:link, a:visited{
                0px 1px 0 rgba(0,0,0,1),
                0px -1px 0 rgba(0,0,0,1);
 }
-/* 직업, 관심사, 분야별 콘텐츠 섹션 */
+/* 리스트 타입 콘텐츠 섹션 */
+/* 직업, 관심사, 분야별 콘텐츠 */
 [class$="case"]{
   width: 100%;
   position: relative;
 }
-[class$="part"]{
+[class$="case"] [class$="theme"], 
+[class$="case"] [class$="question"]{
   border: 1px solid #ddd;
-  border-right: 0;
   background-color: #fff;
-  color:#835190;
-  position: absolute;
-  width: 6em;
-  padding: 1em 1em;
-  margin-bottom: 0.5em;
-}
-[class$="question"]{
-  border: 1px solid #ddd;
-  border-left: 0;
-  background-color: #fff;
-  padding: 1em 1em 1em 7.5em;
   margin: 0 0 0.5em;
 }
+[class$="case"] [class$="theme"]{    
+  position: absolute;
+  color:#835190;
+  width: 6em;
+  border-right: 0;  
+}
+[class$="case"] [class$="question"]{
+  border-left: 0;
+  padding-left: 7em;  
+}
+[class$="case"] a{
+  display: block;
+  padding: 1em;
+}
+/* 직업별(테마) 콘텐츠 */
+[class$="theme-list"]{
+  padding: 0;
+}
+[class$="theme-list"] li{
+  border: 1px solid #ddd;
+  background-color: #fff;
+  margin: 0 0 0.5em;
+}
+[class$="theme-list"] a{
+  display: block;
+  padding: 1em;
+}
+
 /* 콘텐츠 끝 ====================================*/
 @media all and (min-width:600px) and (max-width:1024px) {
   body{
