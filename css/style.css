@@ -164,13 +164,13 @@ a:link, a:visited{
   border-top: 4px solid #9b54ca;
 }
 /* 메뉴 끝 ====================================*/
-/* 메인 콘텐츠 시작 ====================================*/
+/* 콘텐츠 시작 ====================================*/
 /* 콘텐츠 섹션 공통 (텍스트 타입&카드 타입)*/
 [class$="type"]{
   margin: 1em;
 }
 /* 콘텐츠 제목 공통 */
-[class$="-headline"] a{
+[class$="headline"] a{
   display: block;
   font-weight: 400;
   padding: 1em;
@@ -219,7 +219,25 @@ a:link, a:visited{
                0px 1px 0 rgba(0,0,0,1),
                0px -1px 0 rgba(0,0,0,1);
 }
-/* 메인 콘텐츠 끝 ====================================*/
+/* 직업, 관심사, 분야별 콘텐츠 섹션 */
+[class$="case"]{
+  width: 100%;
+  position: relative;
+}
+[class$="part"]{
+  background-color: #fff;
+  color: #9B54CA;
+  position: absolute;
+  width: 6em;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+}
+[class$="question"]{
+  background-color: #fff;
+  padding: 0.5em 1em 0.5em 7.5em;
+  margin: 0 0 1em;
+}
+/* 콘텐츠 끝 ====================================*/
 @media all and (min-width:600px) and (max-width:1024px) {
   body{
     font-size: 1em;
