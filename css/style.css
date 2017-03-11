@@ -29,10 +29,6 @@ input, button, textarea, select, option{
   font-size: inherit;
   font-family: inherit; 
 }
-button{
-  font-size: 12px;
-  font-size: 1.6rem;
-}
 /* 반응형 이미지 */
 img {
   max-width: 100%;
