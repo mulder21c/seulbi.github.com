@@ -26,8 +26,8 @@ input, button, textarea, select, option{
   font-family: inherit; 
 }
 button{
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 12px;
+  font-size: 1.6rem;
 }
 /* 반응형 이미지 */
 img {
@@ -61,8 +61,8 @@ html{
 }
 /* body 요소의 기본 스타일*/
 body{
-  font-size: 16px;
-  font-size: 1.6rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
   line-height: 1;
@@ -97,16 +97,16 @@ a:link, a:visited{
 }
 /* 헤더 시작 ====================================*/
 .header{
-  padding: 16px;
-  padding: 1.6rem;
+  padding: 14px;
+  padding: 1.4rem;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
 }
 /* 로고 */
 .logo{
   float: left;
-  font-size: 24px;
-  font-size: 2.4rem;
+  font-size: 20px;
+  font-size: 2rem;
 }
 /* 검색하기 버튼 */
 .btn-search{
@@ -117,8 +117,8 @@ a:link, a:visited{
 }
 .icon-zoom:before{
    content: '\e800';
-   font-size: 20px;
-   font-size: 2rem;
+   font-size: 18px;
+   font-size: 1.8rem;
    color: #666;
    position: relatvie; 
    top: -2px; /* 아이콘의 글자 크기 조정으로 인해 위쪽으로 2px 정도 끌어올려 배치 */
@@ -134,10 +134,12 @@ a:link, a:visited{
 .login, .my-page{
   display: block;
   font-weight: 400;
-  font-size: 18px;
-  font-size: 1.8rem;
-  padding: 3px 5px 3px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  padding: 2px 5px 2px;
+  padding: 0.2rem 0.5rem 0.2rem;
   margin-left: 5px;
+  margin-left: 0.5rem;
 }
 .my-page{
   display: none;
@@ -145,8 +147,8 @@ a:link, a:visited{
 /* 헤더 끝 ====================================*/
 /* 메뉴 시작 ====================================*/
 .gnb{
-  padding: 16px;
-  padding: 1.6rem;
+  padding: 14px;
+  padding: 1.4rem;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
 }
@@ -159,13 +161,14 @@ a:link, a:visited{
   float: left;
   width: 25%;
   text-align: center;
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 16px;
+  font-size: 1.6rem;
   font-weight: 400;
   color: #666;
 }
 .menu a{
   padding: 10px 15px 7px;
+  padding: 1rem 1.5rem 0.7rem;
 }
 .menu-active{
   border-bottom: 4px solid #9b54ca;
@@ -174,8 +177,8 @@ a:link, a:visited{
 /* 메인 콘텐츠 시작 ====================================*/
 /* 콘텐츠 섹션 공통 (텍스트 타입&카드 타입)*/
 [class$="type"]{
-  margin: 16px;
-  margin: 1.6rem;
+  margin: 14px;
+  margin: 1.4rem;
 }
 /* 콘텐츠 제목 공통 */
 [class$="-headline"]{
@@ -183,10 +186,10 @@ a:link, a:visited{
 }
 [class$="-headline"] a{
   display: block;
-  font-size: 17px;
-  font-size: 1.7rem;
-  padding: 8px 16px;
-  padding: 1.6rem;
+  font-size: 15px;
+  font-size: 1.5rem;
+  padding: 7px 14px;
+  padding: 0.7rem 1.4rem;
 }
 /* 텍스트 타입 콘텐츠 섹션 */
 .text-type{
@@ -202,8 +205,8 @@ a:link, a:visited{
 }
 [class$="list"] a{
   display: block;
-  padding: 16px;
-  padding: 1.6rem;
+  padding: 14px;
+  padding: 1.4rem;
   border-top: 1px solid #bbb;
 }
 /* 카드 타입 콘텐츠 섹션*/
@@ -215,14 +218,14 @@ a:link, a:visited{
 }
 .card-type a{
   display: block;
-  padding: 50px 16px;
-  padding: 5rem 1.6rem;
+  padding: 50px 14px;
+  padding: 5rem 1.4rem;
 }
 .card-type [class$="-headline"], .card-type [class$="-content"]{
-  font-size: 24px;
-  font-size: 2.4rem;
-  margin-bottom: 16px;
-  margin-bottom: 1.6rem;
+  font-size: 20px;
+  font-size: 2rem;
+  margin-bottom: 14px;
+  margin-bottom: 1.4rem;
   line-height: 1.5;
   font-weight: 700;
   color: #fff;
