@@ -208,8 +208,7 @@ a:link, a:visited{
   text-align: center;
   border: 1px solid #bbb;
   background-color: #a18cd1;
-  background-image: linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%);
-  background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 48%, #835190 100%);
+  background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 40%, #835190 70%, #3F48CC 100%);
 }
 .card-type a{
   display: block;
