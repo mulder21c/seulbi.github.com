@@ -86,9 +86,9 @@ body{
 }
 /* IR 기법으로 화면상에서 보이지 않도록 감춤 */
 .ir-text{
-  position: absolute;
-  text-indent: -9999em;
-  overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }
 /* 헤더 시작 ====================================*/
 .header{
@@ -118,18 +118,18 @@ body{
   display: none;
 }
 /* 로그인/MY Page */
-.login-my-page{
+.signin{
   float: right;
 }
 .login, .my-page{
+  display: none;
+}
+.signin-active{
   display: block;
   font-weight: 400;
   font-size: 1.15em;
   padding: 0.15em 0.4em;
   margin-left: 0.4em;
-}
-.my-page{
-  display: none;
 }
 /* 헤더 끝 ====================================*/
 /* 메뉴 시작 ====================================*/

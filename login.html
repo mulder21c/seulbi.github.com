@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>직업 - 모두의 정치</title>
+    <title>로그인 - 모두의 정치</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -23,7 +23,7 @@
         <div class="signin">
           <a href="login.html" class="login signin-active">LOGIN</a>
           <a href="my-page.html" class="my-page">MY</a>
-        </div>         
+        </div>        
         <!-- 로그인/My-Page 끝 -->        
         <!-- 검색 영역 시작 -->        
         <div class="search">
@@ -57,7 +57,7 @@
         <ul class="menu">
           <!-- 현재 활성화 된 페이지의 메뉴 아이템에 menu-active 클래스를 동적으로 추가-->
           <li><a href="index.html">홈</a></li>
-          <li><a href="job.html" class="menu-active">직업</a></li>
+          <li><a href="job.html">직업</a></li>
           <li><a href="interest.html">관심사</a></li>
           <li><a href="field.html">분야별</a></li>
         </ul>
@@ -65,41 +65,32 @@
       <!-- 메뉴 끝 -->
       <!-- 메인 콘텐츠 시작 -->
       <main class="main-content">
-        <!-- 텍스트 타입 콘텐츠 섹션 시작 -->
-        <section class="job list-type">
-          <h2 class="job-headline">
-            당신의 상황에 맞는 질문을 모아보았다!
+        <!-- 로그인 폼 시작 -->
+        <form class="login-form">
+          <h2 class="login-headline">
+            로그인
           </h2>
-          <dl class="job-case">
-              <dt class="job-theme"><a href="/">취준생</a></dt>
-              <dd class="job-question"><a href="/">나 취직 언제 됨? 되긴 되는 거임?</a></dd>
-              <dt class="job-theme"><a href="/">워킹맘</a></dt>
-              <dd class="job-question"><a href="/">우리 엄마가 애 봐주기 너무 힘들대!</a></dd>
-              <dt class="job-theme"><a href="/">비정규직</a></dt>
-              <dd class="job-question"><a href="/">다음 생에는 꼭 정규직이 될꺼야!</a></dd>
-              <dt class="job-theme"><a href="/">노인</a></dt>
-              <dd class="job-question"><a href="/">힘든데 오래 사니까 더 힘드네...</a></dd>
-              <dt class="job-theme"><a href="/">취준생</a></dt>
-              <dd class="job-question"><a href="/">나 취직 언제 됨? 되긴 되는 거임?</a></dd>
-              <dt class="job-theme"><a href="/">워킹맘</a></dt>
-              <dd class="job-question"><a href="/">우리 엄마가 애 봐주기 너무 힘들대!</a></dd>
-              <dt class="job-theme"><a href="/">비정규직</a></dt>
-              <dd class="job-question"><a href="/">다음 생에는 꼭 정규직이 될꺼야!</a></dd>
-              <dt class="job-theme"><a href="/">노인</a></dt>
-              <dd class="job-question"><a href="/">힘든데 오래 사니까 더 힘드네...</a></dd>
-              <dt class="job-theme"><a href="/">취준생</a></dt>
-              <dd class="job-question"><a href="/">나 취직 언제 됨? 되긴 되는 거임?</a></dd>
-              <dt class="job-theme"><a href="/">워킹맘</a></dt>
-              <dd class="job-question"><a href="/">우리 엄마가 애 봐주기 너무 힘들대!</a></dd>
-              <dt class="job-theme"><a href="/">비정규직</a></dt>
-              <dd class="job-question"><a href="/">다음 생에는 꼭 정규직이 될꺼야!</a></dd>
-              <dt class="job-theme"><a href="/">노인</a></dt>
-              <dd class="job-question"><a href="/">힘든데 오래 사니까 더 힘드네...</a></dd>
-              
-          </dl>         
-        </section>
-        
-        <!-- 카드타입 콘텐츠 섹션 끝 -->     
+          <div class="email">
+            <label for="email">email</label><input type="email" id="email" requiered>
+          </div>
+          <div class="password">
+            <label for="password">password</label><input type="password" id="password" requiered>
+          </div>
+          <button type="submit" class="btn-login">로그인</button>                          
+        </form>
+        <!-- 로그인 폼 끝 -->
+        <!-- 회원가입 및 비밀번호 찾기 링크 시작 -->
+        <ul class="member">
+            <li><a href="join.html">회원가입</a></li>
+            <li><a href="find-password.html">비밀번호 찾기</a></li>
+        </ul>
+        <!-- 회원가입 및 비밀번호 찾기 링크 끝 -->
+        <!-- 카카오톡/페이스 북 로그인 링크 시작 -->
+        <ul class="sns">
+            <li><a href="kakao.html">카카오톡</a></li>
+            <li><a href="facebook.html">페이스북</a></li>
+        </ul>
+        <!-- 카카오톡/페이스 북 로그인 링크 끝 -->     
       </main>
       <!-- 메인 콘텐츠 끝 -->
       <!-- 푸터 시작 -->
