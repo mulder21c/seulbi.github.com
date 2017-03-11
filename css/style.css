@@ -162,7 +162,7 @@ a:link, a:visited{
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 0;
+  bottom: 4px;
   border-top: 4px solid #9b54ca;
 }
 /* 메뉴 끝 ====================================*/
