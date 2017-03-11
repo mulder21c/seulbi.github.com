@@ -229,12 +229,12 @@ a:link, a:visited{
   color: #9B54CA;
   position: absolute;
   width: 6em;
-  padding: 0.5em 1em;
+  padding: 0.715em 1em;
   margin-bottom: 1em;
 }
 [class$="question"]{
   background-color: #fff;
-  padding: 0.5em 1em 0.5em 7.5em;
+  padding: 0.715em 1em 0.715em 7.5em;
   margin: 0 0 1em;
 }
 /* 콘텐츠 끝 ====================================*/
