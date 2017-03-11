@@ -196,6 +196,7 @@ a:link, a:visited{
   font-size: 1.5rem;
   padding: 14px;
   padding: 1.4rem;
+  background-color: #fafafa;
 }
 /* 텍스트 타입 콘텐츠 섹션 */
 .text-type{
