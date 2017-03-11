@@ -110,10 +110,8 @@ a:link, a:visited{
 }
 .icon-zoom:before{
    content: '\e800';
-   font-size: 1.25em;
    color: #666;
-   position: relative; 
-   top: 2px; /* 아이콘의 글자 크기 조정으로 인해 위쪽으로 2px 정도 끌어올려 배치 */
+   font-size: 1.15em;
 }
 /* 검색 폼 */
 .search-form {
