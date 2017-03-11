@@ -234,11 +234,10 @@ a:link, a:visited{
   position: absolute;
   font-weight: 400;
   color:#835190;
-  width: 6em;
-  border-right: 0;  
+  width: 6em; 
 }
 [class$="case"] [class$="question"]{
-  border-left: 0;
+  border: 1px solid #bbb;
   padding-left: 7em;  
 }
 [class$="case"] a{
@@ -258,7 +257,15 @@ a:link, a:visited{
   display: block;
   padding: 1em;
 }
-
+/* 맨 위로 이동 링크 */
+.goto-top{
+  position: fixed;
+  right: 2em;
+  bottom: 2em;
+}
+.goto-top:before{
+  font-weight: 700;
+}
 /* 콘텐츠 끝 ====================================*/
 @media all and (min-width:600px) and (max-width:1024px) {
   body{

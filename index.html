@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-     <!-- Wrpper 시작 -->
+    <!-- 건너뛰기 링크 시작 -->
+    <a href="#main" class="a11y-hidden" id="skip-nav">본문 바로가기</a>
+    <!-- 건너뛰기 링크 끝 -->
+    <!-- Wrpper 시작 -->
     <div class="wrapper">
       <!-- 헤더 시작 -->
       <header class="header">
@@ -61,7 +64,7 @@
       </nav>
       <!-- 메뉴 끝 -->
       <!-- 메인 콘텐츠 시작 -->
-      <main class="main-content">
+      <main id="main" class="main-content">
         <!-- 텍스트 타입 콘텐츠 섹션 시작 -->
         <section class="popular text-type">
           <h2 class="popular-headline">
@@ -100,7 +103,7 @@
             </p>
           </a>
         </section> 
-        <!-- 카드타입 콘텐츠 섹션 끝 -->     
+        <!-- 카드타입 콘텐츠 섹션 끝 -->        
       </main>
       <!-- 메인 콘텐츠 끝 -->
       <!-- 푸터 시작 -->
@@ -108,8 +111,11 @@
       <footer class="footer a11y-hidden">
         대한민국 국민
       </footer>
-      <!-- 콘텐츠 끝 -->
+      <!-- 푸터 끝 -->
     </div>
     <!-- Wrpper 끝 -->
+    <!-- 맨 위로 이동 링크 시작-->
+    <a href="#skip-nav" class="goto-top icon-up"><span class="ir-text">맨 위로</span></a>     
+    <!-- 맨 위로 이동 링크 끝-->    
   </body>
 </html>
