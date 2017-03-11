@@ -213,7 +213,7 @@ a:link, a:visited{
 .card-type [class$="-headline"], .card-type [class$="-content"]{
   margin: 0.5em 0;
   line-height: 1.5;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 700;
   color: #fff;
   text-shadow: 1px 0 0 rgba(0,0,0,1), 
