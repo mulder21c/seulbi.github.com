@@ -112,8 +112,8 @@ a:link, a:visited{
    content: '\e800';
    font-size: 1.25em;
    color: #666;
-   position: relatvie; 
-   top: -2px; /* 아이콘의 글자 크기 조정으로 인해 위쪽으로 2px 정도 끌어올려 배치 */
+   position: relative; 
+   top: 2px; /* 아이콘의 글자 크기 조정으로 인해 위쪽으로 2px 정도 끌어올려 배치 */
 }
 /* 검색 폼 */
 .search-form {
