@@ -232,6 +232,7 @@ a:link, a:visited{
 }
 [class$="case"] [class$="theme"]{    
   position: absolute;
+  font-weight: 400;
   color:#835190;
   width: 6em;
   border-right: 0;  
