@@ -1,16 +1,112 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>모두의 정치</title>
-	<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<h1>누굴뽑지?</h1>
-	<p>누굴뽑지? 나...</p>
-	<p>브런치...</p>
-	<p class="test">테스트 브런치 생성</p>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>모두의 정치</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+     <!-- Wrpper 시작 -->
+    <div class="wrapper">
+      <!-- 헤더 시작 -->
+      <header class="header">
+        <!-- 누구뽑지 로고 시작 -->
+        <h1 class="logo"><a href="/index.html">누구뽑지?</a></h1>
+        <!-- 누구뽑지 로고 끝 -->
+        <!-- 로그인 시작 -->        
+        <a href="login.html" class="login">LOGIN</a>
+        <!-- Login 링크 선택 시 로그인 페이지로 이동 후 로그인 절차가 끝나면
+        index.html 페이지의 로그인 링크가 MY 링크로 수정되어야 함.-->
+        <a href="my-page.html" class="my-page">MY</a>
+        <!-- 로그인 끝 -->
+        <!-- 검색 영역 활성화를 위한 버튼 시작 -->
+        <button type="button" class="btn-search">검색하기</button>
+        <!-- 검색 영역 활성화를 위한 버튼 끝 -->
+        <!-- 검색 영역 시작 -->
+        <!-- 검색 영역의 경우 검색하기 버튼을 선택 시 활성화 되어야 함.
+        이때 검색 영역이 활성화 될 경우 검색하기 버튼은 보이지 않도록 처리 -->
+        <div class="search">
+          <form action="/" id="search-form">
+            <fieldset>
+              <legend>분야별 검색</legend>
+              <div class="keyword-wrap">
+                <label for="keyword">검색</label>
+                <input type="search" id="keyword" placeholder="검색어를 입력하세요" required>
+              </div>
+              <div class="btn-wrap">
+                <!--검색 버튼 선택 시 검색 결과 페이지로 이동 search-result.html -->
+                <button type="button" class="btn-search">검색</button>
+                <!--취소 버튼 선택 시 검색 영역을 숨기고 검색하기 버튼이 보이도록 처리 -->
+                <button type="reset" class="btn-reset">취소</button>
+              </div>              
+            </fieldset>
+          </form>
+        </div>
+        <!-- 검색 영역 끝 -->
+      </header>
+      <!-- 헤더 끝 -->
+      <!-- 메뉴 시작 -->
+      <nav class="menu">
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <ul class="menu-list">
+          <!-- 현재 활성화 된 페이지의 메뉴 아이템에 active 클래스를 동적으로 추가-->
+          <li><a href="/" class="menu-list-active">홈</a></li>
+          <li><a href="/">직업</a></li>
+          <li><a href="/">관심사</a></li>
+          <li><a href="/">분야별</a></li>
+        </ul>
+      </nav>
+      <!-- 메뉴 끝 -->
+      <!-- 콘텐츠 시작 -->
+      <main class="content">
+        <!-- 텍스트 박스 섹션 시작 -->
+        <section class="text">
+          <h2 class="text-headline">
+            <a href="/">실시간 인기질문</a>
+          </h2>
+          <ul class="text-list">
+            <li><a href="/">공기업 채용을 늘릴 생각이 있는가?</a></li>
+            <li><a href="/">공무원 시험 준비하려고 한다. 좋은 생각인가?</a></li>
+            <li><a href="/">생활비가 늘 모자란다. 청년수당 줄 생각 있는가?</a></li>
+            <li><a href="/">취준을 너무 오래해서 자존감이 너무 떨어지고 우울증 걸릴 것 같다. 무엇을 해줄 수 있는가?</a></li>
+          </ul>
+        </section>
+        <!-- 텍스트 박스 섹션 끝 -->
+        <!-- 텍스트 박스 섹션 시작 -->
+        <section class="text">
+          <h1 class="text-headline">
+            <a href="/">취준생을 위한  네 가지 질문</a>
+          </h1>
+          <ul class="text-list">
+            <li><a href="/">공기업 채용을 늘릴 생각이 있는가?</a></li>
+            <li><a href="/">공무원 시험 준비하려고 한다. 좋은 생각인가?</a></li>
+            <li><a href="/">생활비가 늘 모자란다. 청년수당 줄 생각 있는가?</a></li>
+            <li><a href="/">취준을 너무 오래해서 자존감이 너무 떨어지고 우울증 걸릴 것 같다. 무엇을 해줄 수 있는가?</a></li>
+          </ul>
+        </section>
+        <!-- 텍스트 박스 섹션 끝 -->
+        <!-- 카드 박스 섹션 시작 -->
+        <!-- 카드 박스 섹션의 경우 제목과 카드 박스의 콘텐츠를 하나의 링크로 처리 -->
+        <section class="card">
+          <a href="/" class="card-page">
+            <h2 class="card-headline">
+              내 군생활은 몇 개월일까?
+            </h2>
+            <p class="card-content">
+              군복무기간 단축에 관한 말말말!</p>
+            </p>
+          </a>
+        </section> 
+        <!-- 카드 박스 섹션 끝 -->     
+      </main>
+      <!-- 콘텐츠 끝 -->
+      <!-- 푸터 시작 -->
+      <!-- 푸터 영역은 화면에 보이지 않도록 처리 -->
+      <footer class="footer a11y-hidden">
+        대한민국 국민
+      </footer>
+      <!-- 콘텐츠 끝 -->
+    </div>
+    <!-- Wrpper 끝 -->
+  </body>
 </html>
