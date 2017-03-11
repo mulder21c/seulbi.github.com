@@ -234,7 +234,9 @@ a:link, a:visited{
   position: absolute;
   font-weight: 400;
   color:#835190;
-  width: 6em; 
+  width: 6em;
+  border-top: 1px solid #bbb;
+  border-left: 1px solid #bbb; 
 }
 [class$="case"] [class$="question"]{
   border: 1px solid #bbb;
