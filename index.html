@@ -14,20 +14,22 @@
         <!-- 누구뽑지 로고 시작 -->
         <h1 class="logo"><a href="/index.html">누구뽑지?</a></h1>
         <!-- 누구뽑지 로고 끝 -->
-        <!-- 로그인 시작 -->        
-        <a href="login.html" class="login">LOGIN</a>
+        <!-- 로그인/My-Page  시작 -->
         <!-- Login 링크 선택 시 로그인 페이지로 이동 후 로그인 절차가 끝나면
         index.html 페이지의 로그인 링크가 MY 링크로 수정되어야 함.-->
-        <a href="my-page.html" class="my-page">MY</a>
-        <!-- 로그인 끝 -->
-        <!-- 검색 영역 활성화를 위한 버튼 시작 -->
-        <button type="button" class="btn-search">검색하기</button>
-        <!-- 검색 영역 활성화를 위한 버튼 끝 -->
-        <!-- 검색 영역 시작 -->
-        <!-- 검색 영역의 경우 검색하기 버튼을 선택 시 활성화 되어야 함.
-        이때 검색 영역이 활성화 될 경우 검색하기 버튼은 보이지 않도록 처리 -->
+        <div class="login-my-page">
+          <a href="login.html" class="login">LOGIN</a>
+          <a href="my-page.html" class="my-page">MY</a>
+        </div>        
+        <!-- 로그인/My-Page 끝 -->        
+        <!-- 검색 영역 시작 -->        
         <div class="search">
-          <form action="/" id="search-form">
+          <!-- 검색 영역 활성화를 위한 버튼 시작 --> 
+          <button type="button" class="btn-search icon-zoom"><span class="ir-text">검색하기</span></button>
+          <!-- 검색 영역 활성화를 위한 버튼 끝 -->
+          <!-- 검색 영역의 경우 검색하기 버튼을 선택 시 활성화 되어야 함.
+          이때 검색 영역이 활성화 될 경우 검색하기 버튼은 보이지 않도록 처리 -->
+          <form action="/" class="search-form" id="search-form">
             <fieldset>
               <legend>분야별 검색</legend>
               <div class="keyword-wrap">
