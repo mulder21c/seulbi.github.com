@@ -117,8 +117,8 @@ a:link, a:visited{
 }
 .icon-zoom:before{
    content: '\e800';
-   font-size: 18px;
-   font-size: 1.8rem;
+   font-size: 16px;
+   font-size: 1.6rem;
    color: #666;
    position: relatvie; 
    top: -2px; /* 아이콘의 글자 크기 조정으로 인해 위쪽으로 2px 정도 끌어올려 배치 */
@@ -136,8 +136,8 @@ a:link, a:visited{
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
-  padding: 2px 5px 2px;
-  padding: 0.2rem 0.5rem 0.2rem;
+  padding: 2px 5px;
+  padding: 0.2rem 0.5rem;
   margin-left: 5px;
   margin-left: 0.5rem;
 }
@@ -188,8 +188,8 @@ a:link, a:visited{
   display: block;
   font-size: 15px;
   font-size: 1.5rem;
-  padding: 7px 14px;
-  padding: 0.7rem 1.4rem;
+  padding: 14px;
+  padding: 1.4rem;
 }
 /* 텍스트 타입 콘텐츠 섹션 */
 .text-type{
