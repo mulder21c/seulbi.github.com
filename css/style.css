@@ -144,18 +144,18 @@ a:link, a:visited{
 }
 /* 헤더 끝 ====================================*/
 /* 메뉴 시작 ====================================*/
-.menu{
+.gnb{
   padding: 16px;
   padding: 1.6rem;
   background-color: #fff;
   border-bottom: 1px solid #bbb;
 }
-.menu-list{
+.menu{
   background-color: #fff;
   margin: 0;
   padding: 0;
 }
-.menu-list li{
+.menu li{
   float: left;
   width: 25%;
   text-align: center;
@@ -164,10 +164,10 @@ a:link, a:visited{
   font-weight: 400;
   color: #666;
 }
-.menu-list a{
+.menu a{
   padding: 10px 15px 7px;
 }
-.menu-list-active{
+.menu-active{
   border-bottom: 4px solid #9b54ca;
 }
 /* 메뉴 끝 ====================================*/
