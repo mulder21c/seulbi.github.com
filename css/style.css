@@ -225,17 +225,21 @@ a:link, a:visited{
   position: relative;
 }
 [class$="part"]{
+  border: 1px solid #ddd;
+  border-right: 0;
   background-color: #fff;
-  color: #9B54CA;
+  color:#835190;
   position: absolute;
   width: 6em;
-  padding: 0.715em 1em;
-  margin-bottom: 1em;
+  padding: 1em 1em;
+  margin-bottom: 0.5em;
 }
 [class$="question"]{
+  border: 1px solid #ddd;
+  border-left: 0;
   background-color: #fff;
-  padding: 0.715em 1em 0.715em 7.5em;
-  margin: 0 0 1em;
+  padding: 1em 1em 1em 7.5em;
+  margin: 0 0 0.5em;
 }
 /* 콘텐츠 끝 ====================================*/
 @media all and (min-width:600px) and (max-width:1024px) {
