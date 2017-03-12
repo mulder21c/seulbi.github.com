@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>모두의 정치</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- 건너뛰기 링크 시작 -->
+    <a href="#main" class="a11y-hidden" id="skip-nav">본문 바로가기</a>
+    <!-- 건너뛰기 링크 끝 -->
+    <!-- Wrpper 시작 -->
+    <div class="wrapper">
+      <!-- 헤더 시작 -->
+      <header class="header">
+        <!-- 누구뽑지 로고 시작 -->
+        <h1 class="logo"><a href="/index.html">누구뽑지?</a></h1>
+        <!-- 누구뽑지 로고 끝 -->
+        <!-- 로그인/My-Page  시작 -->
+        <!-- Login 링크 선택 시 로그인 페이지로 이동 후 로그인 절차가 끝나면
+        index.html 페이지의 로그인 링크가 MY 링크로 수정되어야 함.-->
+        <div class="signin">
+          <a href="login.html" class="login signin-active">LOGIN</a>
+          <a href="my-page.html" class="my-page">MY</a>
+        </div>        
+        <!-- 로그인/My-Page 끝 -->        
+        <!-- 검색 영역 시작 -->        
+        <div class="search">
+          <!-- 검색 영역 활성화를 위한 버튼 시작 --> 
+          <button type="button" class="btn-search icon-zoom"><span class="ir-text">검색하기</span></button>
+          <!-- 검색 영역 활성화를 위한 버튼 끝 -->
+          <!-- 검색 영역의 경우 검색하기 버튼을 선택 시 활성화 되어야 함.
+          이때 검색 영역이 활성화 될 경우 검색하기 버튼은 보이지 않도록 처리 -->
+          <form action="/" class="search-form" id="search-form">
+            <fieldset>
+              <legend>분야별 검색</legend>
+              <div class="keyword-wrap">
+                <label for="keyword">검색</label>
+                <input type="search" id="keyword" placeholder="검색어를 입력하세요" required>
+              </div>
+              <div class="btn-wrap">
+                <!--검색 버튼 선택 시 검색 결과 페이지로 이동 search-result.html -->
+                <button type="submit" class="btn-search">검색</button>
+                <!--취소 버튼 선택 시 검색 영역을 숨기고 검색하기 버튼이 보이도록 처리 -->
+                <button type="reset" class="btn-reset">취소</button>
+              </div>              
+            </fieldset>
+          </form>
+        </div>
+        <!-- 검색 영역 끝 -->
+      </header>
+      <!-- 헤더 끝 -->
+      <!-- 메뉴 시작 -->
+      <nav class="gnb">
+        <h2 class="a11y-hidden">메인 메뉴</h2>
+        <ul class="menu">
+          <!-- 현재 활성화 된 페이지의 메뉴 아이템에 menu-active 클래스를 동적으로 추가-->
+          <li><a href="index.html" class="menu-active">홈</a></li>
+          <li><a href="job.html">직업</a></li>
+          <li><a href="interest.html">관심사</a></li>
+          <li><a href="field.html">분야별</a></li>
+        </ul>
+      </nav>
+      <!-- 메뉴 끝 -->
+      <!-- 메인 콘텐츠 시작 -->
+      <main id="main" class="main-content">
+        <section class="candidates-answer">
+          <h2>동성결혼 법제화에 대한 입장은?</h2>
+          <article class="moonjaein candidate">
+            <h3 class="a11y-hidden">문재인 후보의 답변</h3>
+            <figure class="candidate-profile">
+              <img src="images/moonjaein.png" alt="">
+              <figcaption class="candidate-name">문재인</figcaption>            
+            </figure>
+            <p class="candidate-answer">
+                "한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다."
+            </p>
+            <div class="candidate-answer-like">
+              <a href="/" class="answer-like"><span class="ir-text">좋아요</span></a>
+              <span class="answer-like-count">7</span>
+            </div>           
+            <a href="candidate-answer-detail.html"><span class="ir-text">답변 상세보기</span></a>
+          </article>
+          <article class="ahnchulsoo candidate">
+            <h3 class="a11y-hidden">안철수 후보의 답변</h3>
+            <figure class="candidate-profile">           
+              <img src="images/ahnchulsoo.png" alt="">
+              <figcaption class="candidate-name">안철수</figcaption>            
+            </figure>
+            <p class="candidate-answer">
+                <span>"노답"</span>
+                <span>입장을 확인할 수 있는 근거 없음</span>
+            </p>
+            <dl class="candidate-answer-like">
+              <dt class="answer-like"><a href="/" class="ir-text">좋아요</a></dt>
+              <dd class="answer-like-count"><span>7</span></dd>
+            </dl>           
+            <a href="candidate-answer-detail.html"><span class="ir-text">답변 상세보기</span></a>
+          </article>
+          <article class="yuseungmin candidate">
+            <h3 class="a11y-hidden">유승민 후보의 답변</h3>
+            <figure class="candidate-profile">           
+              <img src="images/yuseungmin.png" alt="">
+              <figcaption class="candidate-name">유승민</figcaption>            
+            </figure>
+            <p class="candidate-answer">
+                <span>등록된 답변이 없습니다.</span>
+                <span>답변을 입력해주세요.</span>
+            </p>
+            <dl class="candidate-answer-like">
+              <dt class="answer-like"><a href="/" class="ir-text">좋아요</a></dt>
+              <dd class="answer-like-count"><span>7</span></dd>
+            </dl>           
+            <a href="candidate-answer-detail.html"><span class="ir-text">답변 상세보기</span></a>          
+          </article>          
+        </section>
+        <section class="">
+          <h2 class="sns">SNS 공유</h2>          
+          <ul class="sns-list">
+            <li><a href="/">카카오톡</a></li>
+            <li><a href="/">페이스북</a></li>
+            <li><a href="/">트위터</a></li>
+            <li><a href="/">링크</a></li>
+          </ul>
+        </section>       
+        <section class="">
+          <h2 class="comment">질문에 대한 댓글</h2>
+          <article class="">
+            <h2 class="black1">Black 1</h2>      
+            <p>안철수의 답변이 마음에 들지 않네요</p>
+            <time datetime="2017-03-05T13:34:30">1주일 전</time>
+          </article>
+          <article class="">
+            <h2 class="black2">Black 2</h2>      
+            <p>문재인 후보... 답변이 살짝 아쉽네요.</p>
+            <time datetime="2017-03-09T15:21:17">3일 전</time>
+          </article>
+          <form action="/" class="reply-form">
+            <fieldset>
+              <legend>답변 등록</legend>
+              <input type="text" title="작성자" required>
+              <input type="password" title="비밀번호" required>
+              <label>답변 내용</label>
+              <textarea name="" id="reply" cols="50" rows="10" required></textarea>
+              <button class="btn-reply" type="submit">저장</button>
+            </fieldset>
+          </form>
+        </section>
+        <section class="for-yours-question list-type">
+          <h2 class="for-yours-question-headline">
+            당신을 위해 준비한 질문들
+          </h2>
+          <ul class="for-yours-question-list">
+            <li><a href="/">당신을 위해 준비한 질문들</a></li>
+            <li><a href="/">공기업 채용을 늘릴 생각이 있는가?</a></li>
+            <li><a href="/">정치 혐오증이 생기고 있다. 대안은?</a></li>
+            <li><a href="/">믿을 만한 후보는 누구인가?</a></li>
+            <li><a href="/">외교와 국방에 대한 대책이 궁금하다.</a></li>
+          </ul>
+        </section>    
+      </main>  
+      <!-- 푸터 시작 -->
+      <!-- 푸터 영역은 화면에 보이지 않도록 처리 -->
+      <footer class="footer a11y-hidden">
+        대한민국 국민
+      </footer>
+      <!-- 푸터 끝 -->
+    </div>
+    <!-- Wrpper 끝 -->
+    <!-- 맨 위로 이동 링크 시작-->
+    <a href="#skip-nav" class="goto-top icon-up"><span class="ir-text">맨 위로</span></a>     
+    <!-- 맨 위로 이동 링크 끝-->    
+  </body>
+</html>

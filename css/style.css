@@ -282,7 +282,7 @@ body{
 }
 /* 로그인 페이지 */
 /* 로그인 폼 */
-.login-headline, .email, .password, .btn-wrap{
+.login-headline, .email, .password, .btn-login-wrap{
   border: 1px solid #bbb;
   background-color: #fff;  
 }
@@ -290,9 +290,11 @@ body{
   padding: 1em;
   margin: 1.5em 1em;
 }
+.email, .password, .btn-login-wrap{
+  margin: 1em;
+}
 .email, .password{
   position: relative;
-  margin: 1em;
 }
 .email-label:before, .password-label:before{
   position: absolute;
@@ -305,9 +307,6 @@ body{
   width: 100%;
   padding: 0.8em 1em 0.65em 3.5em;
   border: 0 none;
-}
-.btn-wrap{
-  margin: 1em;
 }
 .btn-login{
   text-align: center;
@@ -334,6 +333,7 @@ body{
   padding: 0.8em 0.5em;
 }
 /* SNS 로그인 */
+
 /* 맨 위로 이동 링크 */
 .goto-top{
   position: fixed;

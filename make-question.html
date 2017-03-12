@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>질문 등록 - 모두의 정치</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <article class="make-question">  
+      <h1>당신만의 질문을 만들어 보세요!</h1>      
+      <form action="/" class="make-question-form" id="make-question-form">
+        <fieldset>
+          <legend>질문 등록</legend>
+          <div class="relation-job">
+            <label for="relation-job">연관 직업 유형</label>
+            <select name="relation-job" id="relation-job">
+              <option value="/">취준생</option>
+              <option value="/">워킹맘</option>
+              <option value="/">알바생</option>
+              <option value="/">노인</option>
+            </select>
+          </div>
+          <div class="relation-job-field">
+            <label for="relation-job-field">관련 분야</label>
+            <select name="relation-job-field" id="relation-job-field">
+              <option value="/">청년수당</option>
+              <option value="/">보육수당</option>
+              <option value="/">최저임금</option>
+              <option value="/">노령연금</option>
+            </select>
+          </div>
+          <div class="question-content">
+            <label for="question-content">질문 내용</label>
+            <textarea id="question-content" rows="10" cols="50">
+            </textarea>
+          </div>
+          <div class="email-reply">
+            <span>이메일로 답변 등록 알림을 받고자 하실 경우 이메일 주소를 적어주세요. (선택사항) </span>
+            <label for="email-reply">이메일</label>
+            <input type="email" id="email-reply">  
+          </div>
+          <div class="btn-wrap">        
+            <button type="submit" class="btn-question">질문하기</button>
+            <button type="reset" class="btn-reset">취소</button>
+          </div>              
+        </fieldset>
+      </form> 
+    </article>          
+  </body>
+</html>
