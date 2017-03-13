@@ -251,7 +251,7 @@ body{
 /* 메인 콘텐츠 끝 */
 /* 콘텐츠 타입 공통 (텍스트 타입&카드 타입)*/
 .text-type, .card-type{
-  margin: 1em;
+  margin: 0.5em 0;
 }
 /* 콘텐츠 타입 제목 공통 (텍스트 타입&카드 타입) */
 .text-type-headline a, .card-type-headline a{
@@ -307,7 +307,7 @@ body{
 /* 리스트 타입 콘텐츠 섹션 */
 /* 직업, 관심사, 분야별 콘텐츠 */
 .list-type-headline{
-  padding: 1em;
+  padding: 0.5em;
 }
 .list-type-case{
   width: 100%;
@@ -435,7 +435,6 @@ body{
 }
 /* 후보별 답변 */
 .answer-box{
-  margin:1em;
   padding: 1em;
   border: 1px solid #bbb;
   background-color: #fff;  
