@@ -181,18 +181,18 @@ body{
 	padding : 1em;
   z-index: 100;
 }
-.keyword-wrap{
+.search-keyword-wrap{
   float: left;
   width: calc(100% - 5em);
 }
-#keyword{
+.search-keyword{
   border: 0 none;
   width: calc(100% - 2em);
 }
-.btn-search-wrap{
+.search-btn-wrap{
   float: right;
 }
-.btn-search-submit, .btn-search-reset{
+.search-btn-submit, .search-btn-reset{
   border: 0 none;
   padding: 0;
   margin-left: 0.5em;
