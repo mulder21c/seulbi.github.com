@@ -180,13 +180,13 @@ body{
   background-color: #fff;
 }
 /* 로그인/MY Page */
-.signin{
+.login-wrap{
   float: right;
 }
-.login, .my-page{
+.go-login, .my-page{
   display: none;
 }
-.signin-active{
+.login-active{
   display: block;
   font-weight: 400;
   font-size: 1.15em;
@@ -338,7 +338,7 @@ body{
 }
 /* 로그인 페이지 */
 /* 로그인 폼 */
-.login-headline, .email, .password, .btn-login-wrap{
+.login-headline, .login-id, .login-password, .btn-login-wrap{
   border: 1px solid #bbb;
   background-color: #fff;  
 }
@@ -346,25 +346,25 @@ body{
   padding: 1em;
   margin: 1.5em 1em;
 }
-.email, .password, .btn-login-wrap{
+.login-id, .login-password, .btn-login-wrap{
   margin: 1em;
 }
-.email, .password{
+.login-id, .login-password{
   position: relative;
 }
-.email-label:before, .password-label:before{
+.login-id-label:before, .login-password-label:before{
   position: absolute;
   font-size: 1.5em;
   top: 50%;
   left: 0.5em;
   margin-top: -0.5em;
 }
-#email, #password{
+#login-id, #login-password{
   width: 100%;
   padding: 0.8em 1em 0.65em 3.5em;
   border: 0 none;
 }
-.btn-login{
+.btn-login-submit{
   text-align: center;
   display: block;
   border: 0 none;

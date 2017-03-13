@@ -20,8 +20,8 @@
         <!-- 로그인/My-Page  시작 -->
         <!-- Login 링크 선택 시 로그인 페이지로 이동 후 로그인 절차가 끝나면
         index.html 페이지의 로그인 링크가 MY 링크로 수정되어야 함.-->
-        <div class="signin">
-          <a href="login.html" class="login signin-active">LOGIN</a>
+        <div class="login-wrap">
+          <a href="login.html" class="go-login login-active">LOGIN</a>
           <a href="my-page.html" class="my-page">MY</a>
         </div>        
         <!-- 로그인/My-Page 끝 -->        
@@ -68,23 +68,25 @@
       <!-- 메인 콘텐츠 시작 -->
       <main class="main-content">
         <!-- 로그인 폼 시작 -->
-        <form class="login-form">
-          <fieldset>
-            <legend>로그인 폼</legend>
-            <h2 class="login-headline">로그인</h2>
-            <div class="email">
-              <label for="email" class="email-label icon-tumblr-circled"><span class="ir-text">email</span></label>
-              <input type="email" id="email" requiered placeholder="email">
-            </div>
-            <div class="password">
-              <label for="password" class="password-label icon-tumblr-circled"><span class="ir-text">password</span></label>
-              <input type="password" id="password" requiered placeholder="password">
-            </div>
-            <div class="btn-login-wrap">
-              <button type="submit" class="btn-login">로그인</button>                          
-            </div>            
-          </fieldset>          
-        </form>
+        <div class="login">
+          <h2 class="login-headline">로그인</h2>
+          <form class="login-form">
+            <fieldset>
+              <legend>로그인 폼</legend>              
+              <div class="login-id">
+                <label for="email" class="icon-tumblr-circled login-id-label"><span class="ir-text">email</span></label>
+                <input type="email" id="login-id" requiered placeholder="email">
+              </div>
+              <div class="login-password">
+                <label for="password" class="icon-tumblr-circled login-password-label"><span class="ir-text">password</span></label>
+                <input type="password" id="login-password" requiered placeholder="password">
+              </div>
+              <div class="btn-login-wrap">
+                <button type="submit" class="btn-login-submit">로그인</button>                          
+              </div>            
+            </fieldset>          
+          </form>
+        </div>
         <!-- 로그인 폼 끝 -->
         <!-- 회원가입 및 비밀번호 찾기 링크 시작 -->
         <ul class="member">
