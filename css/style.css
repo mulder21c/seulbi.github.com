@@ -1,15 +1,44 @@
 @charset "utf-8";
 /* 웹폰트 : Spoqa Han Sans(Noto Sans) */
-@import url(font.css);
-@import url(fontello.css);
-
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 700;
+    src: local('Spoqa Han Sans Bold'),
+    url('font/Spoqa%20Han%20Sans%20Bold.woff2') format('woff2'),
+    url('font//Spoqa%20Han%20Sans%20Bold.woff') format('woff'),
+    url('font/Spoqa%20Han%20Sans%20Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 400;
+    src: local('Spoqa Han Sans Regular'),
+    url('font/Spoqa%20Han%20Sans%20Regular.woff2') format('woff2'),
+    url('font/Spoqa%20Han%20Sans%20Regular.woff') format('woff'),
+    url('font/Spoqa%20Han%20Sans%20Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 300;
+    src: local('Spoqa Han Sans Light'),
+    url('font/Spoqa%20Han%20Sans%20Light.woff2') format('woff2'),
+    url('font/Spoqa%20Han%20Sans%20Light.woff') format('woff'),
+    url('font/Spoqa%20Han%20Sans%20Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Spoqa Han Sans';
+    font-weight: 100;
+    src: local('Spoqa Han Sans Thin'),
+    url('font/Spoqa%20Han%20Sans%20Thin.woff2') format('woff2'),
+    url('font/Spoqa%20Han%20Sans%20Thin.woff') format('woff'),
+    url('font/Spoqa%20Han%20Sans%20Thin.ttf') format('truetype');
+}
 /* 초기화 - Reset CSS */
 /* 모든 요소의 box-sizing을 재지정 (width 값에 padding과 border가 포함 됨)*/
 *{
   box-sizing: border-box;  
 }
 /* 요소의 여백 제거 */
-html, body, h1, h2, h3, h4, h5, h6, p, fieldset {
+html, body, h1, h2, h3, h4, h5, h6, p, fieldset{
   margin: 0;
   padding: 0;
 }
@@ -74,26 +103,32 @@ body{
   color: inherit;
   text-decoration: none;
 }
-/*p{
-  line-height: 1.5;
-}*/
 /* 공통 스타일 */
 /* 플로트 이슈를 해결하기 위한 clearfix */
-.header:after, .menu:after{
+.clearfix:after{
   content: "";
   display: block;
   clear: both;
-}
-/* IR 기법으로 텍스트를 보이지 않도록 처리한 후 :before 선택자에 아이콘 폰트를 지정 */
-[class^="icon"]:before{
-  content: "";
-  font-family: 'fontello';
 }
 /* IR 기법으로 화면상에서 보이지 않도록 감춤 */
 .ir-text{
   position: absolute !important;
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
+}
+/* 아이콘 배경 이미지 공통 */
+[class|="icon"]:before{
+   display: inline-block;
+   content: "";
+   width: 1.1em;
+   height: 1.1em;
+   position: relative;
+   top: 0.2em;
+   background-size: 100% 100%;   
+   background-repeat: no-repeat;
+}
+.icon-zoom:before{
+   background-image: url(icons/search.png);
 }
 /* 헤더 시작 ====================================*/
 .header{
@@ -107,20 +142,42 @@ body{
   font-size: 1.5em;
 }
 /* 검색하기 버튼 */
-.btn-search{
+.btn-search-open{
   float: right;
   border: 0 none;
   padding: 0;
   background-color: transparent;
 }
-.icon-zoom:before{
-   content: '\e800';
-   color: #666;
-   font-size: 1.15em;
-}
 /* 검색 폼 */
-.search-form {
+.search-layer {
   display: none;
+}
+.search-layer {
+	position : absolute;
+  width: 100%;
+  height: 100vh;
+	left :0;
+	top :0;
+	background : #fff;
+	padding : 1em;
+  z-index: 100;
+}
+.keyword-wrap{
+  float: left;
+  width: calc(100% - 5em);
+}
+#keyword{
+  border: 0 none;
+  width: calc(100% - 2em);
+}
+.btn-search-wrap{
+  float: right;
+}
+.btn-search-submit, .btn-search-reset{
+  border: 0 none;
+  padding: 0;
+  margin-left: 0.5em;
+  background-color: #fff;
 }
 /* 로그인/MY Page */
 .signin{
@@ -134,7 +191,6 @@ body{
   font-weight: 400;
   font-size: 1.15em;
   padding: 0.15em 0.4em;
-  margin-left: 0.4em;
 }
 /* 헤더 끝 ====================================*/
 /* 메뉴 시작 ====================================*/
