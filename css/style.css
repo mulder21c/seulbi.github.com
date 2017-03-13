@@ -246,12 +246,12 @@ body{
 /* 메뉴 끝 */
 /* 메인 콘텐츠 시작 */
 .main-content{
-  padding: 1em;
+  margin: 1em;
 }
 /* 메인 콘텐츠 끝 */
 /* 콘텐츠 타입 공통 (텍스트 타입&카드 타입)*/
 .text-type, .card-type{
-  margin: 0.5em 0;
+  margin-top : 1em;
 }
 /* 콘텐츠 타입 제목 공통 (텍스트 타입&카드 타입) */
 .text-type-headline a, .card-type-headline a{
