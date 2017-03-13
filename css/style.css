@@ -413,6 +413,7 @@ body{
 /* 회원가입 약관동의 */
 .join-agree-checkbox{
   width: 20em;
+  margin-top: 1.5em;
 }
 .join-agree-label{
   float: right;
