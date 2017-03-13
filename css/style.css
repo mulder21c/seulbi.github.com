@@ -434,28 +434,32 @@ body{
   float: left;
 }
 /* 후보별 답변 */
-.candidates-answer, .candidate{
+.answer-box{
   margin:1em;
   padding: 1em;
   border: 1px solid #bbb;
   background-color: #fff;  
 }
-.candidate-profile{
+.answer-headline{
+  padding: 0.5em 1em;
+}
+.profile-box{
   min-width: 80px;
   width: 20%;
   float: left;
   padding: 0.5em 1em;
   margin: 0;
+  text-align: center;
 }
-.candidate-answer{
+.name-box{
+  margin-top: 0.5em;
+}
+.answer-comment-box{
   margin: 1em 0;
   line-height: 1.5;
 }
-.candidate-answer span{
+.answer-comment-box span{
   display: block;
-}
-.candidate-answer-like{
-  float: right;
 }
 .answer-like:before{
   width: 1.5em;
