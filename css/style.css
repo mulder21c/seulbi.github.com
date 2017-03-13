@@ -127,8 +127,14 @@ body{
    background-size: 100% 100%;   
    background-repeat: no-repeat;
 }
-.icon-zoom:before{
+.icon-search:before{
    background-image: url(icons/search.png);
+}
+.icon-kakao-share:before{
+   background-image: url(icons/kakao-share.png);
+}
+.icon-facebook-share:before{
+   background-image: url(icons/facebook-share.png);
 }
 /* 헤더 시작 ====================================*/
 .header{
@@ -337,31 +343,31 @@ body{
   display: block;
 }
 /* 회원가입,로그인,비밀번호 찾기 페이지 */
+[class$="form-area"] [class$="form"]{
+  margin: 1em
+}
 [class$="form-area"] [class$="headline"],
-[class$="form-area"] [class$="input"],
+[class$="form-area"] [class$="inputbox"],
 [class$="form-area"] [class$="wrap"]{
   border: 1px solid #bbb;
   background-color: #fff;
 }
 [class$="form-area"] [class$="headline"]{
   padding: 1em;
-  margin: 1.5em 1em 0.5em;
+  margin: 1.5em 1em 1.5em;
 }
-[class$="form-area"] [class$="wrap"]{
-  margin: 1em;
-}
-[class$="form-area"] input{
-  position: relative;
+[class$="form-area"] [class$="inputbox"]{
   width: 100%;
-  padding: 0.8em 1em 0.65em 3.5em;
-  border: 0 none;
+  padding: 0.7em 1em; 
+  margin-top: 0.5em; 
+  margin-bottom: 1em;
 }
-[class$="form-area"] label:before{
-  position: absolute;
-  font-size: 1.5em;
-  top: 50%;
-  left: 0.5em;
-  margin-top: -0.5em;
+[class$="form-area"] [class$="label"],
+[class$="form-area"] [class$="inputbox"]{
+  display: block;  
+}
+[class$="form-area"] [class$="btn-wrap"]{
+  margin-top: 2em;
 }
 [class$="form-area"] [class$="submit"],
 [class$="form-area"] [class$="reset"]{
@@ -374,21 +380,46 @@ body{
   background-color: #fff;
 }
 .member{  
-  text-align: center;
-  margin: 0;
+  text-align: center;  
   padding: 0;
 }
-[class="member"] [class^="member"]{
+.member [class^="member"]{
   display: inline-block; 
 }
-[class="member"] li:first-child:after{
+.member li:first-child{
+  margin-left: 2em;
+}
+.member li:first-child:after{
   content: " |";
 }
 .member a{
-  padding: 0.8em 0.5em;
+  padding: 0.8em 0;
 }
-/* SNS 로그인 */
-
+/* SNS 공유 */
+.sns-share{
+  text-align: center;
+  padding: 0;
+}
+.sns-share li{
+  display: inline-block;
+}
+.sns-share li:first-child{
+  margin-right: 1em;
+}
+.sns-share [class|="icon"]:before{
+  width: 3.5em;
+  height: 3.5em;
+}
+/* 회원가입 약관동의 */
+.join-agree-checkbox{
+  width: 20em;
+}
+.join-agree-label{
+  float: right;
+}
+.join-agree{
+  float: left;
+}
 /* 맨 위로 이동 링크 */
 .goto-top{
   position: fixed;
