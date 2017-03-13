@@ -406,6 +406,10 @@ body{
 .sns-share li:first-child{
   margin-right: 1em;
 }
+.sns-share [class|="icon"]{
+  border: 0 none;
+  background-color: #fff;
+}
 .sns-share [class|="icon"]:before{
   width: 3.5em;
   height: 3.5em;
