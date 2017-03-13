@@ -136,6 +136,15 @@ body{
 .icon-facebook-share:before{
    background-image: url(icons/facebook-share.png);
 }
+.icon-twitter-share:before{
+   background-image: url(icons/twitter-share.png);
+}
+.icon-link-share:before{
+   background-image: url(icons/link-share.png);
+}
+.icon-like:before{
+   background-image: url(icons/like.png);
+}
 /* 헤더 시작 ====================================*/
 .header{
   padding: 1em;
@@ -402,13 +411,14 @@ body{
 }
 .sns-share li{
   display: inline-block;
+  margin-left: 0.5em
 }
 .sns-share li:first-child{
-  margin-right: 1em;
+  margin-left: 0;
 }
 .sns-share [class|="icon"]{
   border: 0 none;
-  background-color: #fff;
+  background-color: transparent;
 }
 .sns-share [class|="icon"]:before{
   width: 3.5em;
