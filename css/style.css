@@ -336,35 +336,35 @@ body{
 .line-break{
   display: block;
 }
-/* 로그인 페이지 */
-/* 로그인 폼 */
-.login-headline, .login-id, .login-password, .btn-login-wrap{
+/* 회원가입,로그인,비밀번호 찾기 페이지 */
+[class$="form-area"] [class$="headline"],
+[class$="form-area"] [class$="input"],
+[class$="form-area"] [class$="wrap"]{
   border: 1px solid #bbb;
-  background-color: #fff;  
+  background-color: #fff;
 }
-.login-headline{
+[class$="form-area"] [class$="headline"]{
   padding: 1em;
-  margin: 1.5em 1em;
+  margin: 1.5em 1em 0.5em;
 }
-.login-id, .login-password, .btn-login-wrap{
+[class$="form-area"] [class$="wrap"]{
   margin: 1em;
 }
-.login-id, .login-password{
+[class$="form-area"] input{
   position: relative;
+  width: 100%;
+  padding: 0.8em 1em 0.65em 3.5em;
+  border: 0 none;
 }
-.login-id-label:before, .login-password-label:before{
+[class$="form-area"] label:before{
   position: absolute;
   font-size: 1.5em;
   top: 50%;
   left: 0.5em;
   margin-top: -0.5em;
 }
-#login-id, #login-password{
-  width: 100%;
-  padding: 0.8em 1em 0.65em 3.5em;
-  border: 0 none;
-}
-.btn-login-submit{
+[class$="form-area"] [class$="submit"],
+[class$="form-area"] [class$="reset"]{
   text-align: center;
   display: block;
   border: 0 none;
@@ -373,17 +373,16 @@ body{
   margin: 0;
   background-color: #fff;
 }
-/* 회원가입 및 아이디/비밀번호 찾기 */
 .member{  
   text-align: center;
   margin: 0;
   padding: 0;
 }
-.join, .find-password{
-  display: inline-block;
+[class="member"] [class^="member"]{
+  display: inline-block; 
 }
-.join{
-  border-right: 1px solid #aaa;
+[class="member"] li:first-child:after{
+  content: " |";
 }
 .member a{
   padding: 0.8em 0.5em;

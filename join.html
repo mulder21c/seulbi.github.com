@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>로그인 - 모두의 정치</title>
+    <title>회원가입 - 모두의 정치</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -67,39 +67,36 @@
       <!-- 메뉴 끝 -->
       <!-- 메인 콘텐츠 시작 -->
       <main class="main-content">
-        <!-- 로그인 폼 시작 -->
-        <div class="login-form-area">
-          <h2 class="login-form-headline">로그인</h2>
-          <form class="login-form">
+        <!-- 회원가입 폼 시작 -->
+        <div class="join-form-area">
+          <h2 class="join-form-headline">회원가입</h2>
+          <form class="join-form">
             <fieldset>
-              <legend>로그인 폼</legend>              
-              <div class="login-id-wrap">
-                <label for="login-id" class="icon-tumblr-circled login-id-label"><span class="ir-text">email</span></label>
-                <input type="email" class="login-id" id="login-id" requiered placeholder="email">
+              <legend>회원가입 폼</legend>              
+              <div class="join-nickname-wrap">
+                <label for="nickname" class="icon-tumblr-circled nickname-label"><span>닉네임</span></label>
+                <input type="text" class="nickname" id="nickname" requiered>
               </div>
-              <div class="login-password-wrap">
-                <label for="login-password" class="icon-tumblr-circled login-password-label"><span class="ir-text">password</span></label>
-                <input type="password" class="login-password" id="login-password" requiered placeholder="password">
+              <div class="join-id-wrap">
+                <label for="join-id" class="icon-tumblr-circled join-id-label"><span>이메일</span></label>
+                <input type="email" class="join-id" id="join-id" requiered>
               </div>
-              <div class="btn-login-wrap">
-                <button type="submit" class="btn-login-submit">로그인</button>                          
+              <div class="join-password-wrap">
+                <label for="join-password" class="icon-tumblr-circled join-password-label"><span>이메일</span></label>
+                <input type="email" class="join-password" id="join-password" requiered>
+              </div>
+              <div class="join-agree-checkbox">
+                <label for="join-agree" class="join-agree-label"><span>이용약관과 개인정보 취급 방침에 동의합니다.
+</span></label>
+                <input type="checkbox" class="join-agree" id="join-agree" requiered>
+              </div>
+              <div class="btn-join-wrap">
+                <button type="submit" class="btn-join-submit">회원가입</button>                          
               </div>            
             </fieldset>          
           </form>
         </div>
-        <!-- 로그인 폼 끝 -->
-        <!-- 회원가입 및 비밀번호 찾기 링크 시작 -->
-        <ul class="member">
-            <li class="member-join"><a href="join.html">회원가입</a></li>
-            <li class="member-find-password"><a href="find-password.html">비밀번호 찾기</a></li>
-        </ul>
-        <!-- 회원가입 및 비밀번호 찾기 링크 끝 -->
-        <!-- 카카오톡/페이스 북 로그인 링크 시작 -->
-        <ul class="sns">
-            <li><a href="kakao.html">카카오톡</a></li>
-            <li><a href="facebook.html">페이스북</a></li>
-        </ul>
-        <!-- 카카오톡/페이스 북 로그인 링크 끝 -->     
+        <!-- 회원가입 폼 끝 -->             
       </main>
       <!-- 메인 콘텐츠 끝 -->
       <!-- 푸터 시작 -->
