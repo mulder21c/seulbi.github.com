@@ -373,7 +373,7 @@ body{
 }
 /* 답변 타입의 좋아요 버튼과 좋아요를 누른 숫자 */
 .answer-like{
-  margin-top: 1em;
+  margin: 1em 0 2em;
 }
 .answer-like-button, .answer-like-count{
   vertical-align: middle;
@@ -386,9 +386,9 @@ body{
   padding: 0.5em;
 } 
 .answer-detail{
-  display: block;
-  text-align: right;
-  margin-top: 1em;
+  position: absolute;
+  right: 1em;
+  bottom: 1em;
 }
 .best-answer-like{
   float: left;
