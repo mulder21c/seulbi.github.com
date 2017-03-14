@@ -30,9 +30,10 @@ html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, fieldset{
 h1, h2, h3, h4, h5, h6{
   font-size: 1em;
 }
-/* 본문 텍스트 기본 줄간격 */
-p, li{
+/* 단락의 기본 줄간격 및 여백 */
+p{
   line-height: 1.5;
+  margin: 1em 0;
 }
 /* 목록의 불릿 제거 */
 ul{
@@ -250,7 +251,7 @@ body{
   box-sizing: border-box;  
 }
 .card-gradient{
-  margin-top : 1em;
+  padding: 1em 2em 0;
   background-color: #a18cd1;
   background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 40%, #835190 70%, #3F48CC 100%);
   display: table-cell;
@@ -265,19 +266,32 @@ body{
 .form-type{
   margin-bottom: 1em;
 }
+.answer-type{
+  position: relative;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.reply-type{
+  position: relative;
+  padding: 1em;
+}
 /* 헤드라인 */
 .headline-basic{
   padding: 0.5em;
 }
-.headline-simple{
+.headline-add-margin{
+  margin-bottom: 1em;
+}
+.headline-background{
   padding: 0.5em;
   font-weight: 400;
   background-color: #fafafa;
 }
 .headline-shadow, .content-shadow{
   font-size: 1.5em;
-  font-weight: 700;
-  padding: 1em;
+  font-weight: 700;  
   color: #fff;
   text-shadow: 1px 0 0 rgba(0,0,0,1), 
                -1px 0 0 rgba(0,0,0,1),
@@ -340,6 +354,74 @@ body{
   margin: 0 0 0.5em;
   padding: 0.5em;
 }
+/* 플로트 형 박스 ( 답변 타입에서 프로필 이미지에 사용 ) */
+.profile-float{
+  min-width: 80px;
+  width: 20%;
+  float: left;
+  margin: 0;
+  text-align: center;
+}
+.profile-float > *{
+  padding: 0.5em 1em;
+}
+/* 답변 내용안에 <span> 등의 요소로 마크업 한 경우 - 자동 줄바꿈 효과 */
+.answer > * {
+  display: block;
+}
+/* 답변 타입의 좋아요 버튼과 좋아요를 누른 숫자 */
+.answer-like{
+  margin-top: 1em;
+}
+.answer-like-button, .answer-like-count{
+  vertical-align: middle;
+}
+.answer-like-count {
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-radius: 0.5em;
+  height: 2em;
+  padding: 0.5em;
+} 
+.answer-detail{
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+.best-answer-like{
+  float: left;
+  margin: 0;
+}
+.best-answer-like .answer-like-count{
+  font-size: 1.8em;
+  width: 2em;
+  padding: 0;
+  line-height: 1.8em;
+  text-align: center;
+  border-radius: 50%;
+}
+/* 답변에 대한 리플 타입의 날짜 및 시간 정보 */
+.reply-date{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+/* 리플 폼 */
+.reply-form [type="text"], .reply-form [type="password"]{
+  width: 48%;
+  margin-top: 0;
+  margin-bottom: 1em; 
+  padding: 0.5em 0.5em 0.5em 1em;
+}
+.reply-form [type="text"]{
+  float: left;
+}
+.reply-form [type="password"]{
+  float: right;
+}
+.reply-form .form-button{
+  float: right;
+}
 /* 폼 관련 요소 (회원가입, 로그인, 비밀번호 찾기 등) */
 .form-box{
   border: 1px solid #bbb;
@@ -362,6 +444,12 @@ body{
   margin: 0;
   background-color: transparent;
 }
+.form-button{
+  color: #fff;
+  border: 0 none;
+  padding: 0.5em 2em;
+  background-color: #835190;;
+}
 /* 가로 배치 후 구분선 삽입 */
 .separate-text{  
   text-align: center;  
@@ -380,14 +468,14 @@ body{
   padding: 0.8em 0;
 }
 /* SNS 공유 아이콘 */
-.icon-share{
+.sns-share{
   text-align: center;
   padding: 0;
 }
-.icon-share > *{
+.sns-share > *{
   display: inline-block;
 }
-.icon-share > *:first-child{
+.sns-share > *:first-child{
   margin-left: 0;
 }
 .icon-small [class|="icon"]:before{
@@ -395,15 +483,15 @@ body{
   height: 1.5em;
 }
 .icon-medium [class|="icon"]:before{
-  width: 2.5em;
-  height: 2.5em;;
+  width: 2em;
+  height: 2em;;
 }
 .icon-large [class|="icon"]:before{
   width: 3.5em;
   height: 3.5em;
 }
-.separate-text+.icon-share{
-  margin: 1em 0 0 -1em;
+.separate-text+.sns-share{
+  margin-top: 0.5em;
 }
 /* 회원가입 약관동의 체크박스 스타일 */
 .join-form [type="checkbox"]{
@@ -423,64 +511,7 @@ body{
 .line-break{
   display: block;
 }
-/* 후보별 답변 */
-.answer-box{
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 1px solid #bbb;
-  background-color: #fff;  
-}
-.answer-headline{
-  margin-bottom: 1em;
-}
-.profile-box{
-  min-width: 80px;
-  width: 20%;
-  float: left;
-  padding: 0.5em 1em;
-  margin: 0;
-  text-align: center;
-}
-.name-box{
-  margin-top: 0.5em;
-}
-.answer-comment-box{
-  margin: 1em 0;
-  line-height: 1.5;
-}
-.answer-comment-box span{
-  display: block;
-}
-.answer-like:before{
-  width: 1.5em;
-  height: 1.5em;
-}
-/* 후보별 답변에 대한 댓글 */
-.reply-box{
-  position: relative;
-  padding: 1em;
-}
-.reply-nickname{
-  margin-bottom: 0.5em;
-}
-.reply-content{
-  line-height: 1.5;
-}
-.reply-date{
-  position: absolute;
-  top: 1em;
-  right: 1em;
-}
-.reply-form [type="text"], .reply-form [type="password"]{
-  width: calc(50% - 2px);
-}
-.btn-reply{
-  float: right;
-  color: #fff;
-  border: 0 none;
-  padding: 0.5em 2em;
-  background-color: #835190;;
-}
+
 /* 맨 위로 이동 링크 */
 .goto-top{
   position: fixed;
