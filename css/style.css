@@ -38,13 +38,17 @@
   box-sizing: border-box;  
 }
 /* 요소의 여백 제거 */
-html, body, h1, h2, h3, h4, h5, h6, p, fieldset{
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, fieldset{
   margin: 0;
   padding: 0;
 }
 /* 제목 요소의 글자 크기 */
 h1, h2, h3, h4, h5, h6{
   font-size: 1em;
+}
+/* 본문 텍스트 기본 줄간격 */
+p, li{
+  line-height: 1.5;
 }
 /* 목록의 불릿 제거 */
 ul{
@@ -94,7 +98,7 @@ body{
   font-size: 0.875em;
   font-weight: 300;
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
-  line-height: 1;
+  line-height: 1.15;
   color: #181818;
   background-color: #eee;
 }
@@ -253,43 +257,46 @@ body{
   margin: 1em;
 }
 /* 메인 콘텐츠 끝 */
-/* 콘텐츠 타입 공통 (텍스트 타입&카드 타입)*/
+/* 콘텐츠 타입 */
+.card-link{
+  display: table;  
+  width: 100%;
+  min-height: 300px;
+  margin: 1em 0;  
+  box-sizing: border-box;  
+}
 .text-type, .card-type{
   margin-top : 1em;
-}
-/* 텍스트 타입 콘텐츠 섹션 */
-.text-type-headline{
-  font-weight: 400;
-  padding: 1em;
-  background-color: #fafafa;
-}
-.text-type-headline a{
-  display: block;
 }
 .text-type{
   border: 1px solid #bbb;
   background-color: #fff;
 }
-.text-type-list{
-  margin: 0;
-  padding: 0;
+/* 헤드라인 */
+.headline{
+  font-weight: 400;
+  padding: 1em;
+  background-color: #fafafa;
 }
-.text-type-list li{
-  line-height: 1.5;
+.headline-shadow, .content-shadow{
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 1em;
+  color: #fff;
+  text-shadow: 1px 0 0 rgba(0,0,0,1), 
+               -1px 0 0 rgba(0,0,0,1),
+               0px 1px 0 rgba(0,0,0,1),
+               0px -1px 0 rgba(0,0,0,1);
 }
-.text-type-list a{
+.headline a{
+  display: block;
+}
+.list a{
   display: block;
   padding: 1em;
   border-top: 1px solid #bbb;
 }
-/* 카드 타입 콘텐츠 섹션*/
-.card-link{
-  display: table;  
-  width: 100%;
-  height: 250px;
-  margin: 1em 0;  
-  box-sizing: border-box;  
-}
+
 .card-type{
   background-color: #a18cd1;
   background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 40%, #835190 70%, #3F48CC 100%);
