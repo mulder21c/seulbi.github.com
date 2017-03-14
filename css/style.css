@@ -279,10 +279,11 @@ body{
   background-color: #fff;
 }
 /* 헤드라인 */
-.headline-default{
+.headline-basic{
   padding: 0.5em;
 }
 .headline-simple{
+  padding: 0.5em;
   font-weight: 400;
   background-color: #fafafa;
 }
@@ -296,17 +297,25 @@ body{
                0px 1px 0 rgba(0,0,0,1),
                0px -1px 0 rgba(0,0,0,1);
 }
+.headline-form{
+  padding: 1em;
+  margin: 1.5em 0 1.5em;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
 /* 헤드라인 및 리스트 내 링크 영역 */
 [class^="headline"] a, [class^="list"] a{
   display: block;
   padding: 0.5em;
 }
 /* 리스트  */
-.list-default > *{
+.list-basic > *{
   display: block;
   padding: 0.5em;
 }
 .list-border > * {
+  display: block;
+  padding: 0.5em;
   border-top: 1px solid #bbb;
 }
 .list-float{
@@ -318,17 +327,20 @@ body{
   font-weight: 400;
   color:#835190;
   width: 6em;
+  line-height: 1.5;
   border-top: 1px solid #bbb;
   border-left: 1px solid #bbb;
   background-color: #fff;
   margin: 0 0 0.5em; 
+  padding: 0.5em;
 }
 .list-float > *:nth-child(even) { 
-  border: 1px solid #bbb;
-  padding-left: 7em; 
+  display: block;
+  border: 1px solid #bbb;  
   line-height: 1.5; 
   background-color: #fff;
   margin: 0 0 0.5em;
+  padding: 0.5em 0.5em 0.5em 7em; 
 }
 .list-box{
   margin-top: 1em;
@@ -339,6 +351,7 @@ body{
   background-color: #fff;
   line-height: 1.5;
   margin: 0 0 0.5em;
+  padding: 0.5em;
 }
 /* 검색 결과 콘텐츠 섹션 */
 .make-question{
@@ -354,10 +367,7 @@ body{
   display: block;
 }
 /* 회원가입,로그인,비밀번호 찾기 페이지 */
-.form-headline{
-  padding: 1em;
-  margin: 1.5em 0 1.5em;
-}
+
 .form-headline, .form-box{
   border: 1px solid #bbb;
   background-color: #fff;
