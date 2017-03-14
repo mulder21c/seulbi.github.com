@@ -257,25 +257,33 @@ body{
   margin: 1em;
 }
 /* 메인 콘텐츠 끝 */
-/* 콘텐츠 타입 */
-.card-link{
+/* 콘텐츠 박스 타입 */
+.card-type{
   display: table;  
   width: 100%;
   min-height: 300px;
   margin: 1em 0;  
   box-sizing: border-box;  
 }
-.text-type, .card-type{
+.card-gradient{
   margin-top : 1em;
+  background-color: #a18cd1;
+  background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 40%, #835190 70%, #3F48CC 100%);
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;  
 }
 .text-type{
+  margin-top : 1em;
   border: 1px solid #bbb;
   background-color: #fff;
 }
 /* 헤드라인 */
-.headline{
+.headline-default{
+  padding: 0.5em;
+}
+.headline-simple{
   font-weight: 400;
-  padding: 1em;
   background-color: #fafafa;
 }
 .headline-shadow, .content-shadow{
@@ -288,38 +296,26 @@ body{
                0px 1px 0 rgba(0,0,0,1),
                0px -1px 0 rgba(0,0,0,1);
 }
-.headline a{
+/* 헤드라인 내 링크 영역 */
+[class^="headline"] a{
   display: block;
+  padding: 0.5em;
 }
-.list a{
-  display: block;
-  padding: 1em;
+/* 리스트 */
+.list-default li{
+  padding: 0.5em;
+}
+.list-border li{
   border-top: 1px solid #bbb;
 }
-
-.card-type{
-  background-color: #a18cd1;
-  background-image: linear-gradient(-225deg, #38ABA4 0%, #FEC987 40%, #835190 70%, #3F48CC 100%);
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;  
-}
-.card-type-headline, .card-type-content{
-  margin: 0.5em 0;
-  line-height: 1.5;
-  font-size: 1.5em;
-  font-weight: 700;
-  color: #fff;
-  text-shadow: 1px 0 0 rgba(0,0,0,1), 
-               -1px 0 0 rgba(0,0,0,1),
-               0px 1px 0 rgba(0,0,0,1),
-               0px -1px 0 rgba(0,0,0,1);
+/* 리스트 내 링크 영역 */
+[class^="list"] a{
+  display: block;
+  padding: 0.5em;
 }
 /* 리스트 타입 콘텐츠 섹션 */
 /* 직업, 관심사, 분야별 콘텐츠 */
-.list-type-headline{
-  padding: 0.5em;
-}
+
 .list-type-case{
   width: 100%;
   position: relative;
