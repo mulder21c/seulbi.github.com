@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>검색[검색 키워드] - 모두의 정치</title>
+    <title>동성결혼 법제화에 대한 문재인 답변 - 모두의 정치</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
   </head>
@@ -58,7 +58,7 @@
         <h2 class="a11y-hidden">메인 메뉴</h2>
         <ul class="menu clearfix">
           <!-- 현재 활성화 된 페이지의 메뉴 아이템에 menu-active 클래스를 동적으로 추가-->
-          <li><a href="index.html">홈</a></li>
+          <li><a href="index.html" class="menu-active">홈</a></li>
           <li><a href="job.html">직업</a></li>
           <li><a href="interest.html">관심사</a></li>
           <li><a href="field.html">분야별</a></li>
@@ -66,30 +66,49 @@
       </nav>
       <!-- 메뉴 끝 -->
       <!-- 메인 콘텐츠 시작 -->
-      <main class="main-content">
-        <!-- 리스트 타입 콘텐츠 섹션 시작 -->
-        <section class="list-type">
-          <h2 class="headline-basic">
-            '공기업'에 대한 검색결과 (8건)
-          </h2>
-          <ul class="list-box">
-              <li><a href="/">공기업 채용을 늘릴 생각은 있는가?</a></li>
-              <li><a href="/">공기업 복지에 대해 알고 싶다.</a></li>
-              <li><a href="/">근무환경이 좋은 공기업은 어디인가?</a></li>
-              <li><a href="/">공기업의 평균 연봉은 얼마인가?</a></li>
-              <li><a href="/">공기업 채용을 늘릴 생각은 있는가?</a></li>
-              <li><a href="/">공기업 복지에 대해 알고 싶다.</a></li>
-              <li><a href="/">근무환경이 좋은 공기업은 어디인가?</a></li>
-              <li><a href="/">공기업의 평균 연봉은 얼마인가?</a></li>            
-          </ul>          
-          <a href="make-question.html" class="card-background">
-            <span>기대했던 질문이 없나요?</span>
-            <span>직접 질문을 만들어보세요!</span>
-          </a>                          
-        </section>        
-        <!-- 리스트 타입 콘텐츠 섹션 끝 -->     
-      </main>
-      <!-- 메인 콘텐츠 끝 -->
+      <main id="main" class="main-content">
+        <!-- 후보들 답변 섹션 시작 -->
+        <section class="answer-type">
+          <h2 class="headline-basic headline-add-margin">동성결혼 법제화에 대한 입장은?</h2>
+          <!-- 후보(문재인) 답변 섹션 시작 -->
+          <article class="answer-type clearfix">
+            <h3 class="a11y-hidden">문재인 후보의 답변</h3>
+            <figure class="profile-float">
+              <img src="images/moon.png" alt="">
+              <figcaption>문재인</figcaption>            
+            </figure>
+            <p class="answer">
+                "한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다."
+            </p>
+            <p class="answer">
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+                한국사회는 아직 동성결혼 합법화에 대한 사회적 합의가 돼 있지 않다.
+            </p>
+            <footer class="answer-source separate-text">
+                <span>중앙일보</span>
+                <time>2017.2.28</time>
+                <span>mooyh</span>
+            </footer>
+            <div class="answer-like icon-medium">
+              <button type="button" class="icon-like answer-like-button"><span class="ir-text">좋아요</span></button>
+              <span class="answer-like-count">1234567</span>                            
+            </div>
+            <form action="/" class="add-answer-form" id="add-answer-form">
+              <fieldset>
+                <legend>추가 답변 폼</legend>
+                <label for="add-answer" class="a11y-hidden">답변 추가</label>
+                <input type="text" class="input-text" id="add-answer" placeholder="더 정확한 답변이 있나요? 추가해 보세요.">
+              </fieldset>
+            </form>
+          </article>
+          <!-- 후보(문재인) 답변 섹션 끝 --> 
+        </section>
+      </main>  
       <!-- 푸터 시작 -->
       <!-- 푸터 영역은 화면에 보이지 않도록 처리 -->
       <footer class="footer a11y-hidden">
@@ -100,9 +119,9 @@
     <!-- Wrpper 끝 -->
     <!-- 맨 위로 이동 링크 시작-->
     <a href="#skip-nav" class="goto-top icon-up"><span class="ir-text">맨 위로</span></a>     
-    <!-- 맨 위로 이동 링크 끝-->
+    <!-- 맨 위로 이동 링크 끝--> 
     <!-- 검색 영역 활성화를 위한 자바스크립트 시작 -->
     <script src="js/common.js"></script>
-    <!-- 검색 영역 활성화를 위한 자바스크립트 끝 -->  
+    <!-- 검색 영역 활성화를 위한 자바스크립트 끝 -->     
   </body>
 </html>

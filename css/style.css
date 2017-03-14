@@ -257,6 +257,15 @@ body{
   text-align: center;
   vertical-align: middle;  
 }
+.card-background{
+  text-align: center;
+  display: block;
+  background-color: #6C19BC;
+  color: #fff;
+  font-size: 1.5em;
+  line-height: 1.5;
+  padding: 3em 1em;
+}
 .text-type{
   margin-top : 1em;
   border: 1px solid #bbb;
@@ -304,7 +313,7 @@ body{
   background-color: #fff;
 }
 /* 헤드라인 및 리스트 내 링크 영역 */
-[class^="headline"] a, [class^="list"] a{
+[class^="headline"] a, [class^="list"] a:not([class|="card"]){
   display: block;
   padding: 0.5em;
 }
@@ -458,11 +467,11 @@ body{
 .separate-text > *{
   display: inline-block; 
 }
-.separate-text > *:first-child{
-  margin-left: 2em;
+.separate-text > *:before{
+  content: " | ";
 }
-.separate-text > *:first-child:after{
-  content: " |";
+.separate-text > *:first-child:before{
+  content: "";
 }
 .separate-text a{
   padding: 0.8em 0;
