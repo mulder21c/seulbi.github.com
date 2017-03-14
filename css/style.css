@@ -409,9 +409,9 @@ body{
 /* 리플 폼 */
 .reply-form [type="text"], .reply-form [type="password"]{
   width: 48%;
-  margin-top: 0;
-  margin-bottom: 1em; 
+  margin:0 0 1em 0; 
   padding: 0.5em 0.5em 0.5em 1em;
+  border: 0 none;
 }
 .reply-form [type="text"]{
   float: left;
@@ -421,6 +421,9 @@ body{
 }
 .reply-form .form-button{
   float: right;
+}
+.reply-form textarea{
+  border:0 none;
 }
 /* 폼 관련 요소 (회원가입, 로그인, 비밀번호 찾기 등) */
 .form-box{
