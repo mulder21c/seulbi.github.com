@@ -98,7 +98,7 @@ body{
   font-size: 0.875em;
   font-weight: 300;
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
-  line-height: 1.15;
+  line-height: 1;
   color: #181818;
   background-color: #eee;
 }
@@ -248,8 +248,8 @@ body{
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: 4px;
-  border-top: 4px solid #9b54ca;
+  bottom: 0px;
+  border-top: 5px solid #9b54ca;
 }
 /* 메뉴 끝 */
 /* 메인 콘텐츠 시작 */
@@ -296,64 +296,49 @@ body{
                0px 1px 0 rgba(0,0,0,1),
                0px -1px 0 rgba(0,0,0,1);
 }
-/* 헤드라인 내 링크 영역 */
-[class^="headline"] a{
+/* 헤드라인 및 리스트 내 링크 영역 */
+[class^="headline"] a, [class^="list"] a{
   display: block;
   padding: 0.5em;
 }
-/* 리스트 */
-.list-default li{
+/* 리스트  */
+.list-default > *{
+  display: block;
   padding: 0.5em;
 }
-.list-border li{
+.list-border > * {
   border-top: 1px solid #bbb;
 }
-/* 리스트 내 링크 영역 */
-[class^="list"] a{
-  display: block;
-  padding: 0.5em;
-}
-/* 리스트 타입 콘텐츠 섹션 */
-/* 직업, 관심사, 분야별 콘텐츠 */
-
-.list-type-case{
+.list-float{
   width: 100%;
   position: relative;
 }
-.list-type-case dt, .list-type-case dd{
-  background-color: #fff;
-  margin: 0 0 0.5em;
-}
-.list-type-case dt{    
+.list-float > *:nth-child(odd) {  
   position: absolute;
   font-weight: 400;
   color:#835190;
   width: 6em;
   border-top: 1px solid #bbb;
-  border-left: 1px solid #bbb; 
+  border-left: 1px solid #bbb;
+  background-color: #fff;
+  margin: 0 0 0.5em; 
 }
-.list-type-case dd{
+.list-float > *:nth-child(even) { 
   border: 1px solid #bbb;
   padding-left: 7em; 
   line-height: 1.5; 
+  background-color: #fff;
+  margin: 0 0 0.5em;
 }
-.list-type-case a{
+.list-box{
+  margin-top: 1em;
+}
+.list-box > *{
   display: block;
-  padding: 1em;
-}
-/* 직업별(테마) 콘텐츠 */
-.list-type-list{
-  padding: 0;
-}
-.list-type-list li{
   border: 1px solid #ddd;
   background-color: #fff;
   line-height: 1.5;
   margin: 0 0 0.5em;
-}
-.list-type-list a{
-  display: block;
-  padding: 1em;
 }
 /* 검색 결과 콘텐츠 섹션 */
 .make-question{
