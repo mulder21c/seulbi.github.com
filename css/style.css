@@ -2,14 +2,6 @@
 /* 웹폰트 : Spoqa Han Sans(Noto Sans) */
 @font-face {
     font-family: 'Spoqa Han Sans';
-    font-weight: 700;
-    src: local('Spoqa Han Sans Bold'),
-    url('font/Spoqa%20Han%20Sans%20Bold.woff2') format('woff2'),
-    url('font//Spoqa%20Han%20Sans%20Bold.woff') format('woff'),
-    url('font/Spoqa%20Han%20Sans%20Bold.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Spoqa Han Sans';
     font-weight: 400;
     src: local('Spoqa Han Sans Regular'),
     url('font/Spoqa%20Han%20Sans%20Regular.woff2') format('woff2'),
@@ -23,14 +15,6 @@
     url('font/Spoqa%20Han%20Sans%20Light.woff2') format('woff2'),
     url('font/Spoqa%20Han%20Sans%20Light.woff') format('woff'),
     url('font/Spoqa%20Han%20Sans%20Light.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'Spoqa Han Sans';
-    font-weight: 100;
-    src: local('Spoqa Han Sans Thin'),
-    url('font/Spoqa%20Han%20Sans%20Thin.woff2') format('woff2'),
-    url('font/Spoqa%20Han%20Sans%20Thin.woff') format('woff'),
-    url('font/Spoqa%20Han%20Sans%20Thin.ttf') format('truetype');
 }
 /* 초기화 - Reset CSS */
 /* 모든 요소의 box-sizing을 재지정 (width 값에 padding과 border가 포함 됨)*/
@@ -278,6 +262,9 @@ body{
   border: 1px solid #bbb;
   background-color: #fff;
 }
+.form-type{
+  margin-bottom: 1em;
+}
 /* 헤드라인 */
 .headline-basic{
   padding: 0.5em;
@@ -353,6 +340,76 @@ body{
   margin: 0 0 0.5em;
   padding: 0.5em;
 }
+/* 폼 관련 요소 (회원가입, 로그인, 비밀번호 찾기 등) */
+.form-box{
+  border: 1px solid #bbb;
+  background-color: #fff;
+  margin-top: 1.5em;
+}
+.input-text{
+  display: block;
+  width: 100%;
+  padding: 0.7em 1em; 
+  margin-top: 0.5em; 
+  margin-bottom: 1em;
+}
+.form-box [type="submit"], .form-box [type="reset"]{
+  text-align: center; 
+  display: block;
+  border: 0 none;
+  width: 100%;
+  padding: 0.75em 1em;
+  margin: 0;
+  background-color: transparent;
+}
+/* 가로 배치 후 구분선 삽입 */
+.separate-text{  
+  text-align: center;  
+  padding: 0;
+}
+.separate-text > *{
+  display: inline-block; 
+}
+.separate-text > *:first-child{
+  margin-left: 2em;
+}
+.separate-text > *:first-child:after{
+  content: " |";
+}
+.separate-text a{
+  padding: 0.8em 0;
+}
+/* SNS 공유 아이콘 */
+.icon-share{
+  text-align: center;
+  padding: 0;
+}
+.icon-share > *{
+  display: inline-block;
+}
+.icon-share > *:first-child{
+  margin-left: 0;
+}
+.icon-small [class|="icon"]:before{
+  width: 1.5em;
+  height: 1.5em;
+}
+.icon-medium [class|="icon"]:before{
+  width: 2.5em;
+  height: 2.5em;;
+}
+.icon-large [class|="icon"]:before{
+  width: 3.5em;
+  height: 3.5em;
+}
+.separate-text+.icon-share{
+  margin: 1em 0 0 -1em;
+}
+/* 회원가입 약관동의 체크박스 스타일 */
+.join-form [type="checkbox"]{
+  float: left;
+  margin-right: 0.5em;
+}
 /* 검색 결과 콘텐츠 섹션 */
 .make-question{
   text-align: center;
@@ -365,71 +422,6 @@ body{
 }
 .line-break{
   display: block;
-}
-/* 회원가입,로그인,비밀번호 찾기 페이지 */
-
-.form-headline, .form-box{
-  border: 1px solid #bbb;
-  background-color: #fff;
-}
-.input-box{
-  display: block;
-  width: 100%;
-  padding: 0.7em 1em; 
-  margin-top: 0.5em; 
-  margin-bottom: 1em;
-}
-.form-box button{
-  text-align: center; 
-  display: block;
-  border: 0 none;
-  width: 100%;
-  padding: 0.75em 1em;
-  margin: 0;
-  background-color: transparent;
-}
-.member{  
-  text-align: center;  
-  padding: 0;
-}
-.member li{
-  display: inline-block; 
-}
-.member li:first-child{
-  margin-left: 2em;
-}
-.member li:first-child:after{
-  content: " |";
-}
-.member a{
-  padding: 0.8em 0;
-}
-/* SNS 공유 */
-.sns-share{
-  text-align: center;
-  padding: 0;
-}
-.sns-share li{
-  display: inline-block;
-  margin-left: 0.5em
-}
-.sns-share li:first-child{
-  margin-left: 0;
-}
-.sns-share [class|="icon"]:before{
-  width: 3.5em;
-  height: 3.5em;
-}
-/* 회원가입 약관동의 */
-.join-agree{
-  width: 20em;
-  margin: 1.5em 0;
-}
-.join-agree-label{
-  float: right;
-}
-.join-agree-input{
-  float: left;
 }
 /* 후보별 답변 */
 .answer-box{
