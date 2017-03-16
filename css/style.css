@@ -493,6 +493,9 @@ body{
   padding: 1em;
   text-align: center
 }
+.add-answer span{
+  display: block;
+}
 /* 가로 배치 후 구분선 삽입 */
 .separate-text{  
   text-align: center;  
