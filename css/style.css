@@ -503,12 +503,26 @@ body{
 .btn-add-answer{
   text-align: center;
 }
-/* 저장 및 답변작성 버튼 기본 스타일 */
+/* 질문 만들기 페이지의 질문하기 및 취소 버튼 오른쪽 정렬을 위한 스타일 */
+.btn-make-question{
+  text-align: right;
+}
+.btn-make-question button{
+  margin-left: 1em;
+}
+/* 저장, 답변작성, 질문하기 및 취소 버튼 스타일 */
 .btn-default{
   color: #fff;
-  border: 0 none;
+  background-color: #6C19BC;
+  border: 1px solid none;
   padding: 0.5em 2em;
   background-color: #6C19BC;
+}
+.btn-simple{
+  color: #000;
+  border: 1px solid #aaa;
+  padding: 0.5em 2em;
+  background-color: #fff;
 }
 /* 복수 답변 보기 arrow 버튼 */
 .btn-answer{
@@ -595,18 +609,9 @@ body{
 .separate-text+.sns-share{
   margin-top: 0.5em;
 }
-/* 검색 결과 콘텐츠 섹션 */
+ /* 검색 결과 콘텐츠 섹션 */
 .make-question{
-  text-align: center;
-  display: block;
-  background-color: #6C19BC;
-  color: #fff;
-  font-size: 1.5em;
-  line-height: 1.5;
-  padding: 3em 1em;
-}
-.line-break{
-  display: block;
+  margin: 1em;
 }
 
 /* 맨 위로 이동 링크 */
