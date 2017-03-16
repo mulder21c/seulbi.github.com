@@ -101,11 +101,26 @@
                 </div>
                 <div>
                   <label for="answer-summary" class="full-width">답변 요약</label>
-                  <textarea class="full-width" id="answer-summary" row="10" cols="20"></textarea>
+                  <textarea class="basic-narrow full-width" id="answer-summary" row="10" cols="20"></textarea>
                 </div>
                 <div>
                   <label for="answer-summary" class="full-width">답변 상세</label>
-                  <textarea class="full-width" id="answer-detail" row="20" cols="20"></textarea>
+                  <textarea class="basic-narrow full-width" id="answer-detail" row="20" cols="20"></textarea>
+                </div>
+                <div>
+                  <label for="answer-orgin" class="full-width">출처(언론사 이름, 후보 SNS 채널 등)</label>
+                  <input type="text" class="basic-narrow full-width" id="answer-origin">
+                </div>
+                <div>
+                  <label for="answer-url" class="full-width">링크</label>
+                  <input type="url" class="basic-narrow full-width" id="answer-url" placeholder="http://">
+                </div>
+                <div>
+                  <label for="answer-date" class="full-width">발언 일자</label>
+                  <input type="datetime-local" class="basic-narrow full-width" id="answer-date">
+                </div>
+                <div class="btn-add-answer">
+                  <button class="btn-default" type="submit">저장</button>
                 </div>
               </fieldset>
             </form>

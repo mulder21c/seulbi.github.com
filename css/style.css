@@ -499,6 +499,11 @@ body{
   margin: 0;
   background-color: transparent;
 }
+/* 답변 추가 페이지의 작성완료 버튼 가운데 정렬을 위한 스타일 */
+.btn-add-answer{
+  text-align: center;
+}
+/* 저장 및 답변작성 버튼 기본 스타일 */
 .btn-default{
   color: #fff;
   border: 0 none;

@@ -156,13 +156,21 @@
           <form action="/" class="reply-form" id="reply-form">
             <fieldset>
               <legend>답변 등록</legend>
-              <label class="a11y-hidden">작성자</label>
-              <input type="text" class="half-width" required placeholder="작성자">
-              <label class="a11y-hidden">비밀번호</label>
-              <input type="password" class="half-width" required placeholder="비밀번호">
+              <div>
+                <label class="a11y-hidden">작성자</label>
+                <input type="text" class="half-width" required placeholder="작성자">
+              </div>
+              <div>
+                <label class="a11y-hidden">비밀번호</label>
+                <input type="password" class="half-width" required placeholder="비밀번호">
+              </div>
+              <div>
               <label class="a11y-hidden">답변 내용</label>
-              <textarea name="reply" class="full-width" id="reply" cols="50" rows="10" required placeholder="답변 내용"></textarea>
-              <button class="btn-reply btn-default" type="submit">저장</button>
+                <textarea name="reply" class="full-width" id="reply" cols="50" rows="10" required placeholder="답변 내용"></textarea>
+              </div>
+              <div>
+                <button class="btn-reply btn-default" type="submit">저장</button>
+              </div>
             </fieldset>
           </form>
         </section>
