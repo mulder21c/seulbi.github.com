@@ -239,8 +239,8 @@ body{
 /* 메인 콘텐츠 시작 */
 .main-content{
   margin: 1em;
+  padding-bottom: 3em;
 }
-/* 메인 콘텐츠 끝 */
 /* 콘텐츠 박스 타입 */
 .card-type{
   display: table;  
@@ -406,7 +406,7 @@ body{
   position: absolute;
   font-weight: 400;
   color:#6C19BC;
-  width: 6em;
+  width: 7em;
   line-height: 1.5;
   border-top: 1px solid #bbb;
   border-left: 1px solid #bbb;
@@ -462,7 +462,7 @@ body{
   height: 2em;
   padding: 0.5em;
 } 
-.answer-detail{
+.answer-detail, .go-add-answer{
   position: absolute;
   right: 1em;
   bottom: 1em;
@@ -480,15 +480,22 @@ body{
   border-radius: 50%;
 }
 /* 에디터 가이드라인 */
-.editor-guideline ol{
-  margin: 1em 1em 1em 2em;
-  line-height: 1.5;
-}
-.editor-guideline li{
+.editor-guideline{
   margin: 1em;
   line-height: 1.5;
 }
-
+.editor-guideline li{
+  margin: 1em 0;
+  line-height: 1.5;
+  counter-increment: number;
+}
+.editor-guideline li:before{
+  content: counter(number, decimal) ". ";
+}
+/* 발언 일자 입력 서식의 가로 크기 수정 */
+[type="datetime-local"]{
+   -webkit-appearance: none;
+}
 /* 폼 관련 요소 (회원가입, 로그인, 비밀번호 찾기 등) */
 [class|="basic"] > [type="submit"], [class|="basic"] > [type="reset"]{
   text-align: center; 
@@ -535,7 +542,7 @@ body{
 .btn-answer span{
   line-height: 2em;
 }
-[class|="arrow"] {
+.btn-prev, .btn-next {
   position: absolute;
   top: 0;
   width: 2em;
@@ -548,13 +555,13 @@ body{
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
-.arrow-prev{
+.btn-prev{
   left: 0;
-  background-image: url(icons/left-arrow.png);  
+  background-image: url(icons/btn-prev.png);  
 }
-.arrow-next{
+.btn-next{
   right: 0;
-  background-image: url(icons/right-arrow.png);
+  background-image: url(icons/btn-next.png);
 }
 .go-add-answer{
   display: block;
@@ -613,17 +620,38 @@ body{
 .make-question{
   margin: 1em;
 }
-
-/* 맨 위로 이동 링크 */
-.goto-top{
+/* 메인 콘텐츠 끝 */
+/* 푸터 시작 */
+.footer{
   position: fixed;
-  right: 2em;
-  bottom: 2em;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3em;
+  background-color: #ccc;
 }
-.goto-top:before{
-  font-weight: 700;
+/* 더보기 버튼 */
+.btn-more{
+  position: absolute;
+  bottom: 0.5em;
+  padding: 0.2em 2em;
+  left: 50%;
+  margin-left: -3.5em;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #aaa;
 }
-/* 콘텐츠 끝 ====================================*/
+/* 맨위로 이동 링크 */
+.go-top{
+  position: absolute;
+  bottom: 0.5em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+  background: url(icons/go-top.png) no-repeat 0 0 / 100% 100%;
+}
+/* 푸터 끝 */
+/* 미디어쿼리 시작  */
 @media all and (min-width:480px) {
   .go-add-answer span{
     display: inline;
@@ -639,3 +667,4 @@ body{
     font-size: 1.2em;
   }
 }
+/* 미디어쿼리 끝  */
