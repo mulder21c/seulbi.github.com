@@ -268,22 +268,19 @@ body{
 }
 .text-type{
   margin-top : 1em;
+  margin-bottom : 1em;
   border: 1px solid #bbb;
   background-color: #fff;
 }
 .form-type{
+  margin-top: 1em;
   margin-bottom: 1em;
 }
 .answer-type{
   position: relative;
-  padding: 1em;
-  margin-bottom: 1em;
-  border: 1px solid #bbb;
-  background-color: #fff;
 }
 .reply-type{
   position: relative;
-  padding: 1em;
 }
 /* 헤드라인 */
 .headline-basic{
@@ -307,15 +304,87 @@ body{
                0px -1px 0 rgba(0,0,0,1);
 }
 .headline-form{
-  padding: 1em;
-  margin: 1.5em 0 1.5em;
-  border: 1px solid #bbb;
-  background-color: #fff;
+  margin: 1.5em 0;
 }
 /* 헤드라인 및 리스트 내 링크 영역 */
 [class^="headline"] a, [class^="list"] a:not([class|="card"]){
   display: block;
   padding: 0.5em;
+}
+/* 박스 스타일 */
+.basic-default{
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.basic-narrow{
+  padding: 0.5em;
+  margin: 0.5em 0;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.basic-normal{
+  padding: 1em;
+  margin: 1em 0;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+.basic-wide{
+  padding: 1em 2em;
+  margin: 1em 0;
+  border: 1px solid #bbb;
+  background-color: #fff;
+}
+/* 폼 서식 */
+.full-width{
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+.half-width{
+  display: block;
+  width: 50%;
+  margin: 1em 0;
+}
+/* 로그인 아이디/비밀번호 입력상자 padding 조정 */
+.login-form input{
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+/* 
+* 회원가입 이용약관과 개인정보 취급 방침에 동의합니다. 영역 배치 및 여백 조정 
+* 에디터 가이드라인 관련 답변 없음. 영역 배치 및 여백 조정
+*/
+.join-agree, .no-answer{
+  margin-bottom: 1em; 
+}
+.join-agree > [type="checkbox"], .no-answer > [type="checkbox"]{
+  float: left;
+  margin-right: 0.5em;
+  margin-bottom: 1em;
+  position: relative;
+  top: -2px;
+}
+
+/* 답변에 대한 리플 타입의 날짜 및 시간 정보 */
+.reply-date{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+/* 리플 폼 */
+.reply-form .half-width{
+  width: 48%;
+  margin:0 0 1em 0; 
+  padding: 0.5em 0.5em 0.5em 1em;
+}
+.reply-form [type="text"]{
+  float: left;
+}
+.reply-form [type="password"]{
+  float: right;
+}
+.reply-form [type="submit"]{
+  float: right;
 }
 /* 리스트  */
 .list-basic > *{
@@ -336,7 +405,7 @@ body{
 .list-float > *:nth-child(odd) {  
   position: absolute;
   font-weight: 400;
-  color:#835190;
+  color:#6C19BC;
   width: 6em;
   line-height: 1.5;
   border-top: 1px solid #bbb;
@@ -410,50 +479,27 @@ body{
   text-align: center;
   border-radius: 50%;
 }
-/* 답변에 대한 리플 타입의 날짜 및 시간 정보 */
-.reply-date{
-  position: absolute;
-  top: 1em;
-  right: 1em;
+/* 에디터 가이드라인 */
+.editor-guideline ol{
+  margin: 1em 1em 1em 2em;
+  line-height: 1.5;
 }
-/* 리플 폼 */
-.reply-form [type="text"], .reply-form [type="password"]{
-  width: 48%;
-  margin:0 0 1em 0; 
-  padding: 0.5em 0.5em 0.5em 1em;
+.editor-guideline li{
+  margin: 1em;
+  line-height: 1.5;
 }
-.reply-form [type="text"]{
-  float: left;
-}
-.reply-form [type="password"]{
-  float: right;
-}
-.reply-form .form-button{
-  float: right;
-}
+
 /* 폼 관련 요소 (회원가입, 로그인, 비밀번호 찾기 등) */
-.form-box{
-  border: 1px solid #bbb;
-  background-color: #fff;
-  margin-top: 1.5em;
-}
-.input-text{
-  display: block;
-  width: 100%;
-  padding: 0.7em 1em; 
-  margin-top: 0.5em; 
-  margin-bottom: 1em;
-}
-.form-box [type="submit"], .form-box [type="reset"]{
+[class|="basic"] > [type="submit"], [class|="basic"] > [type="reset"]{
   text-align: center; 
   display: block;
   border: 0 none;
   width: 100%;
-  padding: 0.75em 1em;
+  padding: 1em;
   margin: 0;
   background-color: transparent;
 }
-.form-button{
+.btn-default{
   color: #fff;
   border: 0 none;
   padding: 0.5em 2em;
@@ -464,7 +510,8 @@ body{
   position: relative;
   float: right;
   height: 2em;
-  padding: 0 2em;
+  padding: 0 1.5em;
+  margin-right: 0.5em;
   text-align: center;
 }
 [class|="arrow"] {
@@ -473,11 +520,10 @@ body{
 	width: 1.2em;
 	height: 1.2em;
 	background: transparent;
-	border-top: .4em solid #6C19BC;
-	border-right: .4em solid #6C19BC;
-  border-bottom: .4em solid #fff;
-	border-left: .4em solid #fff;
-	/*box-shadow: 0 0 0 lightgray;*/
+	border-top: .3em solid #6C19BC;
+	border-right: .3em solid #6C19BC;
+  border-bottom: .3em solid #fff;
+	border-left: .3em solid #fff;
 }
 .arrow-prev{
   left: 0;
@@ -487,14 +533,15 @@ body{
   transform: rotate(45deg);
   right: 0;
 }
-.add-answer{
+.go-add-answer{
   display: block;
   clear: both;
   padding: 1em;
   text-align: center
 }
-.add-answer span{
+.go-add-answer span{
   display: block;
+  line-height: 1.5;
 }
 /* 가로 배치 후 구분선 삽입 */
 .separate-text{  
@@ -539,11 +586,6 @@ body{
 .separate-text+.sns-share{
   margin-top: 0.5em;
 }
-/* 회원가입 약관동의 체크박스 스타일 */
-.join-form [type="checkbox"]{
-  float: left;
-  margin-right: 0.5em;
-}
 /* 검색 결과 콘텐츠 섹션 */
 .make-question{
   text-align: center;
@@ -568,6 +610,11 @@ body{
   font-weight: 700;
 }
 /* 콘텐츠 끝 ====================================*/
+@media all and (min-width:480px) {
+  .go-add-answer span{
+    display: inline;
+  }
+}
 @media all and (min-width:600px) and (max-width:1024px) {
   body{
     font-size: 1em;
