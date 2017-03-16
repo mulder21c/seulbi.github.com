@@ -514,7 +514,7 @@ body{
 .btn-answer{
   position: relative;
   height: 2em;
-  width : 50%;
+  width : 10em;
   margin: 0 auto;
   text-align: center;
 }
