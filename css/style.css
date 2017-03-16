@@ -462,7 +462,7 @@ body{
   height: 2em;
   padding: 0.5em;
 } 
-.answer-detail, .go-add-answer{
+.corner-position{
   position: absolute;
   right: 1em;
   bottom: 1em;
