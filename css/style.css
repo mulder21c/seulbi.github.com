@@ -513,30 +513,34 @@ body{
 /* 복수 답변 보기 arrow 버튼 */
 .btn-answer{
   position: relative;
-  float: right;
   height: 2em;
-  padding: 0 1.5em;
-  margin-right: 0.5em;
+  width : 50%;
+  margin: 0 auto;
   text-align: center;
 }
+.btn-answer span{
+  line-height: 2em;
+}
 [class|="arrow"] {
-	position: absolute;
-	top: 0;
-	width: 1.2em;
-	height: 1.2em;
-	background: transparent;
-	border-top: .3em solid #6C19BC;
-	border-right: .3em solid #6C19BC;
-  border-bottom: .3em solid #fff;
-	border-left: .3em solid #fff;
+  position: absolute;
+  top: 0;
+  width: 2em;
+  height: 2em;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  margin: 0;
+  background-color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .arrow-prev{
   left: 0;
-  transform: rotate(225deg);
+  background-image: url(icons/left-arrow.png);  
 }
 .arrow-next{
-  transform: rotate(45deg);
   right: 0;
+  background-image: url(icons/right-arrow.png);
 }
 .go-add-answer{
   display: block;
