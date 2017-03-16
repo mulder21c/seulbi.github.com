@@ -632,7 +632,7 @@ body{
 /* 더보기 버튼 */
 .btn-more{
   position: absolute;
-  bottom: 0.5em;
+  bottom: 0.4em;
   padding: 0.2em 2em;
   left: 50%;
   margin-left: -3.5em;
