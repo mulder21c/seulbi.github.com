@@ -457,7 +457,41 @@ body{
   color: #fff;
   border: 0 none;
   padding: 0.5em 2em;
-  background-color: #835190;;
+  background-color: #835190;
+}
+/* 복수 답변 보기 arrow 버튼 */
+.btn-answer{
+  position: relative;
+  float: right;
+  height: 3em;
+  padding: 0 2em;
+  text-align: center;
+}
+[class|="arrow"] {
+	position: absolute;
+	top: 0;
+	width: 1.5em;
+	height: 1.5em;
+	background: transparent;
+	border-top: .4em solid #835190;
+	border-right: .4em solid #835190;
+  border-bottom: .4em solid #fff;
+	border-left: .4em solid #fff;
+	/*box-shadow: 0 0 0 lightgray;*/
+}
+.arrow-prev{
+  left: 0;
+  transform: rotate(225deg);
+}
+.arrow-next{
+  transform: rotate(45deg);
+  right: 0;
+}
+.add-answer{
+  display: block;
+  clear: both;
+  padding: 1em;
+  text-align: center
 }
 /* 가로 배치 후 구분선 삽입 */
 .separate-text{  
