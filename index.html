@@ -11,6 +11,23 @@
     <a href="#main" class="a11y-hidden" id="skip-nav">본문 바로가기</a>
     <!-- 건너뛰기 링크 끝 -->
     <!-- Wrpper 시작 -->
+	<div class="search-layer clearfix" id="search-layer" role="dialog" aria-hidden="true" aria-labelledby="dialog-title">
+		<form action="/" class="search-form" id="search-form">
+		  <fieldset>
+			<legend id="dialog-title">분야별 검색</legend>
+			<div class="search-keyword-wrap">
+			  <label class="icon-search" for="keyword"><span class="ir-text">검색</span></label>
+			  <input type="search" class="search-keyword" id="keyword" placeholder="검색어를 입력하세요" required>
+			</div>
+			<div class="search-btn-wrap">
+			  <!--검색 버튼 선택 시 검색 결과 페이지로 이동 search-result.html -->
+			  <button type="submit" class="search-btn-submit">검색</button>
+			  <!--취소 버튼 선택 시 검색 영역을 숨기고 검색하기 버튼이 보이도록 처리 -->
+			  <button type="reset" class="search-btn-reset">취소</button>
+			</div>
+		  </fieldset>
+		</form> 
+	</div>
     <div class="wrapper">
       <!-- 헤더 시작 -->
       <header class="header clearfix">
@@ -28,27 +45,10 @@
         <!-- 검색 영역 시작 -->        
         <div class="search">
           <!-- 검색 영역 활성화를 위한 버튼 시작 --> 
-          <button type="button" class="icon-search btn-search-open" id="search-layer-open"><span class="ir-text">검색하기</span></button>
+          <button type="button" class="icon-search btn-search-open" id="search-layer-open" aria-expanded="false"><span class="ir-text">검색하기</span></button>
           <!-- 검색 영역 활성화를 위한 버튼 끝 -->
           <!-- 검색 영역의 경우 검색하기 버튼을 선택 시 활성화 되어야 함.
           이때 검색 영역이 활성화 될 경우 검색하기 버튼은 보이지 않도록 처리 -->
-          <div class="search-layer clearfix" id="search-layer" aria-hidden="true" role="dialog" aria-labelledby="dialog-title">
-            <form action="/" class="search-form" id="search-form">
-              <fieldset>
-                <legend id="dialog-title">분야별 검색</legend>
-                <div class="search-keyword-wrap">
-                  <label class="icon-search" for="keyword"><span class="ir-text">검색</span></label>
-                  <input type="search" class="search-keyword" id="keyword" placeholder="검색어를 입력하세요" required>
-                </div>
-                <div class="search-btn-wrap">
-                  <!--검색 버튼 선택 시 검색 결과 페이지로 이동 search-result.html -->
-                  <button type="submit" class="search-btn-submit">검색</button>
-                  <!--취소 버튼 선택 시 검색 영역을 숨기고 검색하기 버튼이 보이도록 처리 -->
-                  <button type="reset" class="search-btn-reset">취소</button>
-                </div>              
-              </fieldset>
-            </form> 
-          </div>
         </div>
         <!-- 검색 영역 끝 -->
       </header>
