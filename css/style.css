@@ -542,6 +542,19 @@ body{
   padding: 0.5em 2em;
   background-color: #fff;
 }
+.char-indicator{
+	display:block;
+	margin-top:-.5em;
+	text-align:right;
+	font-size:.85em;
+}
+.char-indicator > span{
+	margin:0 .25em;
+}
+.char-indicator .warn{
+	color:#6C19BC;
+	font-weight:bold
+}
 /* 복수 답변 보기 arrow 버튼 */
 .btn-answer{
   position: relative;
