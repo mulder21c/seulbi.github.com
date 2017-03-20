@@ -86,6 +86,7 @@ body{
   line-height: 1;
   color: #181818;
   background-color: #eee;
+  -webkit-font-smoothing: antialiased;
 }
 /* 하이퍼 링크 */
 :link, :visited{
@@ -289,6 +290,7 @@ body{
   margin-bottom: 1em;
 }
 .answer-type{
+  overflow:hidden;
   position: relative;
 }
 .reply-type{
@@ -447,14 +449,63 @@ body{
 }
 /* 플로트 형 박스 ( 답변 타입에서 프로필 이미지에 사용 ) */
 .profile-float{
+  position:absolute;
+  top:1em;
+  left:1em;
   min-width: 80px;
-  width: 20%;
+  width: 18.901%;
   float: left;
   margin: 0 0.5em 0 0;
   text-align: center;
 }
 .profile-float > *{
   padding: 0.3em;
+}
+/* 답변 슬라이드 */
+.answer-slide-wrap{
+  overflow:hidden
+}
+.answer-slide-deck{
+  width:1000%
+}
+.answer-slide-item{
+  float:left;
+  width:10%
+}
+.fake-profile-area{
+  min-width: 80px;
+  width: 20%;
+  float: left;
+  margin: 0 0.5em 0 0;
+  padding-bottom:1.6em;
+  text-align: center;
+}
+.fake-profile-area > *{
+  visibility:hidden;
+  opacity:0;
+  padding: 0.3em
+}
+[class*="accordion-"]{
+  overflow:hidden;
+  -webkit-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -moz-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -ms-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -o-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+}
+.accordion-closed{
+  max-height:0 !important;
+  -webkit-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -moz-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -ms-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  -o-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+  transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
+}
+.answer-detail{
+	background-color:transparent;
+	padding:0;
+	border:0;
+	font:inherit;
 }
 /* 답변 내용안에 <span> 등의 요소로 마크업 한 경우 - 자동 줄바꿈 효과 */
 .answer > * {
