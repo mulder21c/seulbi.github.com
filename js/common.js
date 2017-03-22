@@ -6,6 +6,10 @@
 (function(){var regExp=function(name){return new RegExp("(^| )"+name+"( |$)")};var forEach=function(list,fn,scope){for(var i=0;i<list.length;i++)fn.call(scope,list[i])};function ClassList(element){this.element=element}ClassList.prototype={add:function(){forEach(arguments,function(name){if(!this.contains(name))this.element.className+=" "+name},this)},remove:function(){forEach(arguments,function(name){this.element.className=this.element.className.replace(regExp(name),"")},this)},toggle:function(name){return this.contains(name)?(this.remove(name),false):(this.add(name),true)},contains:function(name){return regExp(name).test(this.element.className)},replace:function(oldName,newName){this.remove(oldName),this.add(newName)}};if(!("classList"in Element.prototype))Object.defineProperty(Element.prototype,"classList",{get:function(){return new ClassList(this)}});if(window.DOMTokenList&&DOMTokenList.prototype.replace==null)DOMTokenList.prototype.replace=ClassList.prototype.replace})();
 
 /**
+ * closest polyfill
+ */
+if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function(s){var matches=(this.document||this.ownerDocument).querySelectorAll(s),i,el=this;do{i=matches.length;while(--i>=0&&matches.item(i)!==el);}while(i<0&&(el=el.parentElement));return el};
+/**
  * Simple Temporary Strage
  * @namespace tempStorage
  * @global
@@ -327,3 +331,86 @@
 		item.addEventListener("focusout", limitCharLen, false);
 	}
 })(document.querySelectorAll("input[maxlength], textarea[maxlength]"));
+
+/**
+ * answer view accordion
+ */
+(function(nodeList){
+	if(nodeList.length < 1) return;
+
+	var tm = null;
+
+	for(var i = -1, article = null, detailBtn = null; article = nodeList[++i];){
+		if( detailBtn = article.querySelector(".answer-detail") ){
+			detailBtn.setAttribute("aria-expanded", "false");
+			detailBtn.addEventListener("click", setMaxHeight.bind(article), null);
+		}
+		for(var j = -1, answer = null, answerList = article.querySelectorAll(".accordion-closed"); answer = answerList[++j];){
+			console.log(answer)
+			answer.setAttribute("aria-hidden", "true");
+		}
+	}
+
+	/**
+	 * determining and setting min-height for accordion
+	 * @function setMinHeight
+	 */
+	function getMaxHeight(elem, limit){
+		var cs = elem.querySelector("p") ? window.getComputedStyle(elem.querySelector("p"), null) : window.getComputedStyle(elem, null);
+		return elem.classList.contains("accordion-answer") === true ? 
+				(((parseInt(cs.fontSize) * limit / parseInt(cs.width) + 3 ) * parseInt(cs.lineHeight)) / parseInt(cs.fontSize)) + "em" // accordion answer
+				: (((parseInt(cs.fontSize) * limit / parseInt(cs.width) ) * parseInt(cs.lineHeight) + parseInt(cs.marginTop) + parseInt(cs.marginBottom)) / parseInt(cs.fontSize)) + "em" // answer heading
+	}
+
+	function setLastState(h){
+		var qoute = this.closest("blockquote");
+		qoute.style.minHeight = h + "em";
+	}
+
+	function resetMaxHeight(event){
+		clearTimeout(tm);
+		tm = setTimeout( setMaxHeight.bind(this), 100 );
+	}
+
+	function setMaxHeight(){
+		var accAnswerList = this.querySelectorAll(".answer-slide-item [class*=\"accordion-\"]"),
+			accPaging = this.querySelector(".accordion-answer-paging"),
+			accAnsMaxHeight = 0,
+			fullHeight = 0;
+		if(accAnswerList.length < 0) return;
+		
+		// answer accordion
+		for(var i = -1, accAnswer = null, headingStyle; accAnswer = accAnswerList[++i];){
+			if( i === 0 ){
+				accAnsMaxHeight = getMaxHeight(accAnswer, 150);
+				fullHeight = parseFloat(accAnsMaxHeight) + parseFloat(getMaxHeight(accAnswer.previousElementSibling, 50));
+			}
+			accAnswer.style.maxHeight = accAnsMaxHeight; // maximum width in 320px device 
+			accAnswer.classList.remove("accordion-closed");
+			accAnswer.setAttribute("aria-hidden", "false");
+			if(accAnswer.classList.contains("accordion-closed") && Modernizr.csstransitions){
+				accAnswer.addEventListener("transitionend", setLastState.bind(accAnswer, fullHeight), false);
+				accAnswer.addEventListener("webkitTransitionend", setLastState.bind(accAnswer, fullHeight), false);
+				accAnswer.addEventListener("OTransitionEnd", setLastState.bind(accAnswer, fullHeight), false);
+			}else{
+				setLastState.call(accAnswer, fullHeight);
+			}
+		}
+
+		// paging accordion
+		accPaging.style.maxHeight = accPaging.scrollHeight / parseFloat(window.getComputedStyle(accPaging, null).fontSize) + "em";
+		accPaging.style.minHeight = accPaging.style.maxHeight;
+		accPaging.classList.remove("accordion-closed");
+		accPaging.setAttribute("aria-hidden", "false");
+
+		// for responsive web
+		window.addEventListener("resize", resetMaxHeight.bind(this), null);
+		
+		// WAI-ARIA
+		this.querySelector("button.answer-detail").setAttribute("aria-expanded", "true");
+		accAnswerList[0].closest("blockquote").setAttribute("tabindex", -1);
+		accAnswerList[0].closest("blockquote").focus();
+	}
+
+
+})(document.querySelectorAll("article.answer-type"));
