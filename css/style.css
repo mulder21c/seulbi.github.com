@@ -496,6 +496,7 @@ body{
 }
 .answer-slide-item > blockquote{
   min-height:0;
+  margin:10px;
   -webkit-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99), min-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
   -moz-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99), min-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
   -ms-transition:max-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99), min-height .6s cubic-bezier(0.67, 0.29, 0.63, 0.99);
@@ -537,6 +538,9 @@ body{
 	padding:0;
 	border:0;
 	font:inherit;
+}
+.accordion-answer-paging{
+	margin-bottom:1.5em;
 }
 /* 답변 내용안에 <span> 등의 요소로 마크업 한 경우 - 자동 줄바꿈 효과 */
 .answer > * {

@@ -1,5 +1,9 @@
 "use strict";
 
+/*! modernizr 3.4.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-csstransitions !*/
+!function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,i,s,l;for(var a in g)if(g.hasOwnProperty(a)){if(e=[],n=g[a],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)s=e[i],l=s.split("."),1===l.length?Modernizr[l[0]]=o:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=o),S.push((o?"":"no-")+l.join("-"))}}function i(e,n){return!!~(""+e).indexOf(n)}function s(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function l(e,n){return function(){return e.apply(n,arguments)}}function a(e,n,t){var o;for(var i in e)if(e[i]in n)return t===!1?e[i]:(o=n[e[i]],r(o,"function")?l(o,t||n):o);return!1}function u(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function f(n,t,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,n,t);var i=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(i){var s=i.error?"error":"log";i[s].call(i,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!t&&n.currentStyle&&n.currentStyle[r];return o}function d(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):P?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function p(){var e=n.body;return e||(e=d(P?"svg":"body"),e.fake=!0),e}function c(e,t,r,o){var i,s,l,a,u="modernizr",f=d("div"),c=p();if(parseInt(r,10))for(;r--;)l=d("div"),l.id=o?o[r]:u+(r+1),f.appendChild(l);return i=d("style"),i.type="text/css",i.id="s"+u,(c.fake?c:f).appendChild(i),c.appendChild(f),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),f.id=u,c.fake&&(c.style.background="",c.style.overflow="hidden",a=z.style.overflow,z.style.overflow="hidden",z.appendChild(c)),s=t(f,e),c.fake?(c.parentNode.removeChild(c),z.style.overflow=a,z.offsetHeight):f.parentNode.removeChild(f),!!s}function m(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(u(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+u(n[o])+":"+r+")");return i=i.join(" or "),c("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==f(e,null,"position")})}return t}function y(e,n,o,l){function a(){f&&(delete E.style,delete E.modElem)}if(l=r(l,"undefined")?!1:l,!r(o,"undefined")){var u=m(e,o);if(!r(u,"undefined"))return u}for(var f,p,c,y,h,v=["modernizr","tspan","samp"];!E.style&&v.length;)f=!0,E.modElem=d(v.shift()),E.style=E.modElem.style;for(c=e.length,p=0;c>p;p++)if(y=e[p],h=E.style[y],i(y,"-")&&(y=s(y)),E.style[y]!==t){if(l||r(o,"undefined"))return a(),"pfx"==n?y:!0;try{E.style[y]=o}catch(g){}if(E.style[y]!=h)return a(),"pfx"==n?y:!0}return a(),!1}function h(e,n,t,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+_.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?y(l,n,o,i):(l=(e+" "+x.join(s+" ")+s).split(" "),a(l,n,t))}function v(e,n,r){return h(e,t,t,n,r)}var g=[],C={_version:"3.4.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){g.push({name:e,fn:n,options:t})},addAsyncTest:function(e){g.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=C,Modernizr=new Modernizr;var S=[],w="Moz O ms Webkit",_=C._config.usePrefixes?w.split(" "):[];C._cssomPrefixes=_;var x=C._config.usePrefixes?w.toLowerCase().split(" "):[];C._domPrefixes=x;var z=n.documentElement,P="svg"===z.nodeName.toLowerCase(),b={elem:d("modernizr")};Modernizr._q.push(function(){delete b.elem});var E={style:b.elem.style};Modernizr._q.unshift(function(){delete E.style}),C.testAllProps=h,C.testAllProps=v,Modernizr.addTest("csstransitions",v("transition","all",!0)),o(),delete C.addTest,delete C.addAsyncTest;for(var T=0;T<Modernizr._q.length;T++)Modernizr._q[T]();e.Modernizr=Modernizr}(window,document);
+
 /**
  * ClassList polyfill
  */
@@ -134,7 +138,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 					txtFiled.focus();
 				}
 				break;
-			case 27 : 
+			case 27 :
 				closeDialog();
 				break;
 		}
@@ -155,12 +159,12 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			clsDlgBtn = dialog.querySelector(".search-btn-reset"),
 			siblingElems = Array.prototype.filter.call(dialog.parentNode.children, function(child){return child !== dialog;});
 
-		// add event handler for locking focus navigating in dialog 
+		// add event handler for locking focus navigating in dialog
 		dialog.addEventListener("keydown", focusLock, false);
 		// add event handler for closing dialog
 		clsDlgBtn.addEventListener("click", closeDialog, false);
 
-		// apply WAI-ARIA 
+		// apply WAI-ARIA
 		openDlgBtn.setAttribute("aria-expanded", "true");
 		dialog.setAttribute("aria-hidden", "false");
 		for(var i = -1, item = null; item = siblingElems[++i];){
@@ -208,7 +212,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 })();
 
 /**
- * go top button 
+ * go top button
  */
 (function(){
 	var topBtn = document.querySelector(".go-top");
@@ -220,7 +224,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	 * @param {number} start
 	 * @param {number} change
 	 * @param {number} duration
-	 */ 
+	 */
 	function easeInOut(currTime, start, change, duration) {
 		currTime /= duration / 2;
 		if(currTime < 1){
@@ -232,19 +236,19 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 
 	/**
 	 * @function scrollTo
-	 * @param {object} element 
-	 * @param {number} to 
-	 * @param {number} duration 
-	 */ 
+	 * @param {object} element
+	 * @param {number} to
+	 * @param {number} duration
+	 */
 	function scrollTo(element, to, duration){
 		var start = element.scrollTop,
 			change = to - start,
 			increment = 20;
 
-		var animateScroll = function(elapsedTime) {        
+		var animateScroll = function(elapsedTime) {
 			elapsedTime += increment;
-			var position = easeInOut(elapsedTime, start, change, duration);                        
-			element.scrollTop = position; 
+			var position = easeInOut(elapsedTime, start, change, duration);
+			element.scrollTop = position;
 			if (elapsedTime < duration) {
 				setTimeout(function() {
 					animateScroll(elapsedTime);
@@ -257,7 +261,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	topBtn.addEventListener("click", function(event){
 		event = event || window.event;
 		event.preventDefault ? event.preventDefault() : event.returnValue = false;
-		scrollTo(document.body, 0, 500); 
+		scrollTo(document.body, 0, 500);
 	}, false);
 })();
 
@@ -324,7 +328,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 
 	for(var i = -1, item = null, counter = null, docFrag = null; item = nodeList[++i];){
 		tempStorage.setItem(item.getAttribute("id") + "-maxlength", item.getAttribute("maxlength"));
-	
+
 		updateIndicator.call(item, 0);
 		item.addEventListener("keyup", limitCharLen, false);
 		item.addEventListener("paste", limitCharLen, false);
@@ -332,85 +336,182 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	}
 })(document.querySelectorAll("input[maxlength], textarea[maxlength]"));
 
-/**
- * answer view accordion
- */
-(function(nodeList){
-	if(nodeList.length < 1) return;
 
-	var tm = null;
-
-	for(var i = -1, article = null, detailBtn = null; article = nodeList[++i];){
-		if( detailBtn = article.querySelector(".answer-detail") ){
-			detailBtn.setAttribute("aria-expanded", "false");
-			detailBtn.addEventListener("click", setMaxHeight.bind(article), null);
-		}
-		for(var j = -1, answer = null, answerList = article.querySelectorAll(".accordion-closed"); answer = answerList[++j];){
-			console.log(answer)
-			answer.setAttribute("aria-hidden", "true");
-		}
-	}
+(function(win){
+	win = win || window;
 
 	/**
-	 * determining and setting min-height for accordion
-	 * @function setMinHeight
+	 * @class AnswerAccordion
 	 */
-	function getMaxHeight(elem, limit){
-		var cs = elem.querySelector("p") ? window.getComputedStyle(elem.querySelector("p"), null) : window.getComputedStyle(elem, null);
-		return elem.classList.contains("accordion-answer") === true ? 
-				(((parseInt(cs.fontSize) * limit / parseInt(cs.width) + 3 ) * parseInt(cs.lineHeight)) / parseInt(cs.fontSize)) + "em" // accordion answer
-				: (((parseInt(cs.fontSize) * limit / parseInt(cs.width) ) * parseInt(cs.lineHeight) + parseInt(cs.marginTop) + parseInt(cs.marginBottom)) / parseInt(cs.fontSize)) + "em" // answer heading
-	}
+	var AnswerAccordion = function AnswerAccordion(node){
+		if( !node ) return;
+		this.article = node;
+		this.answers = node.querySelectorAll(".accordion-answer.accordion-closed");
+		this.paging = node.querySelector(".accordion-answer-paging.accordion-closed");
+		this.detailBtn = node.querySelector(".answer-detail");
+		this.tm = null;
+		this.initialize();
+	};
 
-	function setLastState(h){
-		var qoute = this.closest("blockquote");
-		qoute.style.minHeight = h + "em";
-	}
-
-	function resetMaxHeight(event){
-		clearTimeout(tm);
-		tm = setTimeout( setMaxHeight.bind(this), 100 );
-	}
-
-	function setMaxHeight(){
-		var accAnswerList = this.querySelectorAll(".answer-slide-item [class*=\"accordion-\"]"),
-			accPaging = this.querySelector(".accordion-answer-paging"),
-			accAnsMaxHeight = 0,
-			fullHeight = 0;
-		if(accAnswerList.length < 0) return;
-		
-		// answer accordion
-		for(var i = -1, accAnswer = null, headingStyle; accAnswer = accAnswerList[++i];){
-			if( i === 0 ){
-				accAnsMaxHeight = getMaxHeight(accAnswer, 150);
-				fullHeight = parseFloat(accAnsMaxHeight) + parseFloat(getMaxHeight(accAnswer.previousElementSibling, 50));
+	/**
+	 * This provides methods used for handling.
+	 * @mixin
+	 */
+	var methods = {
+		/**
+		 * determining and setting min-height for accordion
+		 * @param {string} type 
+		 */
+		getMaxHeight : function(type){
+			//var cs = elem.querySelector("p") ? window.getComputedStyle(elem.querySelector("p"), null) : window.getComputedStyle(elem, null);
+			var ref = null,
+				height = 0;
+			switch(type){
+				case "answer" :
+					ref = window.getComputedStyle(this.article.querySelector("blockquote"), null);
+					height = ( ((parseFloat(ref.fontSize) * 150 / parseFloat(ref.width) + 4 ) * parseFloat(ref.lineHeight) + parseFloat(ref.marginTop) + parseFloat(ref.marginBottom) ) / parseFloat(ref.fontSize) ) + "em"
+					break;
+				case "heading" :
+					ref = window.getComputedStyle(this.article.querySelector("blockquote p.answer:first-child"), null);
+					height = (((parseFloat(ref.fontSize) * (50 + 2) / parseFloat(ref.width) ) * parseFloat(ref.lineHeight) + parseFloat(ref.marginTop) + parseFloat(ref.marginBottom)) / parseFloat(ref.fontSize)) + "em"
+					break;
 			}
-			accAnswer.style.maxHeight = accAnsMaxHeight; // maximum width in 320px device 
-			accAnswer.classList.remove("accordion-closed");
-			accAnswer.setAttribute("aria-hidden", "false");
-			if(accAnswer.classList.contains("accordion-closed") && Modernizr.csstransitions){
-				accAnswer.addEventListener("transitionend", setLastState.bind(accAnswer, fullHeight), false);
-				accAnswer.addEventListener("webkitTransitionend", setLastState.bind(accAnswer, fullHeight), false);
-				accAnswer.addEventListener("OTransitionEnd", setLastState.bind(accAnswer, fullHeight), false);
-			}else{
-				setLastState.call(accAnswer, fullHeight);
+			return height;
+		},
+		/**
+		 * callback for transition
+		 */
+		adjustWholeHeight : function(){
+			this.setAttribute("aria-hidden", "false");
+			this.setAttribute("tabindex", -1);
+			this.style.overflow = "visible";
+			this.removeEventListener("transitionend", methods.adjustWholeHeight, false);
+			this.removeEventListener("webkitTransitionend", methods.adjustWholeHeight, false);
+			this.removeEventListener("OTransitionEnd", methods.adjustWholeHeight, false);
+			this.focus();
+		},
+		/**
+		 * re-setting max height
+		 */
+		resetMaxHeight : function(){
+			clearTimeout(this.tm);
+			this.tm = setTimeout( methods.setMaxHeight.bind(this), 100 );
+		},
+		/**
+		 * re-setting max height
+		 */
+		setMaxHeight : function(){
+			var accordion = this.article.querySelector(".answer-slide-item [class*=\"accordion-\"]"),
+				maxHeight = methods.getMaxHeight.call(this,'answer'),
+				fullHeight = parseFloat(maxHeight) + parseFloat(methods.getMaxHeight.call(this,'heading'));
+			accordion.style.maxHeight = maxHeight;
+			accordion.style.minHeight = maxHeight;
+			accordion.closest("blockquote").style.minHeight = fullHeight + "em";
+
+			this.paging.removeAttribute("style");
+		},
+		/**
+		 * open accordion
+		 */
+		openAccordion : function(){
+			var accordions = this.article.querySelectorAll(".answer-slide-item [class*=\"accordion-\"]"),
+				maxHeight = 0;
+			if(accordions.length < 0) return;
+
+			// answer accordion
+			for(var i = -1, item = null, maxHeight = 0, fullHeight = 0 ;item = accordions[++i];){
+				if( i === 0 ){
+					maxHeight = methods.getMaxHeight.call(this,'answer');
+					fullHeight = parseFloat(maxHeight) + parseFloat(methods.getMaxHeight.call(this,'heading'));
+					item.closest("blockquote").style.minHeight = fullHeight + "em";
+
+					if(item.classList.contains("accordion-closed") && Modernizr.csstransitions){
+						item.addEventListener("transitionend", methods.adjustWholeHeight, false);
+						item.addEventListener("webkitTransitionend", methods.adjustWholeHeight, false);
+						item.addEventListener("OTransitionEnd", methods.adjustWholeHeight, false);
+					}else{
+						methods.adjustWholeHeight.bind(item);
+					}
+				}
+				item.style.maxHeight = maxHeight;
+				item.style.minHeight = maxHeight;
+				item.classList.remove("accordion-closed");
+			}
+
+			// paging accordion
+			if( this.paging !== null){
+				this.paging.style.maxHeight = this.paging.scrollHeight / parseFloat(window.getComputedStyle(this.paging, null).fontSize) + "em";
+				this.paging.style.minHeight = this.paging.style.maxHeight;
+				this.paging.classList.remove("accordion-closed");
+				this.paging.setAttribute("aria-hidden", "false");
+			}
+			
+			this.resizeCallback = methods.resetMaxHeight.bind(this);
+			window.addEventListener("resize", this.resizeCallback, null);
+
+			// WAI-ARIA
+			this.detailBtn.setAttribute("aria-expanded", "true");
+			accordions[0].closest("blockquote").focus();
+			
+			this.detailBtn.querySelector("span").textContent = "상세닫기";
+			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
+			this.detailBtnCallback = methods.closeAccordion.bind(this);
+			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+		},
+		/**
+		 * close accordion
+		 */
+		closeAccordion : function(){
+			var accordions = this.article.querySelectorAll(".answer-slide-item [class*=\"accordion-\"]"),
+				maxHeight = 0;
+			if(accordions.length < 0) return;
+
+			for(var i = -1, item = null, blockquote = null;item = accordions[++i];){
+				item.removeAttribute("style");
+				item.removeAttribute("tabindex");
+				item.setAttribute("aria-hidden", "true");
+				item.classList.add("accordion-closed");
+
+				blockquote = item.closest("blockquote");
+				blockquote.removeAttribute("style");
+			}
+
+			// paging accordion
+			if( this.paging !== null){
+				this.paging.removeAttribute("style");
+				this.paging.setAttribute("aria-hidden", "true");
+				this.paging.classList.add("accordion-closed");
+			}
+
+			window.removeEventListener("resize", this.resizeCallback, null);
+			this.resizeCallback = null;
+
+			this.detailBtn.setAttribute("aria-expanded", "false");
+			this.detailBtn.querySelector("span").textContent = "답변 상세보기";
+			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
+			this.detailBtnCallback = methods.openAccordion.bind(this);
+			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+		}
+	};
+
+	AnswerAccordion.prototype = {
+		initialize : function(){
+			if( this.detailBtn !== null){
+				this.detailBtn.setAttribute("aria-expanded", "false");
+				this.detailBtnCallback = methods.openAccordion.bind(this);
+				this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+			}
+			for(var i = -1, item = null; item = this.answers[++i];){
+				item.setAttribute("aria-hidden", "true");
+			}
+			if( this.paging !== null ){
+				this.paging.setAttribute("aria-hidden", "true");
 			}
 		}
+	};
 
-		// paging accordion
-		accPaging.style.maxHeight = accPaging.scrollHeight / parseFloat(window.getComputedStyle(accPaging, null).fontSize) + "em";
-		accPaging.style.minHeight = accPaging.style.maxHeight;
-		accPaging.classList.remove("accordion-closed");
-		accPaging.setAttribute("aria-hidden", "false");
-
-		// for responsive web
-		window.addEventListener("resize", resetMaxHeight.bind(this), null);
-		
-		// WAI-ARIA
-		this.querySelector("button.answer-detail").setAttribute("aria-expanded", "true");
-		accAnswerList[0].closest("blockquote").setAttribute("tabindex", -1);
-		accAnswerList[0].closest("blockquote").focus();
+	//win.AnswerAccordion = AnswerAccordion;
+	for(var i = -1, item = null, articles = document.querySelectorAll("article.answer-type"); item = articles[++i];){
+		new AnswerAccordion(item);
 	}
-
-
-})(document.querySelectorAll("article.answer-type"));
+})(window);
