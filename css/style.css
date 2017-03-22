@@ -641,6 +641,42 @@ body{
   color: #ccc;
   border-radius: 0.5em;
 }
+/* 탭 스타일 - 마이페이지 */
+.tab-list::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.tab-list li{
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1em;
+  border: 1px solid #aaa;
+  border-bottom-color: #fff;
+  background-color: #fff;
+}
+.tab-list li:first-child{
+  border-right: 0;
+}
+.tab-contents section{
+  margin-top: 0;
+  border-top: 0;
+  display: none;
+}
+.tab-active{
+  background-color: #eee !important;
+}
+.tab-content-active{
+  display: block !important;
+}
+.lately-date, .old-date{
+  color: #9b54ca;
+  display: inline-block;
+  width: 5em;
+}
 /* 맨위로 이동 링크 */
 .go-top{
   position: absolute;

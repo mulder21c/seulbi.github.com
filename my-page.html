@@ -67,20 +67,42 @@
       <!-- 메뉴 끝 -->
       <!-- 메인 콘텐츠 시작 -->
       <main id="main" class="main-content">
-        <!-- 마이 페이지 로그인 후 보여질 콘텐츠 시작 -->
-        <section class="text-type">
-          <h2 class="headline-background">
-            <a href="/">당신을 위해 준비한 질문들</a>
-          </h2>
-          <ul class="list-border">
-            <li><a href="/">최저 임금을 올릴 계획이 있는가?</a></li>
-            <li><a href="/">공기업 채용을 늘릴 생각이 있는가?</a></li>
-            <li><a href="/">정치 혐오증이 생기고 있다. 대안은?</a></li>
-            <li><a href="/">믿을 만한 후보는 누구인가?</a></li>
-            <li><a href="/">외교와 국방에 대한 대책이 궁금하다.</a></li>
-          </ul>
-        </section> 
-        <!-- 마이 페이지 로그인 후 보여질 콘텐츠 끝 -->   
+        <!-- 마이 페이지 로그인 후 보여질 탭 시작 -->
+        <div class="tab-interface">
+          <ul class="tab-list" role="tablist">
+						<li id="tab1" role="tab" aria-controls="section1" aria-selected="true" tabindex="0">당신이 본 질문들</li>
+						<li class="tab-active" id="tab2" role="tab" aria-controls="section2" aria-selected="false" tabindex="0">알림</li>	
+					</ul>
+        </div>
+        <!-- 마이 페이지 로그인 후 보여질 탭 끝 --> 
+        <!-- 마이 페이지 로그인 후 보여질 탭 콘텐츠 시작 --> 
+        <div class="tab-contents">
+          <section class="text-type" id="section1" role="tabpanel" aria-labelledby="tab1">
+            <h2 class="a11y-hidden">
+              <a href="/">당신이 본 질문들</a>
+            </h2>
+            <ul class="list-border">
+              <li><a href="/">최저 임금을 올릴 계획이 있는가?</a></li>
+              <li><a href="/">공기업 채용을 늘릴 생각이 있는가?</a></li>
+              <li><a href="/">정치 혐오증이 생기고 있다. 대안은?</a></li>
+              <li><a href="/">믿을 만한 후보는 누구인가?</a></li>
+              <li><a href="/">외교와 국방에 대한 대책이 궁금하다.</a></li>
+            </ul>
+          </section>
+          <section class="text-type tab-content-active" id="section2" role="tabpanel" aria-labelledby="tab1">
+            <h2 class="a11y-hidden">
+              <a href="/">알림</a>
+            </h2>
+            <ul class="list-border">
+              <li><a href="/"><time datetime="2017-03-16" class="lately-date">3 분전</time> <span>작성한 질문에 새로운 답변이 추가됐습니다.</span></a></li>
+              <li><a href="/"><time datetime="2017-03-16" class="lately-date">42 분전</time> <span>댓글에 대한 새로운 댓글이 달렸습니다.</span></a></li>
+              <li><a href="/"><time datetime="2017-03-16" class="lately-date">1 시간전</time> <span>작성한 질문에 새로운 댓글이 달렸습니다.</span></a></li>
+              <li><a href="/"><time datetime="2017-03-16" class="lately-date">6 일전</time> <span>다른 사용자의 답변이 추가됐습니다.</span></a></li>
+              <li><a href="/"><time datetime="2017-03-06" class="old-date">오래 전</time> <span>작성한 질문에 새로운 댓글이 달렸습니다.</span></a></li>
+            </ul>
+          </section>
+        </div> 
+        <!-- 마이 페이지 로그인 후 보여질 탭 콘텐츠 끝 -->   
       </main>  
       <!-- 푸터 시작 -->
       <!-- 푸터 영역은 화면에 보이지 않도록 처리 -->
@@ -95,6 +117,7 @@
     <!-- 맨 위로 이동 링크 끝--> 
     <!-- 검색 영역 활성화를 위한 자바스크립트 시작 -->
     <script src="js/common.js"></script>
-    <!-- 검색 영역 활성화를 위한 자바스크립트 끝 -->     
+    <!-- 검색 영역 활성화를 위한 자바스크립트 끝 -->
+
   </body>
 </html>
