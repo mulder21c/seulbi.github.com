@@ -336,12 +336,16 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	}
 })(document.querySelectorAll("input[maxlength], textarea[maxlength]"));
 
-
+/**
+ * accordion UI
+ */
 (function(win){
 	win = win || window;
 
 	/**
 	 * @class AnswerAccordion
+	 * @mixes methods
+	 * @param {object} node the element that used to applied answerAccordion
 	 */
 	var AnswerAccordion = function AnswerAccordion(node){
 		if( !node ) return;
@@ -360,7 +364,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	var methods = {
 		/**
 		 * determining and setting min-height for accordion
-		 * @param {string} type 
+		 * @param {string} type answer|heading
 		 */
 		getMaxHeight : function(type){
 			//var cs = elem.querySelector("p") ? window.getComputedStyle(elem.querySelector("p"), null) : window.getComputedStyle(elem, null);
@@ -388,17 +392,16 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.removeEventListener("transitionend", methods.adjustWholeHeight, false);
 			this.removeEventListener("webkitTransitionend", methods.adjustWholeHeight, false);
 			this.removeEventListener("OTransitionEnd", methods.adjustWholeHeight, false);
-			this.focus();
 		},
 		/**
-		 * re-setting max height
+		 * re-setting max height for resizing window
 		 */
 		resetMaxHeight : function(){
 			clearTimeout(this.tm);
 			this.tm = setTimeout( methods.setMaxHeight.bind(this), 100 );
 		},
 		/**
-		 * re-setting max height
+		 * sett max height to accordion-related element
 		 */
 		setMaxHeight : function(){
 			var accordion = this.article.querySelector(".answer-slide-item [class*=\"accordion-\"]"),
@@ -457,6 +460,16 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
 			this.detailBtnCallback = methods.closeAccordion.bind(this);
 			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+			this.bindKey = methods.bindKey.bind(this);
+			this.detailBtn.addEventListener("keydown", this.bindKey, null);
+			setTimeout((function(){
+				this.alertElem.textContent = "탭키를 눌러 상세 내용으로 초점 이동";
+				setTimeout((function(){
+					this.alertElem.textContent = "";
+				}).bind(this), 3000);
+			}).bind(this), 1500);
+
+			new AnswerSlide(this.article);
 		},
 		/**
 		 * close accordion
@@ -489,17 +502,35 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.detailBtn.setAttribute("aria-expanded", "false");
 			this.detailBtn.querySelector("span").textContent = "답변 상세보기";
 			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
+			
 			this.detailBtnCallback = methods.openAccordion.bind(this);
+			this.detailBtn.removeEventListener("keydown", this.bindKey, null);
 			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+		},
+		bindKey : function(event){
+			event = event || window.event;
+			var keycode = event.keyCode || event.which;
+			if( !event.shiftKey && keycode === 9){
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				this.article.querySelector("[class*=accordion-answer][aria-hidden=false]").focus();
+			}
 		}
 	};
 
 	AnswerAccordion.prototype = {
 		initialize : function(){
+			var docFrag = null;
 			if( this.detailBtn !== null){
 				this.detailBtn.setAttribute("aria-expanded", "false");
 				this.detailBtnCallback = methods.openAccordion.bind(this);
 				this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+
+				docFrag = document.createDocumentFragment();				
+				this.alertElem = document.createElement("span");
+				this.alertElem.setAttribute("role", "alert");
+				this.alertElem.classList.add("a11y-hidden");
+				docFrag.append(this.alertElem);
+				this.detailBtn.parentNode.insertBefore(docFrag, this.detailBtn.nextSibling);
 			}
 			for(var i = -1, item = null; item = this.answers[++i];){
 				item.setAttribute("aria-hidden", "true");
@@ -514,4 +545,110 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	for(var i = -1, item = null, articles = document.querySelectorAll("article.answer-type"); item = articles[++i];){
 		new AnswerAccordion(item);
 	}
+})(window);
+
+/**
+ * carousel UI
+ */
+(function(win){
+	win = win || window;
+
+	/**
+	 * @class AnswerSlide
+	 * @mixes methods
+	 * @param {object} node the element that used to applied answerAccordion
+	 */
+	var AnswerSlide = function AnswerSlide(node){
+		this.wrapper = node.querySelector(".answer-slide-wrap");
+		this.slideDeck = node.querySelector(".answer-slide-deck");
+		this.slide = this.slideDeck.querySelectorAll(".answer-slide-item");
+		this.prefix = "nu9-";
+		this.currSlide = null;
+		this.currIdx = 0;
+		this.timer = 0;
+		this.prevBtn = node.querySelector(".accordion-answer-paging .btn-prev");
+		this.nextBtn = node.querySelector(".accordion-answer-paging .btn-next");
+		this.pager = node.querySelector(".accordion-answer-paging .btn-answer span:first-child");
+		this.initialize();
+	}
+
+	var methods = {
+		animateCallback : function(){
+			this.slideDeck.removeEventListener("transitionend", methods.animateCallback, false);
+			this.slideDeck.removeEventListener("webkitTransitionend", methods.animateCallback, false);
+			this.slideDeck.removeEventListener("OTransitionEnd", methods.animateCallback, false);			
+			this.slideDeck.classList.remove("animate");
+			this.slideDeck.style.transform = "";
+			this.currSlide.style.display = "none";
+			this.currSlide = this.slide[this.currIdx];
+			this.pager.innerHTML = "<span class=\"current\">" + (this.currIdx + 1) + "</span> / " + this.slide.length + "<span class=\"accessibile-hidden\">페이지</span>" ;
+		},
+		prevSlide : function(){
+			if( new Date() - this.timer < 1000 ) return;
+			this.timer = new Date();
+			if( this.currIdx == 0 ) return;
+			--this.currIdx;
+			if(Modernizr.csstransitions){
+				methods.animateCallback = methods.animateCallback.bind(this);
+				this.slideDeck.addEventListener("transitionend", methods.animateCallback, false);
+				this.slideDeck.addEventListener("webkitTransitionend", methods.animateCallback, false);
+				this.slideDeck.addEventListener("OTransitionEnd", methods.animateCallback, false);
+			}else{
+				methods.animateCallback();
+			}
+			this.slide[this.currIdx].style.display = "block";
+			this.slideDeck.style.transform = "translateX(-50%)";
+			setTimeout( (function(){
+				this.slideDeck.classList.add("animate");
+				this.slideDeck.style.transform = "translateX(0)";
+			}).bind(this), 10);
+		},
+		nextSlide : function(){
+			if( new Date() - this.timer < 1000 ) return;
+			this.timer = new Date();
+			if( this.currIdx == this.slide.length - 1 ) return;
+			++this.currIdx;
+			this.slideDeck.classList.add("animate");
+			if(Modernizr.csstransitions){
+				methods.animateCallback = methods.animateCallback.bind(this);
+				this.slideDeck.addEventListener("transitionend", methods.animateCallback, false);
+				this.slideDeck.addEventListener("webkitTransitionend", methods.animateCallback, false);
+				this.slideDeck.addEventListener("OTransitionEnd", methods.animateCallback, false);
+			}else{
+				methods.animateCallback();
+			}
+			this.slide[this.currIdx].style.display = "block";
+			this.slideDeck.style.transform = "translateX(-50%)";
+		}
+	};
+
+	AnswerSlide.prototype = {
+		initialize : function(){
+			var heading = this.wrapper.closest("article").querySelector("h3"),
+				label = heading.getAttribute("id");
+			heading = null;
+			if( !label ){
+				label = this.prefix + new Date().getTime();
+				this.wrapper.closest("article").querySelector("h3").setAttribute("id", label);
+			}
+			this.wrapper.setAttribute("role", "region");
+			this.wrapper.setAttribute("aria-labelledby", label);
+			this.currSlide = this.slide[0];
+
+			for(var i = -1, item = null, answer = null; item = this.slide[++i];){
+				if( !(answer = item.querySelector(".accordion-answer")) ) continue;
+				answer.setAttribute("aria-hidden", "false");
+				answer.setAttribute("tabindex", -1);
+				answer.style.overflow = "visible";
+			}
+
+			this.nextBtn.addEventListener("click", methods.nextSlide.bind(this), false);
+			this.prevBtn.addEventListener("click", methods.prevSlide.bind(this), false);
+
+			this.pager.setAttribute("aria-live", "polite")
+			this.pager.setAttribute("aria-relevant", "all")
+		}
+	};
+
+	win.AnswerSlide = AnswerSlide;
 })(window);

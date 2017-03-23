@@ -468,6 +468,7 @@ body{
   float: left;
   margin: 0 0.5em 0 0;
   text-align: center;
+  z-index:10;
 }
 .profile-float > *{
   padding: 0.3em;
@@ -477,12 +478,19 @@ body{
   overflow:hidden
 }
 .answer-slide-deck{
-  width:1000%
+  width:200%;
+}
+.answer-slide-deck.animate{
+  -webkit-transition:transform .7s;
+  -moz-transition:transform .7s;
+  -ms-transition:transform .7s;
+  -o-transition:transform .7s;
+  transition:transform .7s;
 }
 .answer-slide-item{
   display:none;
   float:left;
-  width:10%
+  width:50%
 }
 .answer-slide-item:first-child{
 	display:block
