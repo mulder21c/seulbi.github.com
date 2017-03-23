@@ -632,14 +632,20 @@ body{
 /* 더보기 버튼 */
 .btn-more{
   position: absolute;
+  width: 2em;
+  height: 2em;
   bottom: 0.4em;
-  padding: 0.2em 3em;
+  padding: 0;
+  cursor: pointer;
   left: 50%;
   margin-left: -3.5em;
   border: 1px solid #ccc;
+  border-radius: 50%;
   background-color: #fff;
   color: #ccc;
-  border-radius: 0.5em;
+  background: url(icons/more.png) no-repeat 0 0 / 100% 100%;
+  overflow: hidden;
+  text-indent: 2em;
 }
 /* 탭 스타일 - 마이페이지 */
 .tab-list::after{
