@@ -751,14 +751,69 @@ body{
 /* 더보기 버튼 */
 .btn-more{
   position: absolute;
+  width: 2em;
+  height: 2em;
   bottom: 0.4em;
-  padding: 0.2em 3em;
+  padding: 0;
+  cursor: pointer;
   left: 50%;
-  margin-left: -3.5em;
+  margin-left: -1em;
   border: 1px solid #ccc;
-  background-color: #fff;
+  border-radius: 50%;
+  background-color: #999;
   color: #ccc;
-  border-radius: 0.5em;
+  background: url(icons/more.png) no-repeat 0 0 / 100% 100%;
+  overflow: hidden;
+  text-indent: 2em;
+}
+/* 탭 스타일 - 마이페이지 */
+.tab-list::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.tab-list li{
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 1em;
+  border: 1px solid #aaa;
+  border-bottom-color: #fff;
+  background-color: #fff;
+}
+.tab-list li:first-child{
+  border-right: 0;
+}
+.tab-contents section{
+  margin-top: 0;
+  border-top: 0;
+  display: none;
+}
+.tab-active{
+  background-color: #eee !important;
+}
+.tab-content-active{
+  display: block !important;
+}
+.lately-date, .old-date{
+  color: #9b54ca;
+  display: inline-block;
+  width: 5em;
+}
+/* 개인정보 보호정책 */
+.rule h1, .rule h2, .rule h3, .rule ul, .rule ol, .rule p{
+  margin: 1em;
+}
+.rule ol{
+  padding-left: 2em;
+}
+.rule ul, .rule p{
+ padding-left: 1em;
+}
+.rule li, .rule p{
+  line-height: 1.5;
 }
 /* 맨위로 이동 링크 */
 .go-top{
