@@ -638,10 +638,10 @@ body{
   padding: 0;
   cursor: pointer;
   left: 50%;
-  margin-left: -3.5em;
+  margin-left: -1em;
   border: 1px solid #ccc;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #999;
   color: #ccc;
   background: url(icons/more.png) no-repeat 0 0 / 100% 100%;
   overflow: hidden;
