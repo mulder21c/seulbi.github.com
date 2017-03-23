@@ -683,6 +683,19 @@ body{
   display: inline-block;
   width: 5em;
 }
+/* 개인정보 보호정책 */
+.rule h1, .rule h2, .rule h3, .rule ul, .rule ol, .rule p{
+  margin: 1em;
+}
+.rule ol{
+  padding-left: 2em;
+}
+.rule ul, .rule p{
+ padding-left: 1em;
+}
+.rule li, .rule p{
+  line-height: 1.5;
+}
 /* 맨위로 이동 링크 */
 .go-top{
   position: absolute;
