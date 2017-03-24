@@ -58,7 +58,7 @@ img {
   height: auto;
 }
 /* 숨김 콘텐츠 */
-.accessibile-hidden{	
+.accessible-hidden{	
 	overflow: hidden;
 	display:inline-block;
 	clip: rect(0 0 0 0);
@@ -89,8 +89,13 @@ img {
   height: auto;
   margin: 0;
 }
+html, body{
+	height:100%;
+}
 /* body 요소의 기본 스타일*/
 body{
+  display:table;
+  width:100%;
   font-size: 0.875em;
   font-weight: 300;
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
@@ -154,6 +159,10 @@ body{
 }
 /* ============ 아이콘 배경 이미지 공통 끝 ============ */
 /* ============ 레이아웃 공통 (헤더, 메뉴, 메인콘텐츠, 푸터) 시작 ============ */
+.wrapper{
+	display:table-row;
+	height:100%;
+}
 /* 헤더 시작 */
 .header{
   padding: 1em;
@@ -740,13 +749,35 @@ body{
 }
 /* 메인 콘텐츠 끝 */
 /* 푸터 시작 */
+.layout-footer{
+	display:table-row;
+	height:1;
+}
 .footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: relative;
   width: 100%;
   height: 3em;
   background-color: #fff;
+}
+.footer .util-menu{
+  position:absolute;
+  line-height:2em;
+  bottom:0.5em;
+}
+.footer .util-menu ul{
+  list-style-type:none;
+  padding:0 1.5em;
+}
+.footer .util-menu li{
+	float:left;
+}
+.footer .util-menu li:before{
+  content:" | ";
+  display:inline-block;
+  margin:0 1em;
+}
+.footer .util-menu li:first-child:before{
+  content:none
 }
 /* 더보기 버튼 */
 .btn-more{

@@ -581,7 +581,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.slideDeck.style.transform = "";
 			this.currSlide.style.display = "none";
 			this.currSlide = this.slide[this.currIdx];
-			this.pager.innerHTML = "<span class=\"current\">" + (this.currIdx + 1) + "</span> / " + this.slide.length + "<span class=\"accessibile-hidden\">페이지</span>" ;
+			this.pager.innerHTML = "<span class=\"current\">" + (this.currIdx + 1) + "</span> / " + this.slide.length + "<span class=\"accessible-hidden\">페이지</span>" ;
 		},
 		prevSlide : function(){
 			if( new Date() - this.timer < 1000 ) return;
