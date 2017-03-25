@@ -798,7 +798,7 @@ body{
   text-indent: 2em;
 }
 /* 탭 스타일 - 마이페이지 */
-.tab-list::after{
+.tab-list:after{
   content: "";
   display: block;
   clear: both;

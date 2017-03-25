@@ -507,6 +507,9 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.detailBtn.removeEventListener("keydown", this.bindKey, null);
 			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
 		},
+		/**
+		 * event bind for tab keyboard navigating
+		 */
 		bindKey : function(event){
 			event = event || window.event;
 			var keycode = event.keyCode || event.which;
@@ -570,9 +573,16 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 		this.nextBtn = node.querySelector(".accordion-answer-paging .btn-next");
 		this.pager = node.querySelector(".accordion-answer-paging .btn-answer span:first-child");
 		this.initialize();
-	}
+	};
 
+	/**
+	 * This provides methods used for handling.
+	 * @mixin
+	 */
 	var methods = {
+		/**
+		 * callback after run animation
+		 */
 		animateCallback : function(){
 			this.slideDeck.removeEventListener("transitionend", methods.animateCallback, false);
 			this.slideDeck.removeEventListener("webkitTransitionend", methods.animateCallback, false);
@@ -583,6 +593,9 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 			this.currSlide = this.slide[this.currIdx];
 			this.pager.innerHTML = "<span class=\"current\">" + (this.currIdx + 1) + "</span> / " + this.slide.length + "<span class=\"accessible-hidden\">페이지</span>" ;
 		},
+		/**
+		 * show previous slide
+		 */
 		prevSlide : function(){
 			if( new Date() - this.timer < 1000 ) return;
 			this.timer = new Date();
@@ -603,6 +616,9 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 				this.slideDeck.style.transform = "translateX(0)";
 			}).bind(this), 10);
 		},
+		/**
+		 * show next slide
+		 */
 		nextSlide : function(){
 			if( new Date() - this.timer < 1000 ) return;
 			this.timer = new Date();
@@ -651,4 +667,188 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	};
 
 	win.AnswerSlide = AnswerSlide;
+})(window);
+
+/**
+ * tab UI
+ */
+(function(win){	
+	win = win || window;
+
+	/**
+	 * @class TabUI
+	 * @mixes methods
+	 * @param {object} node the element that used to applied TabUI
+	 */
+	var TabUI = function TabUI(node){
+		this.component = node;
+		this.tablist = this.component.querySelector(".tab-list");
+		this.tabs = this.tablist.querySelectorAll(".tab");
+		this.tabpanels = this.component.querySelectorAll(".tab-content");
+		this.currIdx = 0;
+		this.initialize();
+	};
+
+	var keymap = {
+		TAB : 9,
+		ENTER : 13,
+		SHIFT : 16,
+		SPACE : 32,
+		LEFT_ARROW : 37,
+		UP_ARROW : 38,
+		RIGHT_ARROW : 39,
+		DOWN_ARROW : 40
+	};
+
+	/**
+	 * This provides methods used for handling.
+	 * @mixin
+	 */
+	var methods = {
+		/**
+		 * Define methods that should act upon keyboard input
+		 */
+		bindKey : function(event){
+			event = event || window.event;
+			var keycode = event.keyCode || event.which;
+			switch(keycode){
+				case keymap.UP_ARROW :
+				case keymap.LEFT_ARROW :
+					methods.prevTabFocus.apply(this, arguments);
+					break;
+				case keymap.DOWN_ARROW :
+				case keymap.RIGHT_ARROW : 
+					methods.nextTabFocus.apply(this, arguments);
+					break;
+				case keymap.SPACE : 
+				case keymap.ENTER :
+					methods.selectTab.apply(this, arguments);
+					break;
+				case keymap.TAB :
+					methods.accessTabPanel.apply(this, arguments);
+					break;
+			}
+		},
+		/**
+		 * active previous tab
+		 */
+		prevTabFocus : function(event){
+			event = event || window.event;
+			if(event){
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				event.stopPropagation();
+			}
+			this.currIdx = --this.currIdx < 0 ? this.tabs.length - 1 : this.currIdx;
+			methods.activateTab.apply(this);
+		},
+		/**
+		 * active next tab
+		 */
+		nextTabFocus : function(event){
+			event = event || window.event;
+			if(event){
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				event.stopPropagation();
+			}
+			this.currIdx = ++this.currIdx > this.tabs.length - 1 ? 0 : this.currIdx;
+			methods.activateTab.apply(this);
+		},
+		/**
+		 * select activated tab
+		 */
+		selectTab : function(event){
+			event = event || window.event;
+			if(event){
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				event.stopPropagation();
+			}
+			for(var i = -1, control = null, tabPanel = null, cnt = this.tabs.length; ++i < cnt;){
+				control = this.tabs[i].getAttribute("aria-controls") || this.tabs[i].getAttribute("data-controls") || this.tabs[i].getAttribute("href");
+				control = control ? control.replace(/.*#/, "") : "";
+				tabPanel = document.getElementById(control);
+				if(i === this.currIdx){
+					this.tabs[i].classList.add("tab-active");
+					this.tabs[i].setAttribute("tabindex", "0");
+					this.tabs[i].setAttribute("aria-selected", "true");
+					tabPanel.classList.add("tab-content-active");
+					tabPanel.setAttribute("aria-hidden", "false");
+				}else{
+					this.tabs[i].classList.remove("tab-active");
+					this.tabs[i].setAttribute("tabindex", "-1");
+					this.tabs[i].setAttribute("aria-selected", "false");
+					tabPanel.classList.remove("tab-content-active");
+					tabPanel.setAttribute("aria-hidden", "true");
+				}
+			}
+		},
+		/**
+		 * focus to tab pannel that is related activated tab 
+		 */
+		accessTabPanel : function(event){
+			event = event || window.event;
+			var control = null;
+
+			if(event.shiftKey === false){
+				if(event.currentTarget.classList.contains("tab-active") === false) return false;
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				control = event.currentTarget.getAttribute("aria-controls") || event.currentTarget.getAttribute("data-controls") || event.currentTarget.getAttribute("href");
+				control = document.getElementById(control.replace(/.*#/, ""));
+				control.setAttribute("tabindex", "-1");
+				control.focus();
+			}
+		},
+		/**
+		 * activate selected tab
+		 */
+		activateTab : function(event, target){
+			if(target !== undefined){
+				event = event || window.event;
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				this.currIdx = [].slice.call(this.tabs).indexOf(target);				
+			}
+			this.tabs[this.currIdx].focus();
+		},
+		/**
+		 * event handler for click event - activate & select tab
+		 */
+		invokeTab : function(event){
+			event = event || window.event;
+			methods.activateTab.call(this, arguments, event.currentTarget);
+			methods.selectTab.apply(this, arguments);
+		}
+	};
+
+	TabUI.prototype = {
+		initialize : function(){
+			// verifying tab - tabpanel relations
+			for(var i = -1, control = "", cnt = this.tabs.length; ++i < cnt;){
+				control = this.tabs[i].getAttribute("data-controls") || this.tabs[i].getAttribute("href");
+				control = control ? control.replace(/.*#/, "") : "";
+				if(control === "" || !document.getElementById(control)){
+					try{
+						throw new Error("no element with matching 'data-controls' or 'href' ");
+					}catch(e){
+						console.log("%cnu9-TabUI Error: ", "font-weight:bold", e.message);
+						return;
+					}
+				}
+
+				// initailly WAI-ARA Set
+				this.component.setAttribute("role", "application");
+				this.tablist.setAttribute("role", "tablist");
+				this.tabs[i].setAttribute("role", "tab");
+				this.tabs[i].setAttribute("aria-controls", control);
+				this.tabs[i].removeAttribute("data-controls");
+				this.tabpanels[i].setAttribute("role", "tabpanel");
+				// add event listener 
+				this.tabs[i].addEventListener("keydown", methods.bindKey.bind(this), false);
+				this.tabs[i].addEventListener("click", methods.invokeTab.bind(this), false);
+			}
+			methods.selectTab.apply(this);
+		}
+	};
+
+	for(var i = -1, item = null, tabComponents = document.querySelectorAll(".tab-interface"); item = tabComponents[++i];){
+		new TabUI(item);
+	}
 })(window);
