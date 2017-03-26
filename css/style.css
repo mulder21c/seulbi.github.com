@@ -761,15 +761,19 @@ body{
 }
 .footer .util-menu{
   position:absolute;
-  line-height:2em;
+  left:0;
+  right:0;
   bottom:0.5em;
+  margin:0 auto;
+  line-height:2em;
 }
 .footer .util-menu ul{
   list-style-type:none;
   padding:0 1.5em;
+  text-align:center;
 }
 .footer .util-menu li{
-	float:left;
+	display:inline-block;
 }
 .footer .util-menu li:before{
   content:" | ";
@@ -853,10 +857,29 @@ body{
   right: 1em;
   width: 2em;
   height: 2em;
-  background: url(icons/go-top.png) no-repeat 0 0 / 100% 100%;
+  background: url(icons/go-up-button.png) no-repeat 0 0 / 100% 100%;
+  z-index:100;
 }
 /* 푸터 끝 */
 /* 미디어쿼리 시작  */
+@media all and (max-width:400px){
+	.best-answer-like{
+		float:none;
+	}
+	.sns-share{
+		margin-top:1.5em;
+		text-align:left;
+	}
+	.sns-share li{
+		margin-right:.75em;
+	}
+}
+@media all and (max-width:460px){
+	.sns-share,
+	.best-answer-like{
+		font-size:.75em;
+	}
+}
 @media all and (min-width:480px) {
   .go-add-answer span{
     display: inline;
