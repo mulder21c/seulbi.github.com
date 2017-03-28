@@ -362,6 +362,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 		this.paging = node.querySelector(".accordion-answer-paging.accordion-closed");
 		this.detailBtn = node.querySelector(".answer-detail");
 		this.tm = null;
+		if(this.answers.length < 1) return;
 		this.initialize();
 	};
 
@@ -543,6 +544,7 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 				docFrag.append(this.alertElem);
 				this.detailBtn.parentNode.insertBefore(docFrag, this.detailBtn.nextSibling);
 			}
+			this.article.classList.add("accordion-ui");
 			for(var i = -1, item = null; item = this.answers[++i];){
 				item.setAttribute("aria-hidden", "true");
 			}
@@ -915,3 +917,103 @@ if(window.Element&&!Element.prototype.closest)Element.prototype.closest=function
 	twt.addEventListener("click", twtShare, false);
 
 })(document.querySelector(".sns-share"));
+
+/**
+ * toggle detail view on Current Version View
+ */
+(function(win){
+	win = win || window;
+
+	/**
+	 * @class DetailAnswer
+	 * @mixes methods
+	 * @param {object} node the element that used to applied answerAccordion
+	 */
+	var DetailAnswer = function DetailAnswer(node){
+		if( !node ) return;
+		this.article = node;
+		this.answers = node.querySelectorAll(".answer-sgpeldource ~ p.answer, .btn-answer, .go-add-answer");		
+		this.paging = node.querySelector(".btn-answer");
+		this.detailBtn = node.querySelector(".answer-detail");
+		this.initialize();
+	};
+
+	var methods = {
+		openDetails : function(){
+			if(this.answers.length < 1) return;
+
+			// answer details open
+			for(var i = -1, item = null;item = this.answers[++i];){
+				item.style.display = "block";
+			}
+
+			this.detailBtn.querySelector("span").textContent = "상세닫기";
+			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
+			this.detailBtnCallback = methods.closeDetails.bind(this);
+			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+			this.bindKey = methods.bindKey.bind(this);
+			this.detailBtn.addEventListener("keydown", this.bindKey, null);
+			setTimeout((function(){
+				this.alertElem.textContent = "탭키를 눌러 상세 내용으로 초점 이동";
+				setTimeout((function(){
+					this.alertElem.textContent = "";
+				}).bind(this), 3000);
+			}).bind(this), 1500);
+			
+			// WAI-ARIA
+			this.detailBtn.setAttribute("aria-expanded", "true");
+			this.answers[0].setAttribute("tabindex", -1);
+		},
+		bindKey : function(event){
+			event = event || window.event;
+			var keycode = event.keyCode || event.which;
+			if( !event.shiftKey && keycode === 9){
+				event.preventDefault ? event.preventDefault() : event.returnValue = false;
+				this.answers[0].setAttribute("tabindex", "-1");
+				this.answers[0].focus();
+			}
+		},
+		closeDetails : function(){
+			if(this.answers.length < 1) return;
+
+			for(var i = -1, item = null;item = this.answers[++i];){
+				item.removeAttribute("style");
+				item.removeAttribute("tabindex");
+			}
+
+			window.removeEventListener("resize", this.resizeCallback, null);
+			this.resizeCallback = null;
+
+			this.detailBtnCallback = methods.openDetails.bind(this);
+			this.detailBtn.removeEventListener("click", this.detailBtnCallback, null);
+			this.detailBtn.removeEventListener("keydown", this.bindKey, null);
+			this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+
+			this.detailBtn.querySelector("span").textContent = "답변 상세보기";
+			this.detailBtn.setAttribute("aria-expanded", "false");
+		}
+	};
+
+	DetailAnswer.prototype = {
+		initialize : function(){
+			var docFrag = null;
+			if( this.detailBtn !== null){
+				this.detailBtn.setAttribute("aria-expanded", "false");
+				this.detailBtnCallback = methods.openDetails.bind(this);
+				this.detailBtn.addEventListener("click", this.detailBtnCallback, null);
+
+				docFrag = document.createDocumentFragment();
+				this.alertElem = document.createElement("span");
+				this.alertElem.setAttribute("role", "alert");
+				this.alertElem.classList.add("a11y-hidden");
+				docFrag.append(this.alertElem);
+				this.detailBtn.parentNode.insertBefore(docFrag, this.detailBtn.nextSibling);
+			}
+		}
+	};
+
+	//win.AnswerAccordion = AnswerAccordion;
+	for(var i = -1, item = null, articles = document.querySelectorAll("article.answer-type"); item = articles[++i];){
+		new DetailAnswer(item);
+	}
+})(window)
